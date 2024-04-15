@@ -1,0 +1,10 @@
+.plastic/
+.vs/
+.vsconfig
+Assembly-CSharp.csproj
+GameFeel.sln
+Library/
+Logs/
+Packages/
+UserSettings/
+obj/
