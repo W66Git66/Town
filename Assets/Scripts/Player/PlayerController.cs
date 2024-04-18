@@ -46,6 +46,5 @@ public class PlayerController : MonoBehaviour
     void SwitchAnim()//¶¯»­ÇÐ»»
     {
         anim.SetFloat("running", Mathf.Abs(rb.velocity.x));
-
     }
 }
