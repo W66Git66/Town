@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D coll;
     private Animator anim;
 
-    public float speed, jumpForce;
+    public float speed;
     private float horizontalMove;
     private float verticalMove;
 
@@ -35,16 +35,11 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
         verticalMove = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector3(horizontalMove * speed, rb.velocity.y);
-
-        if (horizontalMove != 0)
-        {
-            transform.localScale = new Vector3(horizontalMove, 1, 1);
-        }
+        rb.velocity = new Vector3(h);
 
     }
     void SwitchAnim()//¶¯»­ÇÐ»»
     {
-        anim.SetFloat("running", Mathf.Abs(rb.velocity.x));
+       // anim.SetFloat("running", Mathf.Abs(rb.velocity.x));
     }
 }

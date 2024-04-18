@@ -226,7 +226,7 @@ namespace WeatherControl{
                 weatherColor = Color.Lerp(weatherColor, currentPhenomenon.GetColor(), interpolationFactor);
             }
 
-            sunLight.color = weatherColor;  
+            //sunLight.color = weatherColor;  
 
             if(hour >= 24){
                 hour = 0;
