@@ -35,11 +35,11 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
         verticalMove = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector3(h);
-
+        rb.velocity = new Vector3(horizontalMove,verticalMove,1)*speed;
     }
     void SwitchAnim()//¶¯»­ÇÐ»»
     {
-       // anim.SetFloat("running", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("Xmove", horizontalMove);
+        anim.SetFloat("Ymove", verticalMove);
     }
 }
