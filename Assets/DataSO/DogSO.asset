@@ -13,6 +13,3 @@ MonoBehaviour:
   m_Name: DogSO
   m_EditorClassIdentifier: 
   speed: 5
-  daySprite: {fileID: 0}
-  nightSprite: {fileID: 0}
-  anim: {fileID: 0}
