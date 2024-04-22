@@ -5,9 +5,3 @@
     command,
     teleport
 }
-
-public enum TimeState
-{
-    day,
-    night
-}
