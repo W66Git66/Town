@@ -17,11 +17,29 @@ public class Dog : MonoBehaviour
     [SerializeField]private float pathFindCooldown;//搜寻路径的冷却
     private float pathTimer = 0;//计时器
 
+    private IState curState;
+
+    Dictionary<EnemyStates, IState> states = new Dictionary<EnemyStates, IState>();
     private void Awake()
     {
         _seeker=GetComponent<Seeker>();
+
+        states.Add(EnemyStates.Idle, new EnemyIdleState());
+        states.Add(EnemyStates.Chase, new EnemyChaseState());
+        states.Add(EnemyStates.Attack, new EnemyAttackState());
+        states.Add(EnemyStates.Patrol, new EnemyPatrolState());
+        states.Add(EnemyStates.Death, new EnemyDeathState());
     }
 
+    public void TransationState(EnemyStates stateType)
+    {
+        if(curState!=null)
+        {
+            curState.OnExit();
+        }
+        curState = states[stateType];
+        curState.OnEnter();
+    }
     private void AutoPath()
     {
         pathTimer += Time.deltaTime;

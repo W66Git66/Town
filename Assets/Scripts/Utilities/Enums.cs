@@ -5,3 +5,12 @@
     command,
     teleport
 }
+
+public enum EnemyStates
+{
+    Idle,
+    Chase,
+    Attack,
+    Patrol,
+    Death
+}
