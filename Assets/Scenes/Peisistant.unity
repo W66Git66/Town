@@ -123,6 +123,172 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &50265415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 50265416}
+  - component: {fileID: 50265418}
+  - component: {fileID: 50265417}
+  - component: {fileID: 50265419}
+  - component: {fileID: 50265420}
+  m_Layer: 0
+  m_Name: Dog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &50265416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50265415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 326641340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &50265417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50265415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170baaa9445bf70499e96ca26adfe323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  player: {fileID: 2106020709}
+  currentSpeed: 5
+  chaseDistance: 3
+  attackDistance: 0.8
+  _pathPoints: []
+  pathFindCooldown: 0.1
+  meleeAttackDamage: 1
+  isAttack: 1
+  distance: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  AttackCooldownDuration: 2
+  sr: {fileID: 0}
+  rb: {fileID: 0}
+  anim: {fileID: 0}
+  enemyCollider: {fileID: 0}
+--- !u!212 &50265418
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50265415}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f3c82cb72c72bda40b12a2e808bcdd99, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15, y: 15}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &50265419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50265415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!95 &50265420
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50265415}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &125334942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5504012029617781907, guid: 59276214322e3ea439018966534d4b44, type: 3}
@@ -357,6 +523,38 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 556702798}
+--- !u!1 &326641339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326641340}
+  m_Layer: 0
+  m_Name: Monster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326641340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326641339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 50265416}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446949832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1236,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 579161792}
-  - component: {fileID: 579161793}
   m_Layer: 0
   m_Name: ------System------
   m_TagString: Untagged
@@ -1062,20 +1259,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &579161793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579161791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89970e0f2bb1b4549bced890e26bcdf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  day: Daytime
-  night: Night
 --- !u!1 &687869100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,7 +1529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &929181882
 Transform:
   m_ObjectHideFlags: 0
@@ -2568,7 +2751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1900895508
 Transform:
   m_ObjectHideFlags: 0
@@ -2600,7 +2783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABAIeyYwVL1WwIAABIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE2P2jAQ/SvI51IlQHdLby2wbA8saGm1l1yMPSEWjh3ZDp/iv3fsJCRN1VOc997MvBlPciNC2QKY02ZpBF9pDuTbgPgz+TRoyVc4071WW3GFRvMhuMu8iAbNO3VCIx77MKtzcEaw72ovvThCsFQi1SZf8D3MtHUW4ZRKC0gZ7Xy0Qug2IGd8DKc+5IKn0bM/XfE0jQZ3PDJQDkwrbYSNrFKVikmaF8C95VY8+lKr40qmsJlaEX32HNNSClt7Ie5ShF63RQYGfLNcUGwt1B/jawZinzmfuBu7TlMLrvZk6GUuDE6oSkp+6GpsObWHytiRytKXeZoET1XO1T/0MA50anT+2pSNI1/CZYId3umFUes6Y+3C89Z3HMZzovJAdxI+MlBveml0qTiSzpQ+tLQwmrevj85mGbBDi1dWe2BZ/P9yfA/30Px5JkW+C3OfVMBW6jDtcPVg8GZ+ouGwGLZOgah38dvCL7rvblBNvAhjHVJ1l8rb2+nSeClZhJn5bko300ZBgGvTBSgq3WWDaVz/Bntcp2yPeaH+W6mL11zzCfRCAtzqo6hHbfTpcVk206cV2GxdOikUtKY98YZzmmmlqgXrzqQJ25YmpawTti8F/3u1yHjEd1MeMT6i6VOajocQj9PpOAb6dfy8m7AdCbsnFPZJ5aYyWo8Hb021yRXuWfMLGSwNLcKyc0NPS3HNdWfkQqV6ywyAWlcZHsbBYBH8KvmCCxzQFpwTKtw3uSVEanYAnjwSJaHTxdkZmrRZElKIo3YeScgs/DMS4uHHLm8MHAWcfPEm2Z3c/wBQSwMEFAAACAgAAEAh7JhdlJhtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKxUUqSZYpBcopRYppZWpqxbqqhcZqlsWFqooWxeZJJcpJSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAEAh7JjBUvVbAgAAEgUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAEAh7JhdlJhtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqAIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABgAwAAAAA=
+    dataString: UEsDBBQAAAgIAABAIeybrbFHbAIAACMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMuS2jAQ/BVK50DZvMktAZbNgYVaktqLL8IaYxWy5JJknsW/ZyTb2CEnRM/0TE9r5Dvh0uQQW6VXmrO1YkC+d4g7k2+dJvgOF3pQcsdvUOd8cWZTl0R9zie1XCEeOppRGVjN4x/yIFxygGAheaJ0tmQHmCtjDcIJFQYwpJV1bInQvUMu+NOdOcoVT/2JO93wNAs6DzzGIC3oJjUMw944DIJgWjG642FvNqlIJaeQsaBZDswN0FD7o7pLOCoTJQ5X5YxcLyUEN5UyYq+5n3yXp6DBjc44xUG9mqA3HSCSAj+k1tVu0zdJYsBWRmh6XXCNlpV1yU9V+phRcyy1nagoXKfx0Isqa67/C3dDH060yt7rtmgEQjbl8fGTXmNqbMvnNrxopIfeoTMVR7oX8JWC/FArrQrJMGh14aiFgf6i+fucbJ5CfGzwUuoLWOSN5bXh9aW6GR5++Mtc8GzvnRyWwE4ob7jfBdB4Nb9QsN8UU5VA1Kn4Y+A3PbRXqgq8cW0shqoppZO3V4V2qWTpPXPTFHautAQPV6JzkFTY6xbL2NcbfIm12r5E3qh7PFXzKla/iReKh5v8IHgJbdX5eVkmVec1mHRTWMElNKJd4AN9mispywVre1LTdoVOaNyiHQrO/l0tMuiz/YwFMevTZJwkgy6Eg2Q2CIFOB5P9MN4Tv3tc4pxUbEuhlT14a7IpLnHP6m9KZ6Vp7pedaXpe8VumWpZzmahdrAHkpqzwFA4am+CzZEvG0aAdWMulv29yj4hQ8RFY9CwU+UmXF6tp1FSJSM5PyjokInP/EYmIg5+7vNVw4nB2zetiD/L4C1BLAwQUAAAICAAAQCHsmF2UmG0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0krFRSpJlikFyilFimllamrFuqqFxmqWxYWqihbF5kklyklIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAQCHsm62xR2wCAAAjBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAQCHsmF2UmG0AAAB4AAAACQAkAAAAAAAAAAAAAAC5AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHEDAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
