@@ -51,7 +51,7 @@ public class Dog : MonoBehaviour
 
     private void Start()
     {
-        TransState(EnemyStates.Idle);
+        TransState(EnemyStates.Chase);
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class Dog : MonoBehaviour
         }
         float distance = Vector2.Distance(player.position, transform.position);
         AutoPath();
-        direction = _pathPoints[_curIndex] - _pathPoints[0];
+        direction = _pathPoints[_curIndex] - transform.position;
         StateMachine();
     }
 
