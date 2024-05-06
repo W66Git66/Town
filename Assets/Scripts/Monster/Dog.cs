@@ -62,8 +62,8 @@ public class Dog : MonoBehaviour
         }
         float distance = Vector2.Distance(player.position, transform.position);
         AutoPath();
+        Debug.Log(_curIndex);
         direction = _pathPoints[_curIndex] - transform.position;
-
         StateMachine();
     }
 
@@ -109,13 +109,14 @@ public class Dog : MonoBehaviour
     #region ×Ô¶¯Ñ°Â·
     private void AutoPath()
     {
+
         pathTimer += Time.deltaTime;
         if(pathTimer >= pathFindCooldown) 
         {
             GetPathPoints(player.position);
             pathTimer = 0;
         }
-        if (_pathPoints == null||_pathPoints.Count<0||_pathPoints.Count <= _curIndex)
+        if (_pathPoints == null||_pathPoints.Count<=0||_pathPoints.Count <= _curIndex)
         {
             GetPathPoints(player.position);
         }
