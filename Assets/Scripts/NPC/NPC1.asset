@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogNodes:
   - name: NPC1
     sprite: {fileID: -1718020452, guid: 373ae095a62434b4fbe32c1bf6af9543, type: 3}
-    content: "\u4F60\u597D\u554A"
+    content: "\u4F60\u597D\u5440"
   - name: YOU
     sprite: {fileID: 21300000, guid: 5e4520a26c2702a4b8eec123cca8e0be, type: 3}
-    content: "\u597D\u597D\u597D"
+    content: "\u4F60\u597D\uFF0C\u6211\u662F\u738B66"

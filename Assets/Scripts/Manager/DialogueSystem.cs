@@ -12,9 +12,11 @@ public class DialogueSystem : MonoBehaviour
         private int index;
 
         //对话内容框
-        TextMeshProUGUI dialogueContent;
+        //TextMeshProUGUI dialogueContent;
+        Text dialogueContent;
         //名称框
-        TextMeshProUGUI dialogueName;
+        //TextMeshProUGUI dialogueName;
+        Text dialogueName;
         //头像框
         Image dialogueImage;
 
@@ -26,8 +28,8 @@ public class DialogueSystem : MonoBehaviour
         private void OnEnable()
         {
             dialogue = TalkButton.instance.dialogue;
-            dialogueContent = transform.Find("内容").GetComponent<TextMeshProUGUI>();
-            dialogueName = transform.Find("名字").GetComponent<TextMeshProUGUI>();
+            dialogueContent = transform.Find("内容").GetComponent<Text>();
+            dialogueName = transform.Find("名字").GetComponent<Text>();
             dialogueImage = transform.Find("头像").GetComponent<Image>();
 
             //设置人物头像保持宽高比，防止压缩变形
@@ -39,7 +41,7 @@ public class DialogueSystem : MonoBehaviour
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F) && dialogue != null)
+            if (Input.GetKeyDown(KeyCode.Mouse0) && dialogue != null)
             {
                 //对话播放完，关闭对话
                 if (index == dialogue.dialogNodes.Length)
