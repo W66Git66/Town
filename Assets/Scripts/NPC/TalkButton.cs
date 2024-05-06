@@ -43,7 +43,7 @@ public class TalkButton : MonoBehaviour
 
         private void Update()
         {
-            if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.F))
+            if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
                 dialogBox.SetActive(true);
             }
