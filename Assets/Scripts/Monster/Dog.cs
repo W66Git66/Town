@@ -125,7 +125,7 @@ public class Dog : MonoBehaviour
             {
 
                 _curIndex++;
-                if( _curIndex > _pathPoints.Count )
+                if( _curIndex >= _pathPoints.Count )
                 {
                 GetPathPoints(player.position);
                 }

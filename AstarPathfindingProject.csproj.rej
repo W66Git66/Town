@@ -3,7 +3,6 @@ diff a/AstarPathfindingProject.csproj b/AstarPathfindingProject.csproj	(rejected
    </ItemGroup>
    <ItemGroup>
      <Reference Include="UnityEngine">
-+<<<<<<< HEAD
        <HintPath>E:\Unity works\2021.3.26f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.AIModule">
