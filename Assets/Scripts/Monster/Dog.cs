@@ -63,6 +63,7 @@ public class Dog : MonoBehaviour
         float distance = Vector2.Distance(player.position, transform.position);
         AutoPath();
         direction = _pathPoints[_curIndex] - transform.position;
+
         StateMachine();
     }
 
@@ -124,7 +125,7 @@ public class Dog : MonoBehaviour
             {
 
                 _curIndex++;
-                if( _curIndex >= _pathPoints.Count )
+                if( _curIndex > _pathPoints.Count )
                 {
                 GetPathPoints(player.position);
                 }
