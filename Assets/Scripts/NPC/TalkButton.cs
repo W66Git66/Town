@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TalkButton : MonoBehaviour
+public class TalkButton : Singleton<TalkButton>
 {
         public GameObject tipsButton;//对话提示按钮
         [Header("对话框")]
@@ -13,27 +13,22 @@ public class TalkButton : MonoBehaviour
 
     //给脚本设置单例模式
     public static TalkButton instance;
-    private void Awake()
+
+    protected override void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-        DontDestroyOnLoad(gameObject);
+        base.Awake();
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
-        {
-            dialogue = other.GetComponent<NPC>().dialogue;
-            tipsButton.SetActive(true);
-        }
+    {
+        dialogue = other.GetComponent<NPC>().dialogue;
+        tipsButton.SetActive(true);
+    }
 
         private void OnTriggerExit2D(Collider2D other)
         {
@@ -45,7 +40,7 @@ public class TalkButton : MonoBehaviour
         {
             if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
-                dialogBox.SetActive(true);
+               dialogBox.SetActive(true);
             }
         }
 

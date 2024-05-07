@@ -142,11 +142,16 @@ public class Dog : MonoBehaviour
                 }
                 break;
             case EnemyStates.Attack:
+
+
                 break;
             case EnemyStates.Patrol:
+
+
                 break;
             case EnemyStates.Death:
 
+                
                 break;
         }    
     }
