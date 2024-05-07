@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     private Rigidbody2D rb;
     private Collider2D coll;
@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalMove;
     private float verticalMove;
 
-
-
+    private Vector2 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +23,15 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
         GroundMovement();
 
+        
+    }
+
+    private void FixedUpdate()
+    {
         SwitchAnim();
     }
 
@@ -35,11 +39,13 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
         verticalMove = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector3(horizontalMove,verticalMove,1)*speed;
+        direction = new Vector2(horizontalMove, verticalMove);       
+        rb.velocity = direction*speed;
     }
     void SwitchAnim()//¶¯»­ÇÐ»»
     {
         anim.SetFloat("Xmove", horizontalMove);
         anim.SetFloat("Ymove", verticalMove);
+        anim.SetFloat("speed", direction.magnitude);
     }
 }
