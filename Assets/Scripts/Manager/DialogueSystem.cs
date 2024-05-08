@@ -22,7 +22,7 @@ public class DialogueSystem : MonoBehaviour
 
         private void Awake()
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         private void OnEnable()

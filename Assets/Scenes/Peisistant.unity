@@ -171,19 +171,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170baaa9445bf70499e96ca26adfe323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 10
   player: {fileID: 2106020709}
+  IdleDuration: 0
+  patrolPoints: []
+  targetPointIndex: 0
   currentSpeed: 5
-  chaseDistance: 3
+  chaseDistance: 10
   attackDistance: 0.8
-  _pathPoints: []
   pathFindCooldown: 0.1
-  meleeAttackDamage: 1
   isAttack: 1
   distance: 0
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   AttackCooldownDuration: 2
   sr: {fileID: 0}
   rb: {fileID: 0}
@@ -279,7 +280,7 @@ Animator:
   m_GameObject: {fileID: 50265415}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d65620eac7f37af4f8b96695860170fc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
