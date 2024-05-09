@@ -46,21 +46,16 @@ public class PlayerController : Singleton<PlayerController>
         anim.SetFloat("speed", direction.magnitude);
     }
 
-    public void TransToNight()
-    {
-        transform.position = Vector2.zero;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("board"))
         {
             GameManager.Instance.TransToNight();
-            TransToNight();
         }
         if(collision.CompareTag("monster"))
         {
-            GameManager.Instance.Tran
+            GameManager.Instance.TransToDay();
         }
     }
 

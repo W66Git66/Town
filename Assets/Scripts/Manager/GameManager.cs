@@ -12,6 +12,8 @@ public class GameManager : Singleton<GameManager>
     public Collider2D dayBoard;//白天的相机边界
     public Collider2D nightBoard;//夜晚
 
+    public GameObject monster;
+
     public string sceneDay;
     public string SceneNight;
 
@@ -36,10 +38,14 @@ public class GameManager : Singleton<GameManager>
         EventCenter.Broadcast(EventType.teleport, sceneDay, SceneNight);
         PlayerController.Instance.transform.position = Vector2.zero;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
+        monster.SetActive(true);
     }
 
     public void TransToDay()
     {
-
+        EventCenter.Broadcast(EventType.teleport, SceneNight, sceneDay);
+        PlayerController.Instance.transform.position = Vector2.zero;
+        myCameraConfiner.m_BoundingShape2D = dayBoard;
+        monster.SetActive(false);
     }
 }

@@ -22,20 +22,17 @@ public class Dog : MonoBehaviour
     public Vector2 MovementInput { get; set; }
 
     public float chaseDistance = 3f;//追击距离
-    public float attackDistance = 0.8f;//攻击距离
 
     [Header("Pathfinding")]
     private Seeker _seeker;
-    public List<Vector3> _pathPoints;//路径点
+    private List<Vector3> _pathPoints;//路径点
     private int _curIndex;//路径点的索引
     [SerializeField]private float pathFindCooldown=0.5f;//搜寻路径的冷却
     private float pathTimer = 0;//计时器
 
     [Header("攻击")]
-    public bool isAttack = true;
     [HideInInspector] public float distance;
     public LayerMask playerLayer;//表示玩家图层
-    public float AttackCooldownDuration = 2f;//冷却时间
 
     private float Timer = 0;//待机计时器
 
@@ -87,14 +84,9 @@ public class Dog : MonoBehaviour
 
                 if (player != null)//如果玩家不为空
                 {
-                    if (distance > attackDistance)//大于攻击距离，切换为追击状态
-                    {
+
                         TransState(EnemyStates.Chase);
-                    }
-                    else if (distance <= attackDistance)//小于等于攻击距离切换为攻击状态
-                    {
-                        TransState(EnemyStates.Attack);
-                    }
+
                 }
                 else
                 { //如果玩家为空,等待一定时间切换到巡逻状态
@@ -118,21 +110,10 @@ public class Dog : MonoBehaviour
                 {
                     //判定路径点列表是否为空
                     if (_pathPoints == null || _pathPoints.Count <= 0)
-                        return;
-
-                    //是否到攻击范围内
-                    if (distance <= attackDistance)//是否处于攻击范围
-                    {
-                        TransState(EnemyStates.Attack);
-                    }
-                    else
-                    {
-
+                        return;             
                         //追逐玩家
                         Vector2 direction = _pathPoints[_curIndex] - transform.position;
                         MovementInput = direction;//移动方向传给MovementInput
-
-                    }
                 }
                 else
                 {
