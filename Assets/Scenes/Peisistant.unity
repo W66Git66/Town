@@ -178,11 +178,14 @@ MonoBehaviour:
   targetPointIndex: 0
   currentSpeed: 5
   chaseDistance: 10
+  attackDistance: 0.8
   pathFindCooldown: 0.1
+  isAttack: 1
   distance: 0
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  AttackCooldownDuration: 2
   sr: {fileID: 0}
   rb: {fileID: 0}
   anim: {fileID: 0}
