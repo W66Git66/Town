@@ -58,5 +58,11 @@ public class PlayerController : Singleton<PlayerController>
             GameManager.Instance.TransToNight();
             TransToNight();
         }
+        if(collision.CompareTag("monster"))
+        {
+            GameManager.Instance.Tran
+        }
     }
+
+
 }
