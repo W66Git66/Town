@@ -22,12 +22,12 @@ public class DialogueSystem : MonoBehaviour
 
         private void Awake()
         {
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
 
         private void OnEnable()
         {
-            dialogue = TalkButton.instance.dialogue;
+            dialogue = TalkButton.Instance.dialogue;
             dialogueContent = transform.Find("ÄÚÈÝ").GetComponent<Text>();
             dialogueName = transform.Find("Ãû×Ö").GetComponent<Text>();
             dialogueImage = transform.Find("Í·Ïñ").GetComponent<Image>();
