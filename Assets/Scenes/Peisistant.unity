@@ -137,10 +137,9 @@ GameObject:
   - component: {fileID: 50265419}
   - component: {fileID: 50265420}
   - component: {fileID: 50265421}
-  - component: {fileID: 50265422}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: monster
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
