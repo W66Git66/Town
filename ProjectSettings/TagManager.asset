@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - weatherControl
+  - board
+  - monster
+  - "\u86CB\u767D\u7C89"
   layers:
   - Default
   - TransparentFX

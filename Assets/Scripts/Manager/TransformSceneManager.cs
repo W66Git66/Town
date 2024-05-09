@@ -23,11 +23,11 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
 
     private void OnEnable()
     {
-        EventCenter.AddListener<string, string,bool>(EventType.teleport, TransformScene);
+        EventCenter.AddListener<string, string>(EventType.teleport, TransformScene);
     }
     private void OnDisable()
     {
-        EventCenter.RemoveListener<string,string,bool>(EventType.teleport, TransformScene);
+        EventCenter.RemoveListener<string,string>(EventType.teleport, TransformScene);
     }
 
     /// <summary>
@@ -35,20 +35,12 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
     /// </summary>
     /// <param name="from">卸载的场景</param>
     /// <param name="to">加载的场景</param>
-    public void TransformScene(string from, string to,bool isDay)
+    public void TransformScene(string from, string to)
     {
         if (!isFade)
         {
             //如果是白天就白天转换到黑夜，不然就黑夜转换到白天
-            if(isDay)
-            {
                 StartCoroutine(TranstionToScene(from, to));
-            }
-            else
-            {
-                StartCoroutine(TranstionToScene(to, from));
-            }
-            
         }
     }
 
