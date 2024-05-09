@@ -26,7 +26,7 @@ public class Dog : MonoBehaviour
 
     [Header("Pathfinding")]
     private Seeker _seeker;
-    private List<Vector3> _pathPoints;//路径点
+    public List<Vector3> _pathPoints;//路径点
     private int _curIndex;//路径点的索引
     [SerializeField]private float pathFindCooldown=0.5f;//搜寻路径的冷却
     private float pathTimer = 0;//计时器
@@ -44,7 +44,6 @@ public class Dog : MonoBehaviour
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider2D enemyCollider;
 
-    Dictionary<EnemyStates, IState> states = new Dictionary<EnemyStates, IState>();
     private void Awake()
     {
         _seeker=GetComponent<Seeker>();
@@ -222,6 +221,10 @@ public class Dog : MonoBehaviour
            
             rb.velocity = movementInput.normalized * currentSpeed;
             //敌人左右翻转
+            if(Mathf.Abs(movementInput.x)<1)
+            {
+                return;
+            }
             if (movementInput.x < 0)//左
             {
                 sr.flipX = false;
