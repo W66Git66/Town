@@ -121,21 +121,24 @@ public class Dog : MonoBehaviour
                     TransState(EnemyStates.Idle);
                 }
                 break;
-            case EnemyStates.Attack:
-
-
-                break;
             case EnemyStates.Patrol:
 
 
                 break;
             case EnemyStates.Death:
-
+                
                 
                 break;
         }    
     }
-        
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(curState!=EnemyStates.Death&&collision.CompareTag("µ°°×·Û"))
+        {
+            curState = EnemyStates.Death;
+        }
+    }
     public void GetPlayerTransform()
     {
         Collider2D[] chaseColliders = Physics2D.OverlapCircleAll(transform.position, chaseDistance, playerLayer);
