@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TalkButton : Singleton<TalkButton>
 {
-        public GameObject[] tipsButtons;//对话提示按钮
+        private GameObject tipsButton;
         [Header("对话框")]
         public GameObject dialogBox;
         [NonSerialized]
@@ -29,60 +29,46 @@ public class TalkButton : Singleton<TalkButton>
 
     private void Start()
     {
-        tipsButtons = new GameObject[6];//这六个提示按下方tag列表顺序排列
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("村长"))
+        // 获取触发器事件对应的物体
+        GameObject triggeredObject = other.gameObject;
+
+        Transform childTransform = triggeredObject.transform.Find("对话提示");
+
+        if (childTransform != null)
         {
-            tipsButtons[0].SetActive(true);
+            // 找到了指定名称的子物体
+            tipsButton = childTransform.gameObject;
+            Debug.Log("Found child object: " + tipsButton.name);
+
+            // 执行操作
+            tipsButton.SetActive(true);
         }
-        if (other.CompareTag("柴犬"))
+        else
         {
-            tipsButtons[1].SetActive(true);
+            Debug.Log("Child object not found.");
         }
-        if (other.CompareTag("老奶奶"))
-        {
-            tipsButtons[2].SetActive(true);
-        }
-        if (other.CompareTag("裁缝"))
-        {
-            tipsButtons[3].SetActive(true);
-        }
-        if (other.CompareTag("屠夫"))
-        {
-            tipsButtons[4].SetActive(true);
-        }
-        if (other.CompareTag("稻草人"))
-        {
-            tipsButtons[5].SetActive(true);
-        }
-        //tipsButton.SetActive(true);
+
         dialogue = other.GetComponent<NPC>().dialogue;
     }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            foreach(GameObject obj in tipsButtons)
-            {
-              obj.SetActive(false);
-            }
-            //tipsButton.SetActive(false);
+            tipsButton.SetActive(false);
             dialogBox.SetActive(false);
         }
 
         private void Update()
         {
-            foreach(GameObject obj in tipsButtons)
-            {
-               if(obj != null&&obj.activeSelf)
-               {
-                 isAnyActive = true;
-                 break;
-               }
-            }
-            if (tipsButtons != null && isAnyActive && Input.GetKeyDown(KeyCode.E))
+           if(tipsButton != null&&tipsButton.activeSelf)
+        {
+            isAnyActive = true;
+        }
+           if (tipsButton != null && isAnyActive && Input.GetKeyDown(KeyCode.E))
             {
                dialogBox.SetActive(true);
             }
