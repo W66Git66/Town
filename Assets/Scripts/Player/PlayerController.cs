@@ -22,12 +22,9 @@ public class PlayerController : Singleton<PlayerController>
         anim = GetComponent<Animator>();
     }
 
-
     private void Update()
     {
-        GroundMovement();
-
-        
+        GroundMovement();      
     }
 
     private void FixedUpdate()
@@ -48,4 +45,19 @@ public class PlayerController : Singleton<PlayerController>
         anim.SetFloat("Ymove", verticalMove);
         anim.SetFloat("speed", direction.magnitude);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("board"))
+        {
+            GameManager.Instance.TransToNight();
+        }
+        if(collision.CompareTag("monster"))
+        {
+            GameManager.Instance.TransToDay();
+        }
+    }
+
+
 }

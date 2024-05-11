@@ -1,0 +1,59 @@
+diff a/Assets/Scenes/Peisistant.unity b/Assets/Scenes/Peisistant.unity	(rejected hunks)
+@@ -1422,9 +1422,57 @@
+   m_ConstrainProportionsScale: 0
+   m_Children:
+   - {fileID: 2076196862}
++  - {fileID: 699906459}
+   m_Father: {fileID: 0}
+   m_RootOrder: 0
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!1 &699906458
++GameObject:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  serializedVersion: 6
++  m_Component:
++  - component: {fileID: 699906459}
++  - component: {fileID: 699906460}
++  m_Layer: 0
++  m_Name: DataSaveManager
++  m_TagString: Untagged
++  m_Icon: {fileID: 0}
++  m_NavMeshLayer: 0
++  m_StaticEditorFlags: 0
++  m_IsActive: 1
++--- !u!4 &699906459
++Transform:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 699906458}
++  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
++  m_LocalPosition: {x: 0, y: 0, z: 0}
++  m_LocalScale: {x: 1, y: 1, z: 1}
++  m_ConstrainProportionsScale: 0
++  m_Children: []
++  m_Father: {fileID: 698270674}
++  m_RootOrder: 1
++  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
++--- !u!114 &699906460
++MonoBehaviour:
++  m_ObjectHideFlags: 0
++  m_CorrespondingSourceObject: {fileID: 0}
++  m_PrefabInstance: {fileID: 0}
++  m_PrefabAsset: {fileID: 0}
++  m_GameObject: {fileID: 699906458}
++  m_Enabled: 1
++  m_EditorHideFlags: 0
++  m_Script: {fileID: 11500000, guid: ade45157f4f37b641bcf2a86daa301d8, type: 3}
++  m_Name: 
++  m_EditorClassIdentifier: 
++  deadBird: 0
++  liveBird: 0
++  isKnifeOn: 0
+ --- !u!1 &842730175
+ GameObject:
+   m_ObjectHideFlags: 0

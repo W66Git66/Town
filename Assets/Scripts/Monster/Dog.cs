@@ -22,7 +22,6 @@ public class Dog : MonoBehaviour
     public Vector2 MovementInput { get; set; }
 
     public float chaseDistance = 3f;//追击距离
-    public float attackDistance = 0.8f;//攻击距离
 
     [Header("Pathfinding")]
     private Seeker _seeker;
@@ -32,10 +31,8 @@ public class Dog : MonoBehaviour
     private float pathTimer = 0;//计时器
 
     [Header("攻击")]
-    public bool isAttack = true;
     [HideInInspector] public float distance;
     public LayerMask playerLayer;//表示玩家图层
-    public float AttackCooldownDuration = 2f;//冷却时间
 
     private float Timer = 0;//待机计时器
 
@@ -44,7 +41,6 @@ public class Dog : MonoBehaviour
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider2D enemyCollider;
 
-    Dictionary<EnemyStates, IState> states = new Dictionary<EnemyStates, IState>();
     private void Awake()
     {
         _seeker=GetComponent<Seeker>();
@@ -88,14 +84,9 @@ public class Dog : MonoBehaviour
 
                 if (player != null)//如果玩家不为空
                 {
-                    if (distance > attackDistance)//大于攻击距离，切换为追击状态
-                    {
+
                         TransState(EnemyStates.Chase);
-                    }
-                    else if (distance <= attackDistance)//小于等于攻击距离切换为攻击状态
-                    {
-                        TransState(EnemyStates.Attack);
-                    }
+
                 }
                 else
                 { //如果玩家为空,等待一定时间切换到巡逻状态
@@ -119,21 +110,10 @@ public class Dog : MonoBehaviour
                 {
                     //判定路径点列表是否为空
                     if (_pathPoints == null || _pathPoints.Count <= 0)
-                        return;
-
-                    //是否到攻击范围内
-                    if (distance <= attackDistance)//是否处于攻击范围
-                    {
-                        TransState(EnemyStates.Attack);
-                    }
-                    else
-                    {
-
+                        return;             
                         //追逐玩家
                         Vector2 direction = _pathPoints[_curIndex] - transform.position;
                         MovementInput = direction;//移动方向传给MovementInput
-
-                    }
                 }
                 else
                 {
@@ -141,21 +121,24 @@ public class Dog : MonoBehaviour
                     TransState(EnemyStates.Idle);
                 }
                 break;
-            case EnemyStates.Attack:
-
-
-                break;
             case EnemyStates.Patrol:
 
 
                 break;
             case EnemyStates.Death:
-
+                
                 
                 break;
         }    
     }
-        
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(curState!=EnemyStates.Death&&collision.CompareTag("蛋白粉"))
+        {
+            curState = EnemyStates.Death;
+        }
+    }
     public void GetPlayerTransform()
     {
         Collider2D[] chaseColliders = Physics2D.OverlapCircleAll(transform.position, chaseDistance, playerLayer);
@@ -222,6 +205,10 @@ public class Dog : MonoBehaviour
            
             rb.velocity = movementInput.normalized * currentSpeed;
             //敌人左右翻转
+            if(Mathf.Abs(movementInput.x)<1)
+            {
+                return;
+            }
             if (movementInput.x < 0)//左
             {
                 sr.flipX = false;
