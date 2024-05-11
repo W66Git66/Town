@@ -5,5 +5,5 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
         [Header("¶Ô»°ÄÚÈÝ")]
-        public Dialogue dialogue;
+        public Dialogue[] dialogue;
 }

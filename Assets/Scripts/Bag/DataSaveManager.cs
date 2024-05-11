@@ -2,16 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
-[System.Serializable]
-public class PlayerBag
-{
-    public int deadBird = 0;
-    public int liveBird = 0;
-    public bool isKnifeOn = false;
-
-}
-*/
 public class DataSaveManager : MonoBehaviour
 {
     //public PlayerBag bag = new PlayerBag();
@@ -24,6 +14,9 @@ public class DataSaveManager : MonoBehaviour
 
     [Header("是否持有煞气刀")]
     public bool isKnifeOn=false;
+
+    [Header("是否找到假牙")]
+    public bool isFakeToothFind=false;
 
     void Start()
     {

@@ -11,6 +11,8 @@ public class DialogueSystem : MonoBehaviour
                                   //索引
         private int index;
 
+        public bool isFirstTime = true;
+
         //对话内容框
         //TextMeshProUGUI dialogueContent;
         Text dialogueContent;
@@ -48,6 +50,7 @@ public class DialogueSystem : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                     index = 0;
+                    isFirstTime = false;
                 }
                 else
                 {

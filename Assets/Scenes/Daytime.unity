@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  dialogue: []
 --- !u!50 &662602901
 Rigidbody2D:
   serializedVersion: 4
@@ -740,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 19db35b8e7a8cce4cbc6b6ca281b47a7, type: 2}
+  dialogue: []
 --- !u!1 &752078865
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 870486420}
   - component: {fileID: 870486419}
   m_Layer: 0
-  m_Name: NPC2
+  m_Name: "\u67F4\u72AC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -942,7 +942,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  dialogue:
+  - {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  - {fileID: 11400000, guid: 329d16250c61d2f4f90422be30d708fb, type: 2}
+  - {fileID: 11400000, guid: de05dfaec72526b4fb622416d468b658, type: 2}
+  - {fileID: 11400000, guid: 0f6e3dfebf4ad604ba60bf2bde3cbb6f, type: 2}
+  - {fileID: 11400000, guid: 0740bd9430429584cafc0bb9201475c1, type: 2}
+  - {fileID: 11400000, guid: 81e49787df7388042b8ccff7a8fa81e9, type: 2}
 --- !u!50 &870486420
 Rigidbody2D:
   serializedVersion: 4
@@ -1274,7 +1280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  dialogue: []
 --- !u!50 &1343148415
 Rigidbody2D:
   serializedVersion: 4
@@ -1422,7 +1428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  dialogue: []
 --- !u!50 &1425430024
 Rigidbody2D:
   serializedVersion: 4
@@ -1648,6 +1654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783443491}
+  - component: {fileID: 1783443492}
   m_Layer: 0
   m_Name: "\u67F4\u72AC"
   m_TagString: Untagged
@@ -1671,6 +1678,19 @@ Transform:
   m_Father: {fileID: 1841473646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1783443492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783443490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
 --- !u!1 &1841473645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473b4cad81607824d9d22afe0771b564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 81f312139e2a78c42a09c6abc34ca9f1, type: 2}
+  dialogue: []
 --- !u!50 &2145032976
 Rigidbody2D:
   serializedVersion: 4

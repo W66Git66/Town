@@ -12,6 +12,8 @@ public class TalkButton : Singleton<TalkButton>
         [NonSerialized]
         public Dialogue dialogue;//对话内容
 
+    private int dialogueIndex;
+
     private bool isAnyActive=false;//判断是否有对话按钮处于活动状态
 
     //给脚本设置单例模式
@@ -52,8 +54,8 @@ public class TalkButton : Singleton<TalkButton>
         {
             Debug.Log("Child object not found.");
         }
-
-        dialogue = other.GetComponent<NPC>().dialogue;
+        dialogueIndex=other.GetComponent<DialogueIndex>().dialogueIndex;
+        dialogue = other.GetComponent<NPC>().dialogue[dialogueIndex];
     }
 
         private void OnTriggerExit2D(Collider2D other)
