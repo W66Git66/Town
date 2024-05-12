@@ -12,4 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66de2635b6c9fbd4e8cb876b505824bb, type: 3}
   m_Name: "\u67F4\u72AC3"
   m_EditorClassIdentifier: 
-  dialogNodes: []
+  dialogNodes:
+  - name: "\u7626\u5F31\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: dbbba040bacf1bd41af106f6fe8bc545, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A..(\u6628\u665A\uFF0C\u6CA1\u505A\u5669\u68A6\u6C6A!\u8FD8\u68A6\u5230\u4F60\u4E86\u6C6A!)"
+  - name: YOU
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u4F60\u662F\u4E0D\u662F\u68A6\u5230....\u6211\u5E26\u4F60\u627E\u5230\u4E86\u4E00\u7F50\u86CB\u767D\u7C89?"
+  - name: "\u7626\u5F31\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: dbbba040bacf1bd41af106f6fe8bc545, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A.\u2026(\u8BB0\u4E0D\u6E05\u4E86\u6C6A.\u2026\u4F46\u662F\uFF0C\u8981\u8C22\u8C22\u4F60\u6C6A!)"
+  - name: YOU
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u867D\u7136\u4E0D\u77E5\u9053\u6211\u662F\u4E0D\u662F\u771F\u7684\u5E2E\u52A9\u5230\u4E86\u4F60\uFF0C\u4F46\u662F...\u4E0D\u5BA2\u6C14\u3002"
+  - name: "\u7626\u5F31\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: dbbba040bacf1bd41af106f6fe8bc545, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A...(\u8FD9\u662F\u6211\u6293\u7684\u9EBB\u96C0\u6C6A\uFF0C\u9001\u7ED9\u4F60\uFF0C\u4EE5\u540E\u6BCF\u5929\u90FD\u9001\u7ED9\u4F60\u6C6A\uFF0C\u8C22\u8C22\u4F60\u6C6A\u3002)"
+  - name: YOU
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u4E00\u53EA\u72D7,\u600E\u4E48\u4F1A\u60F3\u7740\u53BB\u6293\u9EBB\u96C0???"
+  - name: "\u7626\u5F31\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: dbbba040bacf1bd41af106f6fe8bc545, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A....(\u8FD9\u662F\u4E3B\u4EBA\u6559\u6211\u7684\u953B\u70BC\u65B9\u5F0F\u6C6A!\u6211\u7684\u4E3B\u4EBA\u53EF\u662F\u5065\u8EAB\u9AD8\u624B\u6C6A!\u4ED6\u4EE5\u524D\u4F1A\u7ED9\u6211\u5E26\u597D\u591A\u597D\u591A\u86CB\u767D\u7C89\u6C6A!\u53EF\u60DC\u4ED6\u5F88\u4E45\u6CA1\u56DE\u6765\u4E86\u6C6A.....)"
+  - name: YOU
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u597D\u591A\u69FD\u70B9.....\u4F46\u662F\u4E5F\u602A\u53EF\u601C\u7684."
+  - name: "\u7626\u5F31\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: dbbba040bacf1bd41af106f6fe8bc545, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A......(\u6CA1\u5173\u7CFB\u7684\u6C6A!\u6211\u76F8\u4FE1\u4E3B\u4EBA\u4F1A\u56DE\u6765\u7684\u6C6A!\u8BB0\u5F97\u6BCF\u5929\u6765\u62FF\u6211\u7ED9\u4F60\u6293\u7684\u9EBB\u96C0\u5662\u6C6A!)"

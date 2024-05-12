@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 672352751}
   - component: {fileID: 672352756}
   m_Layer: 0
-  m_Name: NPC1
+  m_Name: "\u6751\u957F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 870486421}
   - component: {fileID: 870486420}
   - component: {fileID: 870486419}
+  - component: {fileID: 870486424}
   m_Layer: 0
   m_Name: "\u67F4\u72AC"
   m_TagString: Untagged
@@ -1064,6 +1065,21 @@ Transform:
   m_Father: {fileID: 1783443491}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &870486424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870486418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  isFakeToothFind: 0
+  isAlbumenPowderFind: 0
 --- !u!1 &917438418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1670,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1783443491}
-  - component: {fileID: 1783443492}
   m_Layer: 0
   m_Name: "\u67F4\u72AC"
   m_TagString: Untagged
@@ -1678,19 +1693,6 @@ Transform:
   m_Father: {fileID: 1841473646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1783443492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783443490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueIndex: 0
 --- !u!1 &1841473645
 GameObject:
   m_ObjectHideFlags: 0

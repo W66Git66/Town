@@ -16,6 +16,9 @@ public class TalkButton : Singleton<TalkButton>
 
     private bool isAnyActive=false;//判断是否有对话按钮处于活动状态
 
+    public GameObject npcOnTrigger;
+    public string npcOnTriggerName;
+
     //给脚本设置单例模式
     public static TalkButton instance;
 
@@ -36,6 +39,8 @@ public class TalkButton : Singleton<TalkButton>
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        npcOnTriggerName=other.name;
+        npcOnTrigger = other.gameObject;
         // 获取触发器事件对应的物体
         GameObject triggeredObject = other.gameObject;
 
@@ -60,6 +65,7 @@ public class TalkButton : Singleton<TalkButton>
 
         private void OnTriggerExit2D(Collider2D other)
         {
+            npcOnTrigger = null;
             tipsButton.SetActive(false);
             dialogBox.SetActive(false);
         }
@@ -75,5 +81,4 @@ public class TalkButton : Singleton<TalkButton>
                dialogBox.SetActive(true);
             }
         }
-
 }

@@ -5,12 +5,13 @@ using UnityEngine;
 public class DialogueIndex : MonoBehaviour
 {
     public int dialogueIndex=0;//NPC对话段落索引,默认初始为0
-    private bool isFirstTime;//是否为初次对话
+
     private GameObject canvasBox;//获取Canvas
     private Transform dialogueBox;//获取Canvas下的对话框组件
 
     private string npcName;
-    private bool isFakeToothFind;
+    public bool isFakeToothFind;
+    public bool isAlbumenPowderFind;
     public void Start()
     {
         canvasBox = GameObject.Find("Canvas");
@@ -29,20 +30,14 @@ public class DialogueIndex : MonoBehaviour
         }
     }
 
+    public void AddIndex()
+    {
+        dialogueIndex++;
+    }
+
     private void ChaiQuan()
     {
-        bool isAlbumenPowderFind = false;
-        isFirstTime = dialogueBox.GetComponent<DialogueSystem>().isFirstTime;
-        if(!isFirstTime&&isAlbumenPowderFind)
-        {
-            dialogueIndex = 3;
-        }
-        else if (isFirstTime)
-        {
-
-        }
-
-
+        
     }
 
 }

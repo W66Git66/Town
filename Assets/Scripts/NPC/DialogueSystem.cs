@@ -8,10 +8,8 @@ using static Dialog;
 public class DialogueSystem : MonoBehaviour
 {
         private Dialogue dialogue;//对话内容
-                                  //索引
-        private int index;
-
-        public bool isFirstTime = true;
+                                  
+        private int index;//索引
 
         //对话内容框
         //TextMeshProUGUI dialogueContent;
@@ -21,6 +19,9 @@ public class DialogueSystem : MonoBehaviour
         Text dialogueName;
         //头像框
         Image dialogueImage;
+
+        private string npcOnTalkingName;
+        private GameObject npcOnTalking;   //正与之对话或即将对话的npc
 
         private void Awake()
         {
@@ -43,6 +44,8 @@ public class DialogueSystem : MonoBehaviour
 
         private void Update()
         {
+            npcOnTalkingName= GameObject.Find("Player").GetComponent<TalkButton>().npcOnTriggerName;
+            //npcOnTalking = GameObject.Find("Player").GetComponent<TalkButton>().npcOnTrigger;//获取正触发trigger的npc
             if (Input.GetKeyDown(KeyCode.Mouse0) && dialogue != null)
             {
                 //对话播放完，关闭对话
@@ -50,7 +53,22 @@ public class DialogueSystem : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                     index = 0;
-                    isFirstTime = false;
+                    switch (npcOnTalkingName)
+                    {
+                       case "柴犬":
+                        //柴犬对话的三个一次性
+                        if (GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 0|| GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 2|| GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 4)
+                        {
+                            GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
+                        }
+                        //柴犬的两个任务
+                        if((GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("柴犬").GetComponent<DialogueIndex>().isAlbumenPowderFind)||(GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("柴犬").GetComponent<DialogueIndex>().isFakeToothFind))
+                        {
+                            GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
+                        }
+                        break;
+                    }
+
                 }
                 else
                 {
