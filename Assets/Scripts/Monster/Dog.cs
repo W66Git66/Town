@@ -13,7 +13,7 @@ public class Dog : MonoBehaviour
     public Transform player;
 
     [Header("待机巡逻")]
-    public float IdleDuration; //待机时间
+    public float IdleDuration=0.5f; //待机时间
     public Transform[] patrolPoints;//巡逻点
     public int targetPointIndex = 0;//目标点索引
 
@@ -22,6 +22,7 @@ public class Dog : MonoBehaviour
     public Vector2 MovementInput { get; set; }
 
     public float chaseDistance = 3f;//追击距离
+
 
     [Header("Pathfinding")]
     private Seeker _seeker;
@@ -40,6 +41,11 @@ public class Dog : MonoBehaviour
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider2D enemyCollider;
+
+    private float stopTime = 0f;//敌人停止运动的时间
+    private float stopThreshold = 3f;//停止的阈值
+
+    private bool isPatrol=false;
 
     private void Awake()
     {
@@ -67,7 +73,7 @@ public class Dog : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(curState==EnemyStates.Chase)
+        if(curState==EnemyStates.Chase||curState==EnemyStates.Patrol)
         {
             Move(MovementInput);
         }
@@ -80,7 +86,9 @@ public class Dog : MonoBehaviour
             case EnemyStates.Idle :
 
                 anim.Play("null");
+                MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
+                isPatrol = false;
 
                 if (player != null)//如果玩家不为空
                 {
@@ -105,6 +113,7 @@ public class Dog : MonoBehaviour
             case EnemyStates.Chase:
 
                 anim.Play("DogMove");
+                isPatrol = false;
 
                 if (player != null)
                 {
@@ -123,6 +132,71 @@ public class Dog : MonoBehaviour
                 break;
             case EnemyStates.Patrol:
 
+                anim.Play("DogMove");
+
+                GetPlayerTransform();//获取玩家位置
+
+                if (isPatrol == false)
+                {
+                    isPatrol = true;
+                    GeneratePatrolPoint();
+                }
+                if (player != null)//如果玩家不为空
+                {
+                    TransState(EnemyStates.Chase);
+                }
+
+                //路径点列表为空时，进行路径计算
+                if ( _pathPoints == null || _pathPoints.Count <= 0)
+                {
+                    //重新生成巡逻点
+                    GeneratePatrolPoint();
+                }
+                else
+                {
+                    //当敌人到达当前路径点时，递增索引currentIndex并进行路径计算
+                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.1f)
+                    {
+                        _curIndex++;
+
+                        //到达巡逻点
+                        if (_curIndex >= _pathPoints.Count)
+                        {
+                            TransState(EnemyStates.Idle);//切换到待机状态
+                        }
+                        else //未到达巡逻点
+                        {
+                            Vector2 direction = _pathPoints[_curIndex] - transform.position;
+                            MovementInput = direction;  //移动方向传给MovementInput
+                        }
+                    }
+                    else
+                    {//相撞处理
+
+                        //敌人刚体速度小于敌人默认的当前速度，并且敌人还未到达巡逻点
+                        if (rb.velocity.magnitude < currentSpeed && _curIndex < _pathPoints.Count)
+                        {
+                            if (rb.velocity.magnitude <= currentSpeed - 0.1f)
+                            {
+                                if (rb.velocity.magnitude <= 0.1f)//如果敌人速度小于0.1f,在寻路范围外的敌人
+                                {
+                                    Vector2 direction = _pathPoints[_curIndex] - transform.position;
+                                    MovementInput = direction;  //移动方向传给MovementInput
+                                }
+                                stopTime += Time.deltaTime;
+                            }
+                        }
+                    }
+
+                    //停止时间到
+                    if (stopTime >= stopThreshold)
+                    {
+                        Debug.Log("切换待机状态" + gameObject.name);
+                        TransState(EnemyStates.Idle);//切换为待机状态
+                        stopTime = 0;
+                    }
+
+                }
 
                 break;
             case EnemyStates.Death:
@@ -228,5 +302,25 @@ public class Dog : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
+    }
+
+    public void GeneratePatrolPoint()
+    {
+        while (true)
+        {
+            //随机选择一个巡逻点索引
+            int i = Random.Range(0,patrolPoints.Length);
+
+            //排除当前索引
+            if (targetPointIndex != i)
+            {
+                targetPointIndex = i;
+                break;//退出死循环
+            }
+        }
+
+        //把巡逻点给生成路径点函数
+        GetPathPoints(patrolPoints[targetPointIndex].position);
+
     }
 }
