@@ -22,6 +22,7 @@ public class DialogueIndex : MonoBehaviour
     public void Update()
     {
         isFakeToothFind = GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind;
+
         switch (npcName)
         {
             case "≤Ò»Æ":

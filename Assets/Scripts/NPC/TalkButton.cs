@@ -9,7 +9,7 @@ public class TalkButton : Singleton<TalkButton>
         private GameObject tipsButton;
         [Header("对话框")]
         public GameObject dialogBox;
-        [NonSerialized]
+       // [NonSerialized]
         public Dialogue dialogue;//对话内容
 
     private int dialogueIndex;
@@ -20,7 +20,7 @@ public class TalkButton : Singleton<TalkButton>
     public string npcOnTriggerName;
 
     //给脚本设置单例模式
-    public static TalkButton instance;
+    //public static TalkButton instance;
 
     protected override void Awake()
     {
@@ -46,6 +46,9 @@ public class TalkButton : Singleton<TalkButton>
 
         Transform childTransform = triggeredObject.transform.Find("对话提示");
 
+        dialogueIndex = other.GetComponent<DialogueIndex>().dialogueIndex;
+        dialogue = other.GetComponent<NPC>().dialogue[dialogueIndex];
+
         if (childTransform != null)
         {
             // 找到了指定名称的子物体
@@ -54,13 +57,12 @@ public class TalkButton : Singleton<TalkButton>
 
             // 执行操作
             tipsButton.SetActive(true);
+            GameObject.Find("DataSaveManager").GetComponent<DialogueSystem>().SetDialogueBox();
         }
         else
         {
             Debug.Log("Child object not found.");
         }
-        dialogueIndex=other.GetComponent<DialogueIndex>().dialogueIndex;
-        dialogue = other.GetComponent<NPC>().dialogue[dialogueIndex];
     }
 
         private void OnTriggerExit2D(Collider2D other)

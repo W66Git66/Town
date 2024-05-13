@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66de2635b6c9fbd4e8cb876b505824bb, type: 3}
+  m_Name: "\u8001\u5976\u59764"
+  m_EditorClassIdentifier: 
+  dialogNodes:
+  - name: "\u8001\u5976\u5976"
+    sprite: {fileID: 0}
+    content: "\u54CE\u54DF!\u5C0F\u4F19\u5B50\uFF0C\u4F60\u662F\u6211\u7684\u5927\u6069\u4EBA!\u6211\u5B59\u5B50\u5DF2\u7ECF\u88AB\u6211\u53EB\u56DE\u6765\u4E86\uFF0C\u6709\u4EC0\u4E48\u9700\u8981\u7684\uFF0C\u5C3D\u7BA1\u627E\u4ED6\uFF0C\u5C31\u8BF4\u662F\u6211\u5429\u5490\u7684!"
+  - name: YOU
+    sprite: {fileID: 0}
+    content: "\u597D\u7684\uFF0C\u8C22\u8C22\u60A8\u3002"
+  - name: "\u8001\u5976\u5976"
+    sprite: {fileID: 0}
+    content: "\u6211\u5B59\u5B50\u5E94\u8BE5\u548C\u4ED6\u7684\u72D7\u5446\u5728\u4E00\u5757\u513F\uFF0C\u5C3D\u7BA1\u627E\u4ED6!"

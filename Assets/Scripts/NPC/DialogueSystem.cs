@@ -11,6 +11,9 @@ public class DialogueSystem : MonoBehaviour
                                   
         private int index;//索引
 
+        public GameObject dialogueBox;//获取对话框
+
+
         //对话内容框
         //TextMeshProUGUI dialogueContent;
         Text dialogueContent;
@@ -25,24 +28,30 @@ public class DialogueSystem : MonoBehaviour
 
         private void Awake()
         {
-            gameObject.SetActive(false);
+            dialogueBox.SetActive(false);
         }
 
         private void OnEnable()
         {
-            dialogue = TalkButton.Instance.dialogue;
-            dialogueContent = transform.Find("内容").GetComponent<Text>();
-            dialogueName = transform.Find("名字").GetComponent<Text>();
-            dialogueImage = transform.Find("头像").GetComponent<Image>();
-
-            //设置人物头像保持宽高比，防止压缩变形
-            dialogueImage.preserveAspect = true;
-
-            index = 0;
-            Play();
+            
         }
 
-        private void Update()
+    public void SetDialogueBox()
+    {
+        dialogue = TalkButton.Instance.dialogue;
+        dialogueContent = dialogueBox.transform.Find("内容").GetComponent<Text>();
+        dialogueName = dialogueBox.transform.Find("名字").GetComponent<Text>();
+        dialogueImage = dialogueBox.transform.Find("头像").GetComponent<Image>();
+
+        //设置人物头像保持宽高比，防止压缩变形
+        dialogueImage.preserveAspect = true;
+
+        index = 0;
+
+        Play();
+
+    }
+    private void Update()
         {
             npcOnTalkingName= GameObject.Find("Player").GetComponent<TalkButton>().npcOnTriggerName;
             //npcOnTalking = GameObject.Find("Player").GetComponent<TalkButton>().npcOnTrigger;//获取正触发trigger的npc
@@ -51,7 +60,7 @@ public class DialogueSystem : MonoBehaviour
                 //对话播放完，关闭对话
                 if (index == dialogue.dialogNodes.Length)
                 {
-                    gameObject.SetActive(false);
+                    dialogueBox.SetActive(false);
                     index = 0;
                     switch (npcOnTalkingName)
                     {
@@ -67,6 +76,21 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
                         }
                         break;
+
+                        case "村长":
+                        break;
+
+                        case "老奶奶":
+                        break;
+
+                        case "裁缝":
+                        break;
+
+                        case "屠夫":
+                        break;
+
+                        case "稻草人":
+                        break;
                     }
 
                 }
@@ -74,16 +98,16 @@ public class DialogueSystem : MonoBehaviour
                 {
                     //开始对话
                     Play();
-                }
+            }
             }
         }
 
         // Play 函数用于开始播放对话。
         private void Play()
         {
-            // 获取当前对话节点，并更新索引值。
-            DialogNode node = dialogue.dialogNodes[index++];
-
+        // 获取当前对话节点，并更新索引值。
+        DialogNode node = dialogue.dialogNodes[index++];
+        
             // 设置对话内容、角色名称和头像
             dialogueContent.text = node.content;
             dialogueName.text = node.name;
