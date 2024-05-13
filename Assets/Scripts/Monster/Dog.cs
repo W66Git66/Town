@@ -171,23 +171,23 @@ public class Dog : MonoBehaviour
                             MovementInput = direction;  //移动方向传给MovementInput
                         }
                     }
-                    else
-                    {//相撞处理
+                    //else
+                    //{//相撞处理
 
-                        //敌人刚体速度小于敌人默认的当前速度，并且敌人还未到达巡逻点
-                        if (rb.velocity.magnitude < currentSpeed && _curIndex < _pathPoints.Count)
-                        {
-                            if (rb.velocity.magnitude <= currentSpeed - 0.1f)
-                            {
-                                if (rb.velocity.magnitude <= 0.1f)//如果敌人速度小于0.1f,在寻路范围外的敌人
-                                {
-                                    Vector2 direction = _pathPoints[_curIndex] - transform.position;
-                                    MovementInput = direction;  //移动方向传给MovementInput
-                                }
-                                stopTime += Time.deltaTime;
-                            }
-                        }
-                    }
+                    //    //敌人刚体速度小于敌人默认的当前速度，并且敌人还未到达巡逻点
+                    //    if (rb.velocity.magnitude < currentSpeed && _curIndex < _pathPoints.Count)
+                    //    {
+                    //        if (rb.velocity.magnitude <= currentSpeed - 0.1f)
+                    //        {
+                    //            if (rb.velocity.magnitude <= 0.1f)//如果敌人速度小于0.1f,在寻路范围外的敌人
+                    //            {
+                    //                Vector2 direction = _pathPoints[_curIndex] - transform.position;
+                    //                MovementInput = direction;  //移动方向传给MovementInput
+                    //            }
+                    //            stopTime += Time.deltaTime;
+                    //        }
+                    //    }
+                    //}
 
                     //停止时间到
                     if (stopTime >= stopThreshold)

@@ -180,6 +180,7 @@ public class GrandMa : MonoBehaviour
                         }
                         else //未到达巡逻点
                         {
+                            Debug.Log("!11");
                             Vector2 direction = _pathPoints[_curIndex] - transform.position;
                             MovementInput = direction;  //移动方向传给MovementInput
                         }
