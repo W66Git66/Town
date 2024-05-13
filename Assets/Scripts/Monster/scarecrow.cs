@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class scarecrow : MonoBehaviour
 {
+    [SerializeField] private float _speed;//怪物的移动速度
+
     private EnemyStates curState;
 
-    [Header("目标")]
-    public Transform player;
-
-    [Header("攻击")]
-    [HideInInspector] public float distance;
-    public LayerMask playerLayer;//表示玩家图层
+    private float Timer = 0;//待机计时器
 
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Animator anim;
     [HideInInspector] public Collider2D enemyCollider;
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -26,9 +24,61 @@ public class scarecrow : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();//碰撞器组件
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        TransState(EnemyStates.Idle);
     }
+
+    private void Update()
+    {
+        StateMachine();
+    }
+
+    private void FixedUpdate()
+    {
+
+    }
+
+    private void StateMachine()
+    {
+        switch (curState)
+        {
+            
+            case EnemyStates.Death:
+
+               // anim.Play("null");
+                //加一个图片淡出效果
+
+                break;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (curState != EnemyStates.Death && collision.CompareTag("蛋白粉"))
+        {
+            if (DataSaveManager.Instance.isDog == false)
+            {
+                DataSaveManager.Instance.isDog = true;
+            }
+            TransState(EnemyStates.Death);
+        }
+        if(curState != EnemyStates.Death && collision.CompareTag("Player"))
+        {
+            PlayerController.Instance.speed *= 0.7f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (curState != EnemyStates.Death && collision.CompareTag("Player"))
+        {
+            PlayerController.Instance.speed /= 0.7f;
+        }
+    }
+    private void TransState(EnemyStates states)
+    {
+        curState = states;
+    }
+
 }
