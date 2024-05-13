@@ -539,6 +539,7 @@ MonoBehaviour:
   liveBird: 0
   isKnifeOn: 0
   isFakeToothFind: 0
+  isDog: 0
 --- !u!4 &554109921
 Transform:
   m_ObjectHideFlags: 0
