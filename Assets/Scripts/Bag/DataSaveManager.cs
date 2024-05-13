@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataSaveManager : MonoBehaviour
+public class DataSaveManager : Singleton<DataSaveManager>
 {
     //public PlayerBag bag = new PlayerBag();
 
@@ -18,6 +18,12 @@ public class DataSaveManager : MonoBehaviour
     [Header("是否找到假牙")]
     public bool isFakeToothFind=false;
 
+    public bool isDog=false;
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     void Start()
     {
         
@@ -26,6 +32,11 @@ public class DataSaveManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected override void OnDestroy()
+    {
+        base.OnDestroy();   
     }
 
     public void GetDeadBird()//获得死去的麻雀

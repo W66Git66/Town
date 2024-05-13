@@ -64,9 +64,12 @@ public class Dog : MonoBehaviour
 
     private void Update()
     {
-        GetPlayerTransform();
+        if (curState != EnemyStates.Death)
+        {
+            GetPlayerTransform();
 
-        AutoPath();
+            AutoPath();
+        }
 
         StateMachine();
     }
@@ -134,8 +137,6 @@ public class Dog : MonoBehaviour
 
                 anim.Play("DogMove");
 
-                GetPlayerTransform();//获取玩家位置
-
                 if (isPatrol == false)
                 {
                     isPatrol = true;
@@ -200,17 +201,27 @@ public class Dog : MonoBehaviour
 
                 break;
             case EnemyStates.Death:
-                
-                
+
+                anim.Play("null");
+                MovementInput = Vector2.zero;
+                rb.velocity = Vector2.zero;//待机时不要移动
+                _pathPoints = null;
+                isPatrol = false;
+
                 break;
         }    
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if(curState!=EnemyStates.Death&&collision.CompareTag("蛋白粉"))
         {
-            curState = EnemyStates.Death;
+            if(DataSaveManager.Instance.isDog==false)
+            {
+                DataSaveManager.Instance.isDog = true;
+            }
+            TransState(EnemyStates.Death);
         }
     }
     public void GetPlayerTransform()
