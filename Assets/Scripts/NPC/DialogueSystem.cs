@@ -71,7 +71,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //柴犬的两个任务
-                        if((GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("柴犬").GetComponent<DialogueIndex>().isAlbumenPowderFind)||(GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("柴犬").GetComponent<DialogueIndex>().isFakeToothFind))
+                        if((GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("柴犬").GetComponent<DialogueIndex>().isAlbumenPowderFind)||(GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind))
                         {
                             GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
                         }
@@ -81,15 +81,50 @@ public class DialogueSystem : MonoBehaviour
                         break;
 
                         case "老奶奶":
+                        //老奶奶对话的两个一次性
+                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex==0|| GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 2)
+                        {
+                            GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
+                        }
+                        //老奶奶的一个任务
+                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind)
+                        {
+                            GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
+                        }
                         break;
 
                         case "裁缝":
+                        //裁缝对话的两个一次性
+                        if(GameObject.Find("裁缝").GetComponent<DialogueIndex>().dialogueIndex==0|| GameObject.Find("裁缝").GetComponent<DialogueIndex>().dialogueIndex == 1)
+                        {
+                            GameObject.Find("裁缝").GetComponent<DialogueIndex>().AddIndex();
+                        }
                         break;
 
                         case "屠夫":
+                        //屠夫对话的一个一次性
+                        if(GameObject.Find("屠夫").GetComponent<DialogueIndex>().dialogueIndex == 0)
+                        {
+                            GameObject.Find("屠夫").GetComponent<DialogueIndex>().AddIndex();
+                        }
+                        //屠夫的一个任务
+                        if (GameObject.Find("屠夫").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isKnifeOn)
+                        {
+                            GameObject.Find("屠夫").GetComponent<DialogueIndex>().AddIndex();
+                        }
                         break;
 
                         case "稻草人":
+                        //稻草人对话的两个一次性
+                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 0|| GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 2)
+                        {
+                            GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
+                        }
+                        //稻草人的一个任务
+                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().liveBird > 0)
+                        {
+                            GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
+                        }
                         break;
                     }
 

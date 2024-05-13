@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 662602902}
   - component: {fileID: 662602901}
   - component: {fileID: 662602900}
+  - component: {fileID: 662602904}
   m_Layer: 0
   m_Name: "\u7A3B\u8349\u4EBA"
   m_TagString: Untagged
@@ -501,6 +502,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &662602904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662602898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  isFakeToothFind: 0
+  isAlbumenPowderFind: 0
 --- !u!1 &672352750
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +530,7 @@ GameObject:
   - component: {fileID: 672352752}
   - component: {fileID: 672352751}
   - component: {fileID: 672352756}
+  - component: {fileID: 672352757}
   m_Layer: 0
   m_Name: "\u6751\u957F"
   m_TagString: Untagged
@@ -649,6 +666,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: []
+--- !u!114 &672352757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672352750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  isFakeToothFind: 0
+  isAlbumenPowderFind: 0
 --- !u!1 &752078865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1284,7 @@ GameObject:
   - component: {fileID: 1425430025}
   - component: {fileID: 1425430024}
   - component: {fileID: 1425430023}
+  - component: {fileID: 1425430027}
   m_Layer: 0
   m_Name: "\u5C60\u592B"
   m_TagString: Untagged
@@ -1390,6 +1423,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1425430027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425430021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  isFakeToothFind: 0
+  isAlbumenPowderFind: 0
 --- !u!1 &1646745124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1657,7 @@ GameObject:
   - component: {fileID: 2145032977}
   - component: {fileID: 2145032976}
   - component: {fileID: 2145032975}
+  - component: {fileID: 2145032979}
   m_Layer: 0
   m_Name: "\u88C1\u7F1D"
   m_TagString: Untagged
@@ -1747,3 +1796,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2145032979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145032973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc9809b4d8468848a6c83fecc4f22e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueIndex: 0
+  isFakeToothFind: 0
+  isAlbumenPowderFind: 0

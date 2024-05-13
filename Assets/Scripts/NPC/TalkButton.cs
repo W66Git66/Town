@@ -14,8 +14,6 @@ public class TalkButton : Singleton<TalkButton>
 
     private int dialogueIndex;
 
-    private bool isAnyActive=false;//判断是否有对话按钮处于活动状态
-
     public GameObject npcOnTrigger;
     public string npcOnTriggerName;
 
@@ -74,11 +72,7 @@ public class TalkButton : Singleton<TalkButton>
 
         private void Update()
         {
-           if(tipsButton != null&&tipsButton.activeSelf)
-        {
-            isAnyActive = true;
-        }
-           if (tipsButton != null && isAnyActive && Input.GetKeyDown(KeyCode.E))
+           if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
                dialogBox.SetActive(true);
             }
