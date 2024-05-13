@@ -303,9 +303,9 @@ GameObject:
   - component: {fileID: 446949837}
   - component: {fileID: 446949836}
   - component: {fileID: 446949835}
-  - component: {fileID: 446949834}
   - component: {fileID: 446949833}
   - component: {fileID: 446949838}
+  - component: {fileID: 446949839}
   m_Layer: 7
   m_Name: ------Player
   m_TagString: Player
@@ -365,32 +365,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &446949834
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446949832}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.6106911}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.65, y: 4.39}
-    newSize: {x: 0.8, y: 1.1333333}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.0000004}
-  m_EdgeRadius: 0
 --- !u!50 &446949835
 Rigidbody2D:
   serializedVersion: 4
@@ -462,6 +436,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &446949839
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446949832}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1}
+  m_Size: {x: 0.5, y: 0.5}
+  m_Direction: 0
 --- !u!1 &449743803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,9 +1333,9 @@ MonoBehaviour:
   data:
     dataString: UEsDBBQAAAgIAABAIezcN/0WZAIAABgFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenZuOITgpvbWO4/SQxBOnkwsXWVqMxkJi9BHbyfi/dyXAEPeE2Pd2973VwicRyjbAnDZLI/ij5kB+Tkg4k2+TAXyAA91qtRYf0HPeBHdVINHIeaFOaIwnIc3qGpwR7JfaykCeYtArUWpTL/gW5to6i+GSSgsIGe1CtsLQ54Qc8HGVh5QjntLbcPrAUz6dnPDIQDkwA/W6Z2b591mSpnlHb9leMUnrBniQPiSl2azLSq5nkajQVscJFpiWUthOE3HHJnpeNxUYCKa5oGgx6gj0CsS2cqHwOPe5LC24zr+hxzthcFJtUfJbt+Orqd21wt6p9KHNTRYVtTUf/4OvkgiXRtcPfdtkGlq4SrDdCz0yat1ovOPw3VfdXu2p3NGNhLcK1JNeGu0VR9AZH1K9hfRueD07m1fAdkO8lXoR9M0w7/6O+rsMHk7R/GEuRb3pIHxdSx1nHRcADN7KH5Qb18N2LIwGDX8tvNLteI864F4Y6xDqPKogbqO9CVSyiBMLXryba6MghjvJDSgq3XGFZdzl/V1go7YXyD0NX0zXvMP6D+EiJYYH/nR6Aa30/nxVttL7R7DVs3dSKBhEB+AJ5zTXSrXrNZ5Jn7b2pqRslLb1gn9dLJKn5W2ZJDNIMj5LE36V/2As3cA0gxuWZllO4uYJhT6pXLVCu/HgramhuMIt638kk6WhTVx1buh+KT5qPRq5UKVeMwOgntsKZ+FgsAl+kXzBBQ5oDc4JFe+bfBZEarYDXpwLFdHp4uAMLYYqBWnEu3YhUpB5/HMUJITPm7wy8C5gH5r3xU7k9A9QSwMEFAAACAgAAEAh7I1YKvFtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKlUZp5mqGhaaqhSYqpkWGKrqVFcrJRUqqBSapZspGJiaVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAEAh7Nw3/RZkAgAAGAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAEAh7I1YKvFtAAAAeAAAAAkAJAAAAAAAAAAAAAAAsQIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABpAwAAAAA=
     upgradeData: 
-    file_cachedStartup: {fileID: 0}
+    file_cachedStartup: {fileID: 4900000, guid: 3b103e85403fed5439fe27b59d3f72f8, type: 3}
     data_cachedStartup: 
-    cacheStartup: 0
+    cacheStartup: 1
   showNavGraphs: 1
   showUnwalkableNodes: 1
   debugMode: 0

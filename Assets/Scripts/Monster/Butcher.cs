@@ -113,7 +113,7 @@ public class Butcher : MonoBehaviour
                 break;
             case EnemyStates.Chase:
 
-                anim.Play("DogMove");
+                anim.Play("ButcherMove");
                 isPatrol = false;
 
                 if (player != null)
@@ -133,7 +133,7 @@ public class Butcher : MonoBehaviour
                 break;
             case EnemyStates.Patrol:
 
-                anim.Play("DogMove");
+                anim.Play("ButcherMove");
 
                 if (isPatrol == false)
                 {
