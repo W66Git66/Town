@@ -88,8 +88,12 @@ public class GrandMa : MonoBehaviour
         switch (curState)
         {
             case EnemyStates.Idle:
-
-                anim.Play("Idle");
+                AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+                if (stateInfo.IsName("GrandMaJump")!=true)
+                {
+                     anim.Play("Idle");
+                }
+               
                 MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
                 isPatrol = false;
@@ -122,7 +126,7 @@ public class GrandMa : MonoBehaviour
                 {
                     //范围外就停止追击，回到待机状态
                     Timer = 0;
-                    TransState(EnemyStates.Idle);              
+                    TransState(EnemyStates.Idle);           
                 }
                 else
                 {
@@ -133,8 +137,10 @@ public class GrandMa : MonoBehaviour
                     else
                     {
                         Timer = 0;
-                        anim.Play("GrandMaJump");
-                        transform.position = player.position;
+                        Vector2 playerPosition = player.position;//记录此时的位置
+                        StartCoroutine(GrandMaJump(playerPosition));
+                       
+                       // transform.position = player.position;
                     }
                 }
 
@@ -174,6 +180,7 @@ public class GrandMa : MonoBehaviour
                         }
                         else //未到达巡逻点
                         {
+                            Debug.Log("!11");
                             Vector2 direction = _pathPoints[_curIndex] - transform.position;
                             MovementInput = direction;  //移动方向传给MovementInput
                         }
@@ -320,6 +327,7 @@ public class GrandMa : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
+        MovementInput = Vector2.zero;
     }
 
     public void GeneratePatrolPoint()
@@ -340,5 +348,12 @@ public class GrandMa : MonoBehaviour
         //把巡逻点给生成路径点函数
         GetPathPoints(patrolPoints[targetPointIndex].position);
 
+    }
+    IEnumerator GrandMaJump(Vector2 position)
+    {
+        anim.Play("Idle");
+        yield return new WaitForSeconds(0.5f);
+        anim.SetTrigger("GrandMaJump");
+        transform.position = position;
     }
 }
