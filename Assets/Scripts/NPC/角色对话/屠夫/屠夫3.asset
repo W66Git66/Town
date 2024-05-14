@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogNodes:
   - name: "\u5C60\u592B"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: ffcce7394967ac042b1a0adf9667adcb, type: 3}
     content: "\u6709...\u6709\u4EBA\u6765\u5BB0\u6740\u6211\u4E86\u2026..\u554A\u554A\u554A..."
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u53D1\u751F\u4EC0\u4E48\u4E8B\u4E86\u3002"
   - name: "\u5C60\u592B"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: ffcce7394967ac042b1a0adf9667adcb, type: 3}
     content: "\u6709\u4EBA...\u5728\u68A6\u91CC...\u7528\u5200\u5BB0\u6740\u6211...\u6211\u4E0D\u5F53\u5C60\u592B\u4E86!\u8FD9\u662F\n\u62A5\u5E94!\u8FD9\u4E00\u5B9A\u662F\u62A5\u5E94!"

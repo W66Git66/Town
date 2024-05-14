@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogNodes:
   - name: "\u8001\u5976\u5976"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 7340a1a3318b8344a98ca41e99bab97c, type: 3}
     content: "\u5C0F\u4F19\u5B50,\u5728\u6751\u91CC\u751F\u6D3B\u7684\u600E\u6837\u5440?"
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u55EF\u55EF....\u53EA\u80FD\u8BF4\u8FD8\u662F\u611F\u89C9\u6709\u70B9\u5947\u5947\u602A\u602A\u7684\u5427..."
   - name: "\u8001\u5976\u5976"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 7340a1a3318b8344a98ca41e99bab97c, type: 3}
     content: "\u54C8\u54C8\u54C8!\u5E74\u8F7B\u4EBA\uFF0C\u4E60\u60EF\u5C31\u597D\u5566\u3002"
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u5976\u5976\uFF0C\u60A8\u7684\u5047\u7259\u627E\u5230\u4E86\u5417?"
   - name: "\u8001\u5976\u5976"
     sprite: {fileID: 0}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogNodes:
   - name: "\u7A3B\u8349\u4EBA"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 20a7b633f490973458118afe9f6ffe79, type: 3}
     content: "\u597D\u75DB\u554A...\u8BE5\u6B7B\u7684\u9E1F.\u5FEB\u6EDA\u5F00..."
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: ......

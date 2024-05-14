@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogNodes:
   - name: "\u88C1\u7F1D"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 73144a113df1990489db550ada59ac0f, type: 3}
     content: "\u4F60\u77E5\u9053\u5417?\u60F3\u8D70\u51FA\u8FD9\u4E2A\u6751\u5B50\uFF0C\u5C31\u5FC5\u987B\u505A\u4E00\u70B9\u532A\u5937\u6240\u601D\u7684\n\u4E8B\u513F\u3002"
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u8D70\u51FA\u6751\u5B50....\u4F60\u4F3C\u4E4E\u548C\u8FD9\u4E2A\u6751\u91CC\u7684\u5176\u5B83\u4EBA\u6709\u4E00\u4E9B\u4E0D\u540C\u3002"
   - name: "\u88C1\u7F1D"
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 73144a113df1990489db550ada59ac0f, type: 3}
     content: "\u4F60\u4E5F\u6709\u4E9B\u4E0D\u540C\uFF0C\u6211\u770B\u5230\u4E86!\u4F60\u4E5F\u6709\u6210\u4E3A\u827A\u672F\u5BB6\u7684\u6F5C\u529B!\n\u54C8\u54C8\u54C8..."
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u6709\u4E9B\u65E0\u6CD5\u6C9F\u901A..."
