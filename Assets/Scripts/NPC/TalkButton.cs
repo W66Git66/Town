@@ -8,7 +8,7 @@ public class TalkButton : Singleton<TalkButton>
 {
         private GameObject tipsButton;
         [Header("对话框")]
-        public GameObject dialogBox;
+        public GameObject dialogBox=GameObject.Find("对话框");
        // [NonSerialized]
         public Dialogue dialogue;//对话内容
 
