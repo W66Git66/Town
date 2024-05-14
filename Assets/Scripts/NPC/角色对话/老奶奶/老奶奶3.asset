@@ -17,14 +17,14 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u8001\u5976\u5976\uFF0C\u60A8\u770B\u770B\uFF0C\u8FD9\u662F\u60A8\u7684\u5047\u7259\u5417?"
   - name: "\u8001\u5976\u5976"
-    sprite: {fileID: 21300000, guid: 7340a1a3318b8344a98ca41e99bab97c, type: 3}
+    sprite: {fileID: 21300000, guid: d3f6267aad2fa754f8eb94c1cf274f05, type: 3}
     content: "\u554A\u54DF!\u54E6\u54DF!\u8C22\u8C22\u4F60\u5C0F\u4F19\u5B50!\u8FD9\u5C31\u662F\u6211\u7684\u5047\u7259!"
   - name: YOU
     sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u7ED9\u60A8!"
   - name: "\u8001\u5976\u5976"
-    sprite: {fileID: 21300000, guid: 7340a1a3318b8344a98ca41e99bab97c, type: 3}
+    sprite: {fileID: 21300000, guid: d3f6267aad2fa754f8eb94c1cf274f05, type: 3}
     content: "\u597D\u5440\uFF0C\u597D\u5440!\u6211\u90A3\u5E9F\u7269\u5B59\u5B50\u627E\u4E86\u90A3\u4E48\u4E45\u90FD\u627E\u4E0D\u5230\uFF0C\u5C0F\u4F19\u5B50\uFF0C\u4F60\u5F88\u5389\u5BB3\u554A!"
   - name: YOU
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
     content: "\u54C8\u54C8....\u90A3\u4E0D\u602A\u4ED6..\u60A8\u7684\u5047\u7259\u6389\u5728\u4E86\u5F88\u5947\u602A\u7684\u5730\u65B9..."

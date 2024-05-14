@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66de2635b6c9fbd4e8cb876b505824bb, type: 3}
   m_Name: "\u67F4\u72AC5"
   m_EditorClassIdentifier: 
-  dialogNodes: []
+  dialogNodes:
+  - name: "\u5E78\u798F\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: 8ead49ed2abafc541a1a887db7557e44, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A.....(\u6211\u7684\u4E3B\u4EBA\u56DE\u6765\u4E86\u6C6A!\u8FD9\u662F\u6211\u7684\u4E3B\u4EBA\u6C6A!)"
+  - name: "\u808C\u8089\u5EB7"
+    sprite: {fileID: 1881814221, guid: f80fd97f44980914582b85869e9bb114, type: 3}
+    content: "\u4F60\u597D!\u6211\u542C\u8BF4\u4E86\u4F60\u7684\u4E8B\uFF0C\u8C22\u8C22\u4F60\u5E2E\u6211\u5976\u5976\u627E\u56DE\u4E86\u5047\u7259\uFF0C\u8981\u4E0D\u7136\uFF0C\u6211\u8FD8\u4E00\u76F4\u56DE\u4E0D\u6765\u5462\u2026.."
+  - name: YOU
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u54C8\u54C8\u54C8\u6CA1\u4E8B\u513F\u3002"
+  - name: "\u5E78\u798F\u7684\u67F4\u72AC"
+    sprite: {fileID: 21300000, guid: 8ead49ed2abafc541a1a887db7557e44, type: 3}
+    content: "\u6C6A\u6C6A\u6C6A\u6C6A\u2026(\u597D\u9AD8\u5174\u6C6A!\u597D\u9AD8\u5174\u6C6A!)"
+  - name: "\u808C\u8089\u5EB7"
+    sprite: {fileID: 1881814221, guid: f80fd97f44980914582b85869e9bb114, type: 3}
+    content: "\u542C\u8BF4\u4F60\u9700\u8981\u201C\u534A\u6B7B\u4E0D\u6D3B\u7684\u9EBB\u96C0\u201D\uFF0C\u867D\u7136\u4E0D\u77E5\u9053\u6709\u4EC0\u4E48\u7528\u9014\uFF0C\u4F46\u662F\u4E3A\u4E86\u8868\u8FBE\u611F\u8C22\uFF0C\u6211\u6BCF\u5929\u4F1A\u548C\u6211\u7684\u72D7\u4E00\u8D77\u6293\u66F4\u591A\u9001\u7ED9\u4F60\u7684!"

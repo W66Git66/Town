@@ -55,7 +55,7 @@ public class TalkButton : Singleton<TalkButton>
 
             // Ö´ÐÐ²Ù×÷
             tipsButton.SetActive(true);
-            GameObject.Find("DataSaveManager").GetComponent<DialogueSystem>().SetDialogueBox();
+            gameObject.GetComponent<DialogueSystem>().SetDialogueBox();
         }
         else
         {
@@ -72,6 +72,7 @@ public class TalkButton : Singleton<TalkButton>
 
         private void Update()
         {
+           gameObject.transform.position= PlayerController.Instance.transform.position;
            if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
                dialogBox.SetActive(true);
