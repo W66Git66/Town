@@ -64,6 +64,11 @@ public class Dog : MonoBehaviour
 
     private void Update()
     {
+        
+    }
+
+    private void FixedUpdate()
+    {
         if (curState != EnemyStates.Death)
         {
             GetPlayerTransform();
@@ -72,11 +77,7 @@ public class Dog : MonoBehaviour
         }
 
         StateMachine();
-    }
-
-    private void FixedUpdate()
-    {
-        if(curState==EnemyStates.Chase||curState==EnemyStates.Patrol)
+        if (curState==EnemyStates.Chase||curState==EnemyStates.Patrol)
         {
             Move(MovementInput);
         }
@@ -168,6 +169,8 @@ public class Dog : MonoBehaviour
                         else //未到达巡逻点
                         {
                             Vector2 direction = _pathPoints[_curIndex] - transform.position;
+                            //Debug.Log(_pathPoints[_curIndex]);
+                            
                             MovementInput = direction;  //移动方向传给MovementInput
                         }
                     }
