@@ -23,8 +23,7 @@ public class DialogueSystem : MonoBehaviour
         //头像框
         Image dialogueImage;
 
-        private string npcOnTalkingName;
-        private GameObject npcOnTalking;   //正与之对话或即将对话的npc
+        private string npcOnTalkingName; //正与之对话或即将对话的npc
 
         private void Awake()
         {
@@ -53,7 +52,7 @@ public class DialogueSystem : MonoBehaviour
     }
     private void Update()
         {
-            npcOnTalkingName= GameObject.Find("Player").GetComponent<TalkButton>().npcOnTriggerName;
+            npcOnTalkingName= GameObject.Find("FollowPlayer").GetComponent<TalkButton>().npcOnTriggerName;
             //npcOnTalking = GameObject.Find("Player").GetComponent<TalkButton>().npcOnTrigger;//获取正触发trigger的npc
             if (Input.GetKeyDown(KeyCode.Mouse0) && dialogue != null)
             {
@@ -87,7 +86,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //老奶奶的一个任务
-                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind)
+                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.isFakeToothFind)
                         {
                             GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
                         }
@@ -108,7 +107,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("屠夫").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //屠夫的一个任务
-                        if (GameObject.Find("屠夫").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isKnifeOn)
+                        if (GameObject.Find("屠夫").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.isKnifeOn)
                         {
                             GameObject.Find("屠夫").GetComponent<DialogueIndex>().AddIndex();
                         }
@@ -121,7 +120,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //稻草人的一个任务
-                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().liveBird > 0)
+                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.liveBird > 0)
                         {
                             GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
                         }
