@@ -600,11 +600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 4.46, y: 5.4, z: -10}
-=======
-  m_LocalPosition: {x: 12.5, y: 0, z: -10}
->>>>>>> a8a30ac409c3911a3eed82175fb8f370d6644e19
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1257,7 +1253,6 @@ PolygonCollider2D:
       - {x: -89, y: 114}
       - {x: -89, y: -14}
       - {x: 152, y: -14}
-<<<<<<< HEAD
 --- !u!1 &1728577980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,8 +1354,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-=======
->>>>>>> e8f86b0871fa593b7db3772094ceca522923aa56
 --- !u!1 &1739918282
 GameObject:
   m_ObjectHideFlags: 0
