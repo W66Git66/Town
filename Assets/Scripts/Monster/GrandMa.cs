@@ -168,7 +168,7 @@ public class GrandMa : MonoBehaviour
                 else
                 {
                     //当敌人到达当前路径点时，递增索引currentIndex并进行路径计算
-                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.1f)
+                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.5f)
                     {
                         _curIndex++;
 

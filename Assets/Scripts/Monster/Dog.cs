@@ -64,17 +64,17 @@ public class Dog : MonoBehaviour
 
     private void Update()
     {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        if (curState != EnemyStates.Death)
+                if (curState != EnemyStates.Death)
         {
             GetPlayerTransform();
 
             AutoPath();
         }
+    }
+
+    private void FixedUpdate()
+    {
+
 
         StateMachine();
         if (curState==EnemyStates.Chase||curState==EnemyStates.Patrol)
@@ -157,7 +157,7 @@ public class Dog : MonoBehaviour
                 else
                 {
                     //当敌人到达当前路径点时，递增索引currentIndex并进行路径计算
-                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.1f)
+                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.5f)
                     {
                         _curIndex++;
 
