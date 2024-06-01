@@ -67,8 +67,10 @@ public class Butcher : MonoBehaviour
         if (curState != EnemyStates.Death)
         {
             GetPlayerTransform();
-
-            AutoPath();
+            if (curState != EnemyStates.Chase)
+            {
+                AutoPath();
+            }
         }
 
         StateMachine();
@@ -118,12 +120,16 @@ public class Butcher : MonoBehaviour
 
                 if (player != null)
                 {
-                    //判定路径点列表是否为空
-                    if (_pathPoints == null || _pathPoints.Count <= 0)
-                        return;
-                    //追逐玩家
-                    Vector2 direction = _pathPoints[_curIndex] - transform.position;
-                    MovementInput = direction;//移动方向传给MovementInput
+
+                    Ray ray = new Ray(transform.position, player.position-transform.position);
+                    //声明一个Ray结构体，用于存储该射线的发射点，方向
+                    Debug.DrawLine(transform.position, player.position - transform.position,Color.green);
+                    RaycastHit hitInfo;
+                    //声明一个RaycastHit结构体，存储碰撞信息
+                    if (Physics.Raycast(ray, out hitInfo))
+                    {
+                        Debug.Log(hitInfo.collider.gameObject.name);
+                    }
                 }
                 else
                 {
@@ -311,6 +317,7 @@ public class Butcher : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
+        Debug.Log(states);
     }
 
     public void GeneratePatrolPoint()
