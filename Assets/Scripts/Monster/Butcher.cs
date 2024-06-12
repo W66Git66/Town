@@ -47,6 +47,8 @@ public class Butcher : MonoBehaviour
 
     private bool isPatrol = false;
 
+    public LayerMask Obstacle;
+
     private void Awake()
     {
         _seeker = GetComponent<Seeker>();
@@ -73,11 +75,12 @@ public class Butcher : MonoBehaviour
             }
         }
 
-        StateMachine();
+        
     }
 
     private void FixedUpdate()
     {
+        StateMachine();
         if (curState == EnemyStates.Patrol)
         {
             Move(MovementInput);
@@ -115,20 +118,19 @@ public class Butcher : MonoBehaviour
                 break;
             case EnemyStates.Chase:
 
-                anim.Play("ButcherMove");
+                
                 isPatrol = false;
 
                 if (player != null)
                 {
-
-                    Ray ray = new Ray(transform.position, player.position-transform.position);
+                    Vector2 dashPosition = player.position - transform.position;
+                    RaycastHit2D hit = Physics2D.Raycast(transform.position, dashPosition.normalized, dashPosition.magnitude, Obstacle);
                     //声明一个Ray结构体，用于存储该射线的发射点，方向
-                    Debug.DrawLine(transform.position, player.position - transform.position,Color.green);
-                    RaycastHit hitInfo;
-                    //声明一个RaycastHit结构体，存储碰撞信息
-                    if (Physics.Raycast(ray, out hitInfo))
+                    Debug.DrawLine(transform.position, player.position,Color.green);
+                    if(!hit)
                     {
-                        Debug.Log(hitInfo.collider.gameObject.name);
+                        anim.Play("ButcherMove");
+                        rb.velocity = dashPosition.normalized * currentSpeed;
                     }
                 }
                 else
@@ -317,7 +319,6 @@ public class Butcher : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
-        Debug.Log(states);
     }
 
     public void GeneratePatrolPoint()

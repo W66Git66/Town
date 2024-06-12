@@ -71,11 +71,12 @@ public class Ghost : MonoBehaviour
             AutoPath();
         }
 
-        StateMachine();
+       
     }
 
     private void FixedUpdate()
-    {
+    { 
+        StateMachine();
         if (curState == EnemyStates.Patrol)
         {
             Move(MovementInput);

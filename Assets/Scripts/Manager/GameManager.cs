@@ -13,7 +13,8 @@ public class GameManager : Singleton<GameManager>
     public Collider2D nightBoard;//夜晚
 
 
-    public Transform createPoint;
+    public Transform createNightPoint;
+    public Transform createDayPoint;
 
     public string sceneDay;
     public string SceneNight;
@@ -36,15 +37,26 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToNight()
     {
+        StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneDay, SceneNight);
-        PlayerController.Instance.transform.position = createPoint.position;
+        PlayerController.Instance.transform.position = createNightPoint.position;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
     }
 
     public void TransToDay()
     {
+        StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, SceneNight, sceneDay);
-        PlayerController.Instance.transform.position = Vector2.zero;
+        PlayerController.Instance.transform.position = createDayPoint.position;
         myCameraConfiner.m_BoundingShape2D = dayBoard;
+    }
+
+    //开始游戏（开始场景切换到白天）
+
+    IEnumerator TransMove()
+    {
+        PlayerController.Instance.TransMove(false);
+        yield return new WaitForSeconds(1f);
+        PlayerController.Instance.TransMove(true);
     }
 }

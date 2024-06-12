@@ -64,7 +64,7 @@ public class Dog : MonoBehaviour
 
     private void Update()
     {
-                if (curState != EnemyStates.Death)
+        if (curState != EnemyStates.Death)
         {
             GetPlayerTransform();
 
@@ -96,9 +96,7 @@ public class Dog : MonoBehaviour
 
                 if (player != null)//如果玩家不为空
                 {
-
                         TransState(EnemyStates.Chase);
-
                 }
                 else
                 { //如果玩家为空,等待一定时间切换到巡逻状态
@@ -225,6 +223,7 @@ public class Dog : MonoBehaviour
                 DataSaveManager.Instance.isDog = true;
             }
             TransState(EnemyStates.Death);
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
     public void GetPlayerTransform()

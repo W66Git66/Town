@@ -47,6 +47,7 @@ public class GrandMa : MonoBehaviour
     private float stopThreshold = 3f;//停止的阈值
 
     private bool isPatrol = false;
+    private AnimatorStateInfo stateInfo;
 
     private void Awake()
     {
@@ -60,7 +61,8 @@ public class GrandMa : MonoBehaviour
 
     private void Start()
     {
-        TransState(EnemyStates.Idle);
+        TransState(EnemyStates.Idle);                
+        stateInfo = anim.GetCurrentAnimatorStateInfo(0);
     }
 
     private void Update()
@@ -70,13 +72,12 @@ public class GrandMa : MonoBehaviour
             GetPlayerTransform();
 
             AutoPath();
-        }
-
-        StateMachine();
+        }      
     }
 
     private void FixedUpdate()
     {
+        StateMachine();
         if (curState == EnemyStates.Patrol)
         {
             Move(MovementInput);
@@ -88,7 +89,7 @@ public class GrandMa : MonoBehaviour
         switch (curState)
         {
             case EnemyStates.Idle:
-                AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
                 if (stateInfo.IsName("GrandMaJump")!=true)
                 {
                      anim.Play("Idle");
@@ -100,9 +101,7 @@ public class GrandMa : MonoBehaviour
 
                 if (player != null)//如果玩家不为空
                 {
-                    Timer = 0;
                     TransState(EnemyStates.Chase);
-
                 }
                 else
                 { //如果玩家为空,等待一定时间切换到巡逻状态
@@ -120,7 +119,11 @@ public class GrandMa : MonoBehaviour
                 break;
             case EnemyStates.Chase:
 
-               isPatrol = false;
+                isPatrol = false;
+                if (stateInfo.IsName("GrandMaJump") != true)
+                {
+                   // anim.Play("Idle");
+                }
 
                 if (player == null)
                 {
@@ -130,6 +133,7 @@ public class GrandMa : MonoBehaviour
                 }
                 else
                 {
+
                     if(Timer<chaseTime)
                     {
                         Timer += Time.deltaTime;
@@ -138,9 +142,9 @@ public class GrandMa : MonoBehaviour
                     {
                         Timer = 0;
                         Vector2 playerPosition = player.position;//记录此时的位置
-                        StartCoroutine(GrandMaJump(playerPosition));
+                        StartCoroutine(GrandmaJump(playerPosition));
                        
-                       // transform.position = player.position;
+                        // transform.position = player.position;
                     }
                 }
 
@@ -175,12 +179,10 @@ public class GrandMa : MonoBehaviour
                         //到达巡逻点
                         if (_curIndex >= _pathPoints.Count)
                         {
-                            Debug.Log("111");
                             TransState(EnemyStates.Idle);//切换到待机状态
                         }
                         else //未到达巡逻点
                         {
-                            Debug.Log("!11");
                             Vector2 direction = _pathPoints[_curIndex] - transform.position;
                             MovementInput = direction;  //移动方向传给MovementInput
                         }
@@ -223,19 +225,6 @@ public class GrandMa : MonoBehaviour
                 isPatrol = false;
 
                 break;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (curState != EnemyStates.Death && collision.CompareTag("蛋白粉"))
-        {
-            if (DataSaveManager.Instance.isDog == false)
-            {
-                DataSaveManager.Instance.isDog = true;
-            }
-            TransState(EnemyStates.Death);
         }
     }
     public void GetPlayerTransform()
@@ -327,7 +316,6 @@ public class GrandMa : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
-        MovementInput = Vector2.zero;
     }
 
     public void GeneratePatrolPoint()
@@ -349,10 +337,26 @@ public class GrandMa : MonoBehaviour
         GetPathPoints(patrolPoints[targetPointIndex].position);
 
     }
-    IEnumerator GrandMaJump(Vector2 position)
+    IEnumerator GrandmaJump(Vector2 position)
     {
-        anim.Play("Idle");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+        Vector2 directionJump = position - (Vector2)transform.position;
+        if (directionJump.magnitude > 0.1f && currentSpeed >= 0)
+        {
+            //敌人左右翻转
+            if (Mathf.Abs(directionJump.x) < 1)
+            {
+                yield return 0;
+            }
+            if (directionJump.x > 0)//左
+            {
+                sr.flipX = false;
+            }
+            if (directionJump.x < 0)//右
+            {
+                sr.flipX = true;
+            }
+        }
         anim.SetTrigger("GrandMaJump");
         transform.position = position;
     }

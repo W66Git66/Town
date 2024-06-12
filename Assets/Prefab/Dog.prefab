@@ -108,7 +108,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   targetPointIndex: 0
-  currentSpeed: 5
+  currentSpeed: 10
   chaseDistance: 10
   pathFindCooldown: 0.1
   distance: 0
