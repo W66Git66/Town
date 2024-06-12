@@ -19,6 +19,9 @@ public class GameManager : Singleton<GameManager>
     public string sceneDay;
     public string SceneNight;
 
+    //设置UI界面
+    public GameObject uiPanel;
+
     protected override void Awake()
     {
         base.Awake();
@@ -51,12 +54,31 @@ public class GameManager : Singleton<GameManager>
         myCameraConfiner.m_BoundingShape2D = dayBoard;
     }
 
-    //开始游戏（开始场景切换到白天）
-
     IEnumerator TransMove()
     {
         PlayerController.Instance.TransMove(false);
         yield return new WaitForSeconds(1f);
         PlayerController.Instance.TransMove(true);
+    }
+
+    //打开设置UI
+    public void UIPanel()
+    {
+        if(uiPanel == null)
+        {
+            return;
+        }
+
+        if(uiPanel.activeSelf)
+        {
+            uiPanel.SetActive(false);
+            Time.timeScale= 1f;
+        }
+        else
+        {
+            uiPanel.SetActive(true);
+            Time.timeScale= 0f;
+        }
+
     }
 }
