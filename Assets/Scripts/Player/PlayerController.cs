@@ -14,6 +14,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private Vector2 direction;
 
+    private bool isMove=true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,21 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        GroundMovement();      
+        if (isMove == true)
+        {
+            GroundMovement();
+            SwitchAnim();
+            
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     private void FixedUpdate()
     {
-        SwitchAnim();
+        
     }
 
     void GroundMovement()
@@ -57,6 +68,11 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransToDay();
         }
+    }
+
+    public void TransMove(bool ismove)
+    {
+        isMove = ismove;
     }
 
 

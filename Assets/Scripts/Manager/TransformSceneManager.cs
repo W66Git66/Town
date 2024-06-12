@@ -46,6 +46,7 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
 
     private IEnumerator TranstionToScene(string from, string to)
     {
+        
         yield return Fade(1);
         yield return SceneManager.UnloadSceneAsync(from);
         yield return SceneManager.LoadSceneAsync(to, LoadSceneMode.Additive);

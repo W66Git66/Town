@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5417405562053059607}
   - component: {fileID: 5417405562053059606}
   - component: {fileID: 5417405562053059605}
+  - component: {fileID: -8602568763158989319}
   m_Layer: 0
   m_Name: "\u88C1\u7F1D"
   m_TagString: Untagged
@@ -155,3 +156,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8602568763158989319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417405562053059603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92affaedb444eb64490e142e25532ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 5
+  player: {fileID: 0}
+  IdleDuration: 0.5
+  patrolPoints: []
+  targetPointIndex: 0
+  currentSpeed: 5
+  chaseDistance: 3
+  pathFindCooldown: 0.5
+  distance: 0
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  sr: {fileID: 0}
+  rb: {fileID: 0}
+  anim: {fileID: 0}
+  enemyCollider: {fileID: 0}
