@@ -18,20 +18,13 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否找到假牙")]
     public bool isFakeToothFind=false;
 
+    [Header("是否找到过蛋白粉")]
+    public bool isProteinEverbeenFound=false;
+
     public bool isDog=false;
     protected override void Awake()
     {
         base.Awake();
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 
     protected override void OnDestroy()

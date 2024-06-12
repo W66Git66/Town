@@ -79,6 +79,11 @@ public class GameManager : Singleton<GameManager>
             uiPanel.SetActive(true);
             Time.timeScale= 0f;
         }
+    }
 
+    //ÍË³öÓÎÏ·
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

@@ -30,11 +30,6 @@ public class DialogueSystem : MonoBehaviour
             dialogueBox.SetActive(false);
         }
 
-        private void OnEnable()
-        {
-            
-        }
-
     public void SetDialogueBox()
     {
         dialogue = TalkButton.Instance.dialogue;
@@ -70,7 +65,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //≤Ò»Æµƒ¡Ω∏ˆ»ŒŒÒ
-                        if((GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().isAlbumenPowderFind)||(GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind))
+                        if((GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("≤Ò»Æ").GetComponent<DataSaveManager>().isProteinEverbeenFound)||(GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind))
                         {
                             GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex();
                         }
