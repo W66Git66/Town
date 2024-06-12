@@ -1055,6 +1055,7 @@ MonoBehaviour:
   liveBird: 0
   isKnifeOn: 0
   isFakeToothFind: 0
+  isProteinEverbeenFound: 0
   isDog: 0
 --- !u!1 &842730175
 GameObject:
