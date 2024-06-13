@@ -203,7 +203,7 @@ public class Dog : MonoBehaviour
                 break;
             case EnemyStates.Death:
 
-                anim.Play("null");
+                anim.Play("DogDeath");
                 MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
                 _pathPoints = null;
