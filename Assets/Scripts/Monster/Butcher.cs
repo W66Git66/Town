@@ -71,7 +71,7 @@ public class Butcher : MonoBehaviour
             GetPlayerTransform();
             if (curState != EnemyStates.Chase)
             {
-                AutoPath();
+                //AutoPath();
             }
         }
 
