@@ -47,6 +47,9 @@ public class Ghost : MonoBehaviour
 
     private bool isPatrol = false;
 
+    public GameObject bullet;
+    float shootTime = 2f;
+
     private void Awake()
     {
         _seeker = GetComponent<Seeker>();
@@ -81,6 +84,10 @@ public class Ghost : MonoBehaviour
         {
             Move(MovementInput);
         }
+        if(curState != EnemyStates.Death&&player!=null)
+        {
+            Shoot();
+        }
     }
 
     private void StateMachine()
@@ -93,24 +100,17 @@ public class Ghost : MonoBehaviour
                 MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
                 isPatrol = false;
-
-                if (player != null)//如果玩家不为空
+                
+                if (Timer <= IdleDuration)
                 {
-
-                    TransState(EnemyStates.Patrol);
-
+                    Timer += Time.deltaTime;
                 }
                 else
-                { //如果玩家为空,等待一定时间切换到巡逻状态
-                    if (Timer <= IdleDuration)
-                    {
-                        Timer += Time.deltaTime;
-                    }
-                    else
-                    {
-                        Timer = 0;
-                        TransState(EnemyStates.Patrol);
-                    }
+                {
+                    Timer = 0;
+                    TransState(EnemyStates.Patrol);
+                   
+                    
                 }
 
                 break;
@@ -123,10 +123,6 @@ public class Ghost : MonoBehaviour
                     isPatrol = true;
                     GeneratePatrolPoint();
                 }
-                if (player != null)//如果玩家不为空
-                {
-                    //发射子弹
-                }
 
                 //路径点列表为空时，进行路径计算
                 if (_pathPoints == null || _pathPoints.Count <= 0)
@@ -137,7 +133,7 @@ public class Ghost : MonoBehaviour
                 else
                 {
                     //当敌人到达当前路径点时，递增索引currentIndex并进行路径计算
-                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.1f)
+                    if (Vector2.Distance(transform.position, _pathPoints[_curIndex]) <= 0.5f)
                     {
                         _curIndex++;
 
@@ -179,14 +175,6 @@ public class Ghost : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (curState != EnemyStates.Death && collision.CompareTag("蛋白粉"))
-        {
-            if (DataSaveManager.Instance.isDog == false)
-            {
-                DataSaveManager.Instance.isDog = true;
-            }
-            TransState(EnemyStates.Death);
-        }
     }
     public void GetPlayerTransform()
     {
@@ -194,7 +182,6 @@ public class Ghost : MonoBehaviour
 
         if (chaseColliders.Length > 0)//玩家在追击范围内
         {
-            curState = EnemyStates.Chase;
             player = chaseColliders[0].transform;//获取玩家的Transform
             distance = Vector2.Distance(player.position, transform.position);
         }
@@ -277,6 +264,7 @@ public class Ghost : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
+        Debug.Log(states);
     }
 
     public void GeneratePatrolPoint()
@@ -297,5 +285,15 @@ public class Ghost : MonoBehaviour
         //把巡逻点给生成路径点函数
         GetPathPoints(patrolPoints[targetPointIndex].position);
 
+    }
+
+     public void Shoot()
+    {
+        shootTime -= Time.deltaTime;
+        if (shootTime <= 0)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity); 
+            shootTime = 2f;
+        }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5417405562053059606}
   - component: {fileID: 5417405562053059605}
   - component: {fileID: -8602568763158989319}
+  - component: {fileID: 8549336729014603497}
   m_Layer: 0
   m_Name: "\u88C1\u7F1D"
   m_TagString: Untagged
@@ -174,7 +175,7 @@ MonoBehaviour:
   patrolPoints: []
   targetPointIndex: 0
   currentSpeed: 5
-  chaseDistance: 3
+  chaseDistance: 10
   pathFindCooldown: 0.5
   distance: 0
   playerLayer:
@@ -184,3 +185,32 @@ MonoBehaviour:
   rb: {fileID: 0}
   anim: {fileID: 0}
   enemyCollider: {fileID: 0}
+  bullet: {fileID: 9042264091129073040, guid: 2edb7ecf556b57444861541b3e8f96d2, type: 3}
+--- !u!114 &8549336729014603497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417405562053059603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
