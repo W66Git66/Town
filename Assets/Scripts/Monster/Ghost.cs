@@ -100,7 +100,7 @@ public class Ghost : MonoBehaviour
                 MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
                 isPatrol = false;
-
+                
                 if (Timer <= IdleDuration)
                 {
                     Timer += Time.deltaTime;
@@ -109,6 +109,8 @@ public class Ghost : MonoBehaviour
                 {
                     Timer = 0;
                     TransState(EnemyStates.Patrol);
+                   
+                    
                 }
 
                 break;
@@ -180,7 +182,6 @@ public class Ghost : MonoBehaviour
 
         if (chaseColliders.Length > 0)//玩家在追击范围内
         {
-            curState = EnemyStates.Chase;
             player = chaseColliders[0].transform;//获取玩家的Transform
             distance = Vector2.Distance(player.position, transform.position);
         }
@@ -263,6 +264,7 @@ public class Ghost : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
+        Debug.Log(states);
     }
 
     public void GeneratePatrolPoint()

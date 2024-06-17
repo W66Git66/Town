@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5417405562053059606}
   - component: {fileID: 5417405562053059605}
   - component: {fileID: -8602568763158989319}
-  - component: {fileID: -5707964060616865880}
+  - component: {fileID: 8549336729014603497}
   m_Layer: 0
   m_Name: "\u88C1\u7F1D"
   m_TagString: Untagged
@@ -186,7 +186,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   enemyCollider: {fileID: 0}
   bullet: {fileID: 9042264091129073040, guid: 2edb7ecf556b57444861541b3e8f96d2, type: 3}
---- !u!114 &-5707964060616865880
+--- !u!114 &8549336729014603497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
