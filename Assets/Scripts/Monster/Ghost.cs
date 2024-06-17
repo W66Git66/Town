@@ -71,7 +71,7 @@ public class Ghost : MonoBehaviour
         {
             GetPlayerTransform();
 
-            AutoPath();
+           // AutoPath();
         }
 
        

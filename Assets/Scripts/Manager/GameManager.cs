@@ -44,6 +44,7 @@ public class GameManager : Singleton<GameManager>
         EventCenter.Broadcast(EventType.teleport, sceneDay, SceneNight);
         PlayerController.Instance.transform.position = createNightPoint.position;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
+        PlayerController.Instance.speed = 10;
     }
 
     public void TransToDay()
@@ -52,6 +53,7 @@ public class GameManager : Singleton<GameManager>
         EventCenter.Broadcast(EventType.teleport, SceneNight, sceneDay);
         PlayerController.Instance.transform.position = createDayPoint.position;
         myCameraConfiner.m_BoundingShape2D = dayBoard;
+        PlayerController.Instance.speed = 10;
     }
 
     IEnumerator TransMove()

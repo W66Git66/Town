@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   player: {fileID: 0}
-  IdleDuration: 2
+  IdleDuration: 0.5
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -140,11 +140,14 @@ MonoBehaviour:
   distance: 0
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   sr: {fileID: 0}
   rb: {fileID: 0}
   anim: {fileID: 0}
   enemyCollider: {fileID: 0}
+  Obstacle:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!50 &5822294098335410174
 Rigidbody2D:
   serializedVersion: 4

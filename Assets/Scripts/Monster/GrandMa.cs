@@ -71,7 +71,7 @@ public class GrandMa : MonoBehaviour
         {
             GetPlayerTransform();
 
-            AutoPath();
+            //AutoPath();
         }      
     }
 
