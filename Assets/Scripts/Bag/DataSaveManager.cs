@@ -69,6 +69,16 @@ public class DataSaveManager : Singleton<DataSaveManager>
         isKnifeOn = true;
     }
 
+    public void FindFakeTooth()
+    {
+        isFakeToothFind = true;
+    }
+
+    public void FindProtein()
+    {
+        isProteinEverbeenFound = true;
+    }
+
     public void NightReSet()//Ò¹ÍíË¢ÐÂ
     {
         deadBird = liveBird = 0;

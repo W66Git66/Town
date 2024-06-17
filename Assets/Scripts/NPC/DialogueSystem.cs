@@ -60,15 +60,21 @@ public class DialogueSystem : MonoBehaviour
                     {
                        case "≤Ò»Æ":
                         //≤Ò»Æ∂‘ª∞µƒ»˝∏ˆ“ª¥Œ–‘
-                        if (GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 0|| GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 2|| GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 4)
+                        if (GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 0 || GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 2 || GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 4)
                         {
                             GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //≤Ò»Æµƒ¡Ω∏ˆ»ŒŒÒ
-                        if((GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex ==1&&GameObject.Find("≤Ò»Æ").GetComponent<DataSaveManager>().isProteinEverbeenFound)||(GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind))
+                        /*
+                        if((GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 1  && GameObject.Find("≤Ò»Æ").GetComponent<DataSaveManager>().isProteinEverbeenFound)
                         {
-                            GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex();
+                            GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex2();
                         }
+                        if(GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind)
+                        {
+                            GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddIndex4();
+                        }
+                        */
                         break;
 
                         case "¥Â≥§":

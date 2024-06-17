@@ -10,4 +10,9 @@ public class DialogueIndex : MonoBehaviour
     {
         dialogueIndex++;
     }
+
+    public void AddToIndex(int index)
+    {
+        dialogueIndex=index;
+    }
 }

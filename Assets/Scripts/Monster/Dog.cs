@@ -224,6 +224,8 @@ public class Dog : MonoBehaviour
             }
             TransState(EnemyStates.Death);
             gameObject.GetComponent<Collider2D>().enabled = false;
+
+            DataSaveManager.Instance.FindProtein();//判定已经带狗找到过蛋白粉了
         }
     }
     public void GetPlayerTransform()
