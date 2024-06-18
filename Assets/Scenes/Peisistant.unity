@@ -238,7 +238,6 @@ MonoBehaviour:
   myCameraConfiner: {fileID: 322529373}
   dayBoard: {fileID: 896722110}
   nightBoard: {fileID: 1683683747}
-<<<<<<< HEAD
   houseBoard: {fileID: 0}
   createNightPoint: {fileID: 2088694883}
   createDayPoint: {fileID: 1089257258}
@@ -246,15 +245,6 @@ MonoBehaviour:
   sceneDay: SampleScene
   SceneNight: Night
   sceneHouse: 
-=======
-  houseBoard: {fileID: 611849500}
-  createNightPoint: {fileID: 2088694883}
-  createDayPoint: {fileID: 1089257258}
-  createHousePoint: {fileID: 1721924307}
-  sceneDay: SampleScene
-  SceneNight: Night
-  sceneHouse: House
->>>>>>> cf171c39147477f6f93e84945cee6e14f2c6d949
   uiPanel: {fileID: 1583564227}
   checkPoints:
   - {fileID: 1708136736}

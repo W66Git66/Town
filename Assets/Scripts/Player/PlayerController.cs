@@ -76,9 +76,6 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransToNight();
         }
-<<<<<<< HEAD
-        if (collision.CompareTag("monster"))
-=======
         if (collision.CompareTag("board1"))
         {
             GameManager.Instance.TransToHouseDay();
@@ -88,7 +85,6 @@ public class PlayerController : Singleton<PlayerController>
             enterHouseTiShi.SetActive(true);
         }
         if(collision.CompareTag("monster"))
->>>>>>> cf171c39147477f6f93e84945cee6e14f2c6d949
         {
             GameManager.Instance.TransToDay();
         }
