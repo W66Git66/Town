@@ -6,6 +6,7 @@ public class Gfire : MonoBehaviour
 {
     public Sprite lightFire;
     private SpriteRenderer sr;
+    public GameObject light;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class Gfire : MonoBehaviour
 
     public void ChangeSprite()
     {
+        light.SetActive(true);
         sr.sprite = lightFire;
         GameManager.Instance.gfireNumber += 1;
     }

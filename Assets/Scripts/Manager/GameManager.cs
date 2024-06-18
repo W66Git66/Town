@@ -11,13 +11,16 @@ public class GameManager : Singleton<GameManager>
     public CinemachineConfiner2D myCameraConfiner;//相机边界
     public Collider2D dayBoard;//白天的相机边界
     public Collider2D nightBoard;//夜晚
+    public Collider2D houseBoard;
 
 
     public Transform createNightPoint;
     public Transform createDayPoint;
+    public Transform createHousePoint;
 
     public string sceneDay;
     public string SceneNight;
+    public string sceneHouse;
 
     //设置UI界面
     public GameObject uiPanel;
@@ -47,6 +50,7 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToNight()
     {
+        DataSaveManager.Instance.UnShenSheBack();
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneDay, SceneNight);
         PlayerController.Instance.transform.position = createNightPoint.position;
@@ -68,6 +72,24 @@ public class GameManager : Singleton<GameManager>
         }
         gfireNumber = 0;
         DataSaveManager.Instance.NightReSet();
+    }
+
+    public void TransToDayHouse()
+    {
+        StartCoroutine(TransMove());
+        EventCenter.Broadcast(EventType.teleport, sceneDay, sceneHouse);
+        PlayerController.Instance.transform.position = createHousePoint.position;
+        myCameraConfiner.m_BoundingShape2D = houseBoard;
+        PlayerController.Instance.speed = 10;
+    }
+
+    public void TransToHouseDay()
+    {
+        StartCoroutine(TransMove());
+        EventCenter.Broadcast(EventType.teleport, sceneHouse, sceneDay);
+        PlayerController.Instance.transform.position = createDayPoint.position;
+        myCameraConfiner.m_BoundingShape2D = dayBoard;
+        PlayerController.Instance.speed = 10;
     }
 
     IEnumerator TransMove()

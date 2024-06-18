@@ -27,6 +27,9 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否召回肌肉康")]
     public bool isJirouBack = false;
 
+    [Header("是否神社传回")]
+    public bool isShenSheBack = false;
+
     public bool isDog=false;
 
     protected override void Awake()
@@ -89,5 +92,15 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void NightReSet()//夜晚刷新
     {
         deadBird = liveBird = 0;
+    }
+
+    public void ShenSheBack()
+    {
+        isShenSheBack = true;
+    }
+
+    public void UnShenSheBack()
+    {
+        isShenSheBack= false;
     }
 }
