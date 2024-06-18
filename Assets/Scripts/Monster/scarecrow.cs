@@ -8,7 +8,7 @@ public class scarecrow : MonoBehaviour
 
     private EnemyStates curState;
 
-    private float Timer = 0;//待机计时器
+    //private float Timer = 0;//待机计时器
 
     [HideInInspector] public SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
