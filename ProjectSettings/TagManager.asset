@@ -12,8 +12,12 @@ TagManager:
   - "\u9B3C\u706B"
   - board1
   - enterHouse
+<<<<<<< HEAD
   - Canvas
   - Arrow
+=======
+  - Bed
+>>>>>>> f6b36d8fa06dfd7a4eecac00c80c96890689b023
   layers:
   - Default
   - TransparentFX

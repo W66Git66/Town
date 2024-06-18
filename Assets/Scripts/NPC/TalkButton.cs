@@ -75,6 +75,8 @@ public class TalkButton : Singleton<TalkButton>
            gameObject.transform.position= PlayerController.Instance.transform.position;
            if (tipsButton != null && tipsButton.activeSelf && Input.GetKeyDown(KeyCode.E))
             {
+               GameManager.Instance.ChangeAudioClip(GameManager.Instance.talkClick);
+               GameManager.Instance.PlaySound();
                dialogBox.SetActive(true);
             }
         }

@@ -204,6 +204,8 @@ public class Dog : MonoBehaviour
             case EnemyStates.Death:
 
                 anim.Play("DogDeath");
+                GameManager.Instance.ChangeAudioClip(GameManager.Instance.chuMo);
+                GameManager.Instance.PlaySound();
                 MovementInput = Vector2.zero;
                 rb.velocity = Vector2.zero;//待机时不要移动
                 _pathPoints = null;
