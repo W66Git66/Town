@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class JiaoFu : MonoBehaviour
 {
-    private Text payMaque;
+    public Text payMaque;
     private int live;
     private int dead;
 
@@ -13,7 +13,7 @@ public class JiaoFu : MonoBehaviour
     public GameObject noButton;
     void Start()
     {
-        payMaque = GetComponent<Text>();
+        
     }
 
     void Update()

@@ -110,11 +110,7 @@ public class DialogueSystem : MonoBehaviour
                         {
                             GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
                         }
-                        //稻草人的一个任务
-                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.isScareBeated)
-                        {
-                            GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
-                        }
+                        //稻草人的一个任务(在ScarecrowIndex里）
                         break;
                     }
 
