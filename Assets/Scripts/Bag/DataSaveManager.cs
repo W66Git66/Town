@@ -21,7 +21,11 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否找到过蛋白粉")]
     public bool isProteinEverbeenFound=false;
 
+    [Header("是否消灭过稻草人")]
+    public bool isScareBeated = false;
+
     public bool isDog=false;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,9 +36,9 @@ public class DataSaveManager : Singleton<DataSaveManager>
         base.OnDestroy();   
     }
 
-    public void GetDeadBird()//获得死去的麻雀
+    public void GetDeadBird(int birdnum)//获得死去的麻雀
     {
-        deadBird++;
+        deadBird+=birdnum;
     }
     public void UseDeadBird()//使用死去的麻雀
     {

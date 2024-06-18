@@ -64,17 +64,7 @@ public class DialogueSystem : MonoBehaviour
                         {
                             GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex();
                         }
-                        //柴犬的两个任务
-                        /*
-                        if((GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 1  && GameObject.Find("柴犬").GetComponent<DataSaveManager>().isProteinEverbeenFound)
-                        {
-                            GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex2();
-                        }
-                        if(GameObject.Find("柴犬").GetComponent<DialogueIndex>().dialogueIndex == 3 && GameObject.Find("DataSaveManager").GetComponent<DataSaveManager>().isFakeToothFind)
-                        {
-                            GameObject.Find("柴犬").GetComponent<DialogueIndex>().AddIndex4();
-                        }
-                        */
+                        //柴犬的两个任务（在DogIndex里）
                         break;
 
                         case "村长":
@@ -121,7 +111,7 @@ public class DialogueSystem : MonoBehaviour
                             GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
                         }
                         //稻草人的一个任务
-                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.liveBird > 0)
+                        if(GameObject.Find("稻草人").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.isScareBeated)
                         {
                             GameObject.Find("稻草人").GetComponent<DialogueIndex>().AddIndex();
                         }

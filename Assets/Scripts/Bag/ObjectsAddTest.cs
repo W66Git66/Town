@@ -16,7 +16,7 @@ public class ObjectsAddTest : MonoBehaviour
 
     private void AddDeadBird()
     {
-        dataSaveManager.GetDeadBird();
+        dataSaveManager.GetDeadBird(1);
         Debug.Log("+1");
     }
 }
