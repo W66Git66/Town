@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   GetToothTiShi: {fileID: 1905519549}
-  enterHouseTiShi: {fileID: 0}
+  enterHouseTiShi: {fileID: 1530426511}
 --- !u!4 &446949837
 Transform:
   m_ObjectHideFlags: 0

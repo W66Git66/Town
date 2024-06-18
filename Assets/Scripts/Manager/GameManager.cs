@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -48,6 +49,10 @@ public class GameManager : Singleton<GameManager>
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+    }
+    private void Start()
+    {
+        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
     }
 
     protected override void OnDestroy()
