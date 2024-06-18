@@ -66,12 +66,19 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createDayPoint.position;
         myCameraConfiner.m_BoundingShape2D = dayBoard;
         PlayerController.Instance.speed = 10;
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Arrow");
+        foreach (GameObject obj in objects)
+        {
+            obj.GetComponent<Arrow>().DestroyArrow();
+        }
         foreach(var item in gfirePoints)
         {
             Destroy(item);
         }
         gfireNumber = 0;
         DataSaveManager.Instance.NightReSet();
+        
+        
     }
 
     public void TransToDayHouse()

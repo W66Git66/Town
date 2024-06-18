@@ -10,20 +10,26 @@ public class Gfire : MonoBehaviour
     public GameObject light;
     private Vector3 BPoint;
 
-    public GameObject enemyPos;
+    private GameObject enemyPos;
+    public GameObject enemyArrow;
     private Vector3 APoint;
+    public GameObject parent;
 
     private void Start()
-    {
+    { 
+        parent = GameObject.FindWithTag("Canvas");
         sr = GetComponent<SpriteRenderer>();
-        BPoint = Camera.main.WorldToScreenPoint(transform.position);
+
         APoint = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        Instantiate(enemyPos, this.transform);
+        enemyPos=Instantiate(enemyArrow, parent.transform,false);
+        
+       
     }
 
     private void Update()
     {
-
+        BPoint = Camera.main.WorldToScreenPoint(transform.position);
+        Debug.Log(BPoint);
         if (BPoint.x < Screen.width
        && BPoint.y < Screen.height
        && BPoint.x > 0 && BPoint.y > 0)
@@ -126,5 +132,10 @@ public class Gfire : MonoBehaviour
         Quaternion q = Quaternion.identity;
         q.SetFromToRotation(lookAxis, dir);
         ctrlObj.eulerAngles = new Vector3(q.eulerAngles.x, 0, q.eulerAngles.z);
+    }
+
+    public void DestroyArrow()
+    {
+        Destroy(gameObject);
     }
 }

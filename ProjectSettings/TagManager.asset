@@ -12,6 +12,8 @@ TagManager:
   - "\u9B3C\u706B"
   - board1
   - enterHouse
+  - Canvas
+  - Arrow
   layers:
   - Default
   - TransparentFX
