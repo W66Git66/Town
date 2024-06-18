@@ -238,3 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightFire: {fileID: 21300000, guid: 8098caa5ba4d90f4f826880c11a3831a, type: 3}
   light: {fileID: 5564234233562261585}
+  enemyPos: {fileID: 3200669445237937000, guid: ac28535eed2947b42bf952534afc94fe, type: 3}

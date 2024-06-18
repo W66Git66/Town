@@ -237,10 +237,13 @@ MonoBehaviour:
   myCameraConfiner: {fileID: 322529373}
   dayBoard: {fileID: 896722110}
   nightBoard: {fileID: 1683683747}
+  houseBoard: {fileID: 0}
   createNightPoint: {fileID: 2088694883}
   createDayPoint: {fileID: 1089257258}
+  createHousePoint: {fileID: 0}
   sceneDay: SampleScene
   SceneNight: Night
+  sceneHouse: 
   uiPanel: {fileID: 1583564227}
   checkPoints:
   - {fileID: 1708136736}
@@ -1245,6 +1248,7 @@ MonoBehaviour:
   isProteinEverbeenFound: 0
   isScareBeated: 0
   isJirouBack: 0
+  isShenSheBack: 0
   isDog: 0
 --- !u!1 &701787810
 GameObject:
@@ -1293,7 +1297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &731265453
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1719,7 +1723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1208251520
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1803,7 +1807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1262380789
 SpriteRenderer:
   m_ObjectHideFlags: 0
