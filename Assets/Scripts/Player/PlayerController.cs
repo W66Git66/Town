@@ -71,18 +71,16 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransToDay();
         }
-<<<<<<< HEAD
-        if(collision.CompareTag("¹í»ð"))
+        if (collision.CompareTag("¹í»ð"))
         {
             collision.GetComponent<Gfire>().ChangeSprite();
-=======
+        }
         if (collision.gameObject.CompareTag("¼ÙÑÀ"))
         {
             DataSaveManager.Instance.isFakeToothFind = true;
             GetToothTiShi.SetActive(true);
             Destroy(collision.gameObject);
             Invoke("GetToothTiShiShut", 2f);
->>>>>>> 517ed087c09af794c73089b77ea4a41c1ef55004
         }
     }
 
