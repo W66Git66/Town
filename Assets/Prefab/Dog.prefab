@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: 0}
   targetPointIndex: 0
   currentSpeed: 9
-  chaseDistance: 13
+  chaseDistance: 11
   pathFindCooldown: 0.1
   distance: 0
   playerLayer:

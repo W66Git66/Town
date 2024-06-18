@@ -26,6 +26,8 @@ public class GameManager : Singleton<GameManager>
     private List<GameObject> gfirePoints=new List<GameObject>();
     public GameObject gfire;
 
+    public int gfireNumber = 0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -37,6 +39,7 @@ public class GameManager : Singleton<GameManager>
     }
     private void Update()
     {
+        
     }
 
     public void TransToNight()
@@ -60,7 +63,7 @@ public class GameManager : Singleton<GameManager>
         {
             Destroy(item);
         }
-
+        gfireNumber = 0;
         DataSaveManager.Instance.NightReSet();
     }
 

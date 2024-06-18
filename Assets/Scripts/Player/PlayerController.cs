@@ -68,6 +68,10 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransToDay();
         }
+        if(collision.CompareTag("¹í»ð"))
+        {
+            collision.GetComponent<Gfire>().ChangeSprite();
+        }
     }
 
     public void TransMove(bool ismove)
