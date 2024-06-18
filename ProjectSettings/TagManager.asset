@@ -8,6 +8,7 @@ TagManager:
   - board
   - monster
   - "\u86CB\u767D\u7C89"
+  - "\u5047\u7259"
   layers:
   - Default
   - TransparentFX
