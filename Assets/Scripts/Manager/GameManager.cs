@@ -39,7 +39,10 @@ public class GameManager : Singleton<GameManager>
     }
     private void Update()
     {
-        
+        if(gfireNumber>=3)
+        {
+            Invoke("TransToDay", 1f);
+        }
     }
 
     public void TransToNight()
