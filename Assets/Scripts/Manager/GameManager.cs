@@ -22,6 +22,9 @@ public class GameManager : Singleton<GameManager>
     //…Ë÷√UIΩÁ√Ê
     public GameObject uiPanel;
 
+    public List<Vector2> cheekPoints;
+    private int pointsNumber = 0;
+
     protected override void Awake()
     {
         base.Awake();
@@ -91,4 +94,11 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
+    public void MakePoints()
+    {
+        for(int i=0;i<3;i++)
+        {
+
+        }
+    }
 }

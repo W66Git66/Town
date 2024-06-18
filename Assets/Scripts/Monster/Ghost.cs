@@ -264,7 +264,6 @@ public class Ghost : MonoBehaviour
     private void TransState(EnemyStates states)
     {
         curState = states;
-        Debug.Log(states);
     }
 
     public void GeneratePatrolPoint()
