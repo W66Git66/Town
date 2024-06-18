@@ -197,6 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 295274698}
   - component: {fileID: 295274699}
+  - component: {fileID: 295274700}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -238,13 +239,20 @@ MonoBehaviour:
   myCameraConfiner: {fileID: 322529373}
   dayBoard: {fileID: 896722110}
   nightBoard: {fileID: 1683683747}
-  houseBoard: {fileID: 0}
+  houseBoard: {fileID: 611849500}
   createNightPoint: {fileID: 2088694883}
   createDayPoint: {fileID: 1089257258}
-  createHousePoint: {fileID: 0}
+  createHousePoint: {fileID: 1721924307}
   sceneDay: SampleScene
   SceneNight: Night
-  sceneHouse: 
+  sceneHouse: House
+  uiClick: {fileID: 8300000, guid: 94fbe504351a0cf4bb54a5c6946fb5fa, type: 3}
+  playerInjured: {fileID: 8300000, guid: 23152cf616beeaa4b8f1167370d60cd1, type: 3}
+  talkClick: {fileID: 8300000, guid: 2cb514a2b22364b4d97e6d26b33955e6, type: 3}
+  gameFailed: {fileID: 8300000, guid: 5b5406d95d583f94bb828628f83905f1, type: 3}
+  lightFire: {fileID: 8300000, guid: 2701702f0839ea14c8302f1c7e9c0539, type: 3}
+  footBgm: {fileID: 8300000, guid: 4ab1dc91ea55d814cbb0b9cc6f0cf5ce, type: 3}
+  chuMo: {fileID: 8300000, guid: f48189a83d067ec44913d58a6aa66f5d, type: 3}
   uiPanel: {fileID: 1583564227}
   checkPoints:
   - {fileID: 1708136736}
@@ -258,6 +266,102 @@ MonoBehaviour:
   - {fileID: 1784045573}
   gfire: {fileID: 7992901968378049037, guid: 4a8d2096246d6b84f8fa35b0ef087288, type: 3}
   gfireNumber: 0
+--- !u!82 &295274700
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295274697}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &322529370
 GameObject:
   m_ObjectHideFlags: 0

@@ -79,6 +79,8 @@ public class scarecrow : MonoBehaviour
             case EnemyStates.Death:
 
                anim.SetTrigger("IsBird");
+                GameManager.Instance.ChangeAudioClip(GameManager.Instance.chuMo);
+                GameManager.Instance.PlaySound();
                 Destroy(gameObject, 1.5f);
                 PlayerController.Instance.speed = 10.0f;
                 //加一个图片淡出效果

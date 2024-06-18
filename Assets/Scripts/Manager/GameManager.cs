@@ -6,6 +6,7 @@ using Cinemachine;
 public class GameManager : Singleton<GameManager>
 {
     private int day;//游戏的天数流程
+    private AudioSource audioSource;
 
     [Header("Camera相关")]
     public CinemachineConfiner2D myCameraConfiner;//相机边界
@@ -22,6 +23,14 @@ public class GameManager : Singleton<GameManager>
     public string SceneNight;
     public string sceneHouse;
 
+    public AudioClip uiClick;
+    public AudioClip playerInjured;
+    public AudioClip talkClick;
+    public AudioClip gameFailed;
+    public AudioClip lightFire;
+    public AudioClip footBgm;
+    public AudioClip chuMo;
+
     //设置UI界面
     public GameObject uiPanel;
 
@@ -34,6 +43,11 @@ public class GameManager : Singleton<GameManager>
     protected override void Awake()
     {
         base.Awake();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     protected override void OnDestroy()
@@ -102,6 +116,8 @@ public class GameManager : Singleton<GameManager>
     //打开设置UI
     public void UIPanel()
     {
+        ChangeAudioClip(uiClick);
+        PlaySound();
         if(uiPanel == null)
         {
             return;
@@ -123,6 +139,16 @@ public class GameManager : Singleton<GameManager>
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void ChangeAudioClip(AudioClip clip)
+    {
+        audioSource.clip = clip;
+    }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
     }
 
     IEnumerator MakePoints()

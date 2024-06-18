@@ -12,6 +12,7 @@ TagManager:
   - "\u9B3C\u706B"
   - board1
   - enterHouse
+  - Bed
   layers:
   - Default
   - TransparentFX
