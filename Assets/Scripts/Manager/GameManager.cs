@@ -90,4 +90,5 @@ public class GameManager : Singleton<GameManager>
     {
         Application.Quit();
     }
+
 }

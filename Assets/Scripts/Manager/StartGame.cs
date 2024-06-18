@@ -22,7 +22,7 @@ public class StartGame : MonoBehaviour
     IEnumerator TransMove()
     {
         PlayerController.Instance.TransMove(false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         PlayerController.Instance.TransMove(true);
     }
 }
