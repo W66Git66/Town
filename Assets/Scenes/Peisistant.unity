@@ -246,13 +246,13 @@ MonoBehaviour:
   sceneDay: SampleScene
   SceneNight: Night
   sceneHouse: House
-  uiClick: {fileID: 8300000, guid: 94fbe504351a0cf4bb54a5c6946fb5fa, type: 3}
-  playerInjured: {fileID: 8300000, guid: 23152cf616beeaa4b8f1167370d60cd1, type: 3}
-  talkClick: {fileID: 8300000, guid: 2cb514a2b22364b4d97e6d26b33955e6, type: 3}
-  gameFailed: {fileID: 8300000, guid: 5b5406d95d583f94bb828628f83905f1, type: 3}
-  lightFire: {fileID: 8300000, guid: 2701702f0839ea14c8302f1c7e9c0539, type: 3}
-  footBgm: {fileID: 8300000, guid: 4ab1dc91ea55d814cbb0b9cc6f0cf5ce, type: 3}
-  chuMo: {fileID: 8300000, guid: f48189a83d067ec44913d58a6aa66f5d, type: 3}
+  uiClick: {fileID: 0}
+  playerInjured: {fileID: 0}
+  talkClick: {fileID: 0}
+  gameFailed: {fileID: 0}
+  lightFire: {fileID: 0}
+  footBgm: {fileID: 0}
+  chuMo: {fileID: 0}
   uiPanel: {fileID: 1583564227}
   checkPoints:
   - {fileID: 1708136736}
@@ -1638,7 +1638,7 @@ GameObject:
   - component: {fileID: 1068165542}
   m_Layer: 5
   m_Name: FadeCanvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

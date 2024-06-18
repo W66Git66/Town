@@ -238,5 +238,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightFire: {fileID: 21300000, guid: 8098caa5ba4d90f4f826880c11a3831a, type: 3}
   light: {fileID: 5564234233562261585}
-  enemyArrow: {fileID: 4998361763190529215, guid: 4b7f7b81a686d5044b628e00c69f1d87, type: 3}
+  enemyArrow: {fileID: 929625259440545579, guid: 4b7f7b81a686d5044b628e00c69f1d87, type: 3}
   parent: {fileID: 0}
