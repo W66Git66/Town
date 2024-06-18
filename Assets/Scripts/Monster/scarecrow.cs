@@ -80,6 +80,7 @@ public class scarecrow : MonoBehaviour
 
                anim.SetTrigger("IsBird");
                 Destroy(gameObject, 1.5f);
+                PlayerController.Instance.speed = 10.0f;
                 //加一个图片淡出效果
 
                 break;
