@@ -71,16 +71,12 @@ public class DialogueSystem : MonoBehaviour
                         break;
 
                         case "老奶奶":
-                        //老奶奶对话的两个一次性
-                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex==0|| GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 2)
+                        //老奶奶对话的两个一次性(另一个需等肌肉康回归）
+                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex==0)
                         {
                             GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
                         }
-                        //老奶奶的一个任务
-                        if(GameObject.Find("老奶奶").GetComponent<DialogueIndex>().dialogueIndex == 1 && DataSaveManager.Instance.isFakeToothFind)
-                        {
-                            GameObject.Find("老奶奶").GetComponent<DialogueIndex>().AddIndex();
-                        }
+                        //老奶奶的一个任务(在GrandmaIndex里）
                         break;
 
                         case "裁缝":

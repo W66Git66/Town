@@ -9,6 +9,7 @@ public class PlayerController : Singleton<PlayerController>
     private Animator anim;
 
     public float speed;
+    public GameObject GetToothTiShi;//获得假牙提示
     private float horizontalMove;
     private float verticalMove;
 
@@ -22,6 +23,8 @@ public class PlayerController : Singleton<PlayerController>
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+
+        GetToothTiShiShut();
     }
 
     private void Update()
@@ -68,9 +71,18 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransToDay();
         }
+<<<<<<< HEAD
         if(collision.CompareTag("鬼火"))
         {
             collision.GetComponent<Gfire>().ChangeSprite();
+=======
+        if (collision.gameObject.CompareTag("假牙"))
+        {
+            DataSaveManager.Instance.isFakeToothFind = true;
+            GetToothTiShi.SetActive(true);
+            Destroy(collision.gameObject);
+            Invoke("GetToothTiShiShut", 2f);
+>>>>>>> 517ed087c09af794c73089b77ea4a41c1ef55004
         }
     }
 
@@ -79,5 +91,8 @@ public class PlayerController : Singleton<PlayerController>
         isMove = ismove;
     }
 
-
+    public void GetToothTiShiShut()
+    {
+        GetToothTiShi.SetActive(false);
+    }
 }

@@ -61,6 +61,10 @@ public class GrandMa : MonoBehaviour
 
     private void Start()
     {
+        if (DataSaveManager.Instance.isFakeToothFind) //找到假牙后不再刷新
+        {
+            Destroy(gameObject);
+        }
         TransState(EnemyStates.Idle);                
         stateInfo = anim.GetCurrentAnimatorStateInfo(0);
     }

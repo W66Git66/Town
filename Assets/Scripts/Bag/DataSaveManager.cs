@@ -24,6 +24,9 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否消灭过稻草人")]
     public bool isScareBeated = false;
 
+    [Header("是否召回肌肉康")]
+    public bool isJirouBack = false;
+
     public bool isDog=false;
 
     protected override void Awake()
