@@ -22,8 +22,9 @@ public class GameManager : Singleton<GameManager>
     //…Ë÷√UIΩÁ√Ê
     public GameObject uiPanel;
 
-    public List<Vector2> cheekPoints;
-    private int pointsNumber = 0;
+    public List<Transform> checkPoints;
+    private List<GameObject> gfirePoints=new List<GameObject>();
+    public GameObject gfire;
 
     protected override void Awake()
     {
@@ -36,9 +37,6 @@ public class GameManager : Singleton<GameManager>
     }
     private void Update()
     {
-
-
-
     }
 
     public void TransToNight()
@@ -48,6 +46,7 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createNightPoint.position;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
         PlayerController.Instance.speed = 10;
+        StartCoroutine(MakePoints());
     }
 
     public void TransToDay()
@@ -57,6 +56,10 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createDayPoint.position;
         myCameraConfiner.m_BoundingShape2D = dayBoard;
         PlayerController.Instance.speed = 10;
+        foreach(var item in gfirePoints)
+        {
+            Destroy(item);
+        }
 
         DataSaveManager.Instance.NightReSet();
     }
@@ -94,11 +97,14 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
     }
 
-    public void MakePoints()
+    IEnumerator MakePoints()
     {
-        for(int i=0;i<3;i++)
+        for (int i = 0; i < 3; i++)
         {
-
+            int num = Random.Range(0, 8);
+            var obj=Instantiate(gfire, checkPoints[num].position, Quaternion.identity, transform);
+            gfirePoints.Add(obj);
         }
+        yield return new WaitForSeconds(1f);
     }
 }
