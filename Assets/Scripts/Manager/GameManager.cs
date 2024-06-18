@@ -54,6 +54,8 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createDayPoint.position;
         myCameraConfiner.m_BoundingShape2D = dayBoard;
         PlayerController.Instance.speed = 10;
+
+        DataSaveManager.Instance.NightReSet();
     }
 
     IEnumerator TransMove()
