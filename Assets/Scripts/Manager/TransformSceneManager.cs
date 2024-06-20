@@ -78,4 +78,19 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
 
         isFade = false;
     }
+
+    public IEnumerator FadeUI(CanvasGroup fadeCanvasGroup,float fadeDuration,float targetAlpha)
+    {
+        fadeCanvasGroup.blocksRaycasts = true;
+
+        float speed = Mathf.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
+
+        while (!Mathf.Approximately(fadeCanvasGroup.alpha, targetAlpha))
+        {
+            fadeCanvasGroup.alpha = Mathf.MoveTowards(fadeCanvasGroup.alpha, targetAlpha, speed * Time.deltaTime);
+            yield return null;
+        }
+
+        fadeCanvasGroup.blocksRaycasts = false;
+    }
 }
