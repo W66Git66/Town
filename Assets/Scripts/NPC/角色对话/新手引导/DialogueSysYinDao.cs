@@ -16,6 +16,7 @@ public class DialogueSysYinDao : MonoBehaviour
     public GameObject npcOnTrigger;
     public GameObject xinshouYindao;
     public GameObject cunzhangYindao;
+    public GameObject heiyeYindao;
 
     private int index;//Ë÷Òý
 
@@ -33,13 +34,14 @@ public class DialogueSysYinDao : MonoBehaviour
     {
         Invoke("XinShouYinDaoVar", 1.5f);
         Invoke("CunZhangYinDaoVar", 1.5f);
+        Invoke("HeiYeYinDaoVar", 1.5f);
     }
 
     public void XinShouYinDaoVar()
     {
-        npcOnTrigger = xinshouYindao;
         if (xinshouYindao != null)
         {
+            npcOnTrigger = xinshouYindao;
             dialogueIndex = xinshouYindao.GetComponent<DialogueIndex>().dialogueIndex;
             dialogue = xinshouYindao.GetComponent<NPC>().dialogue[dialogueIndex];
             Time.timeScale = 0;
@@ -54,11 +56,28 @@ public class DialogueSysYinDao : MonoBehaviour
 
     public void CunZhangYinDaoVar()
     {
-        npcOnTrigger = cunzhangYindao;
         if (cunzhangYindao != null)
         {
+            npcOnTrigger = cunzhangYindao;
             dialogueIndex = cunzhangYindao.GetComponent<DialogueIndex>().dialogueIndex;
             dialogue = cunzhangYindao.GetComponent<NPC>().dialogue[dialogueIndex];
+            Time.timeScale = 0;
+            SetDialogueBox();
+            dialogueBox.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public void HeiYeYinDaoVar()
+    {
+        if (heiyeYindao != null)
+        {
+            npcOnTrigger = heiyeYindao;
+            dialogueIndex = heiyeYindao.GetComponent<DialogueIndex>().dialogueIndex;
+            dialogue = heiyeYindao.GetComponent<NPC>().dialogue[dialogueIndex];
             Time.timeScale = 0;
             SetDialogueBox();
             dialogueBox.SetActive(true);

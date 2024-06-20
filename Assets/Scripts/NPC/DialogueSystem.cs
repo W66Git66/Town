@@ -10,6 +10,7 @@ public class DialogueSystem : MonoBehaviour
         private Dialogue dialogue;//对话内容
                                   
         private int index;//索引
+        private bool isOver=false;//判断当前对话是否结束
 
         public GameObject dialogueBox;//获取对话框
 
@@ -51,11 +52,13 @@ public class DialogueSystem : MonoBehaviour
             //npcOnTalking = GameObject.Find("Player").GetComponent<TalkButton>().npcOnTrigger;//获取正触发trigger的npc
             if (Input.GetKeyDown(KeyCode.Mouse0) && dialogue != null)
             {
+                isOver = false;
                 //对话播放完，关闭对话
                 if (index == dialogue.dialogNodes.Length)
                 {
                     dialogueBox.SetActive(false);
                     index = 0;
+                    isOver=true;
                     switch (npcOnTalkingName)
                     {
                        case "柴犬":
@@ -68,6 +71,10 @@ public class DialogueSystem : MonoBehaviour
                         break;
 
                         case "村长":
+                        if (GameObject.Find("村长").GetComponent<DialogueIndex>().dialogueIndex == 0 && isOver)
+                        {
+                            GameObject.Find("村长").GetComponent<CunZhangTanChuang>().ShowTishi();
+                        }
                         break;
 
                         case "老奶奶":

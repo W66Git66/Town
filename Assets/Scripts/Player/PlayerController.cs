@@ -10,7 +10,9 @@ public class PlayerController : Singleton<PlayerController>
 
     public float speed;
     public GameObject GetToothTiShi;//获得假牙提示
+    public GameObject ToothTanchuang;//第一次弹窗
     public GameObject enterHouseTiShi;//进入自己家提示
+    public GameObject goToSleepTiShi;//入眠提示
     private float horizontalMove;
     private float verticalMove;
 
@@ -46,6 +48,14 @@ public class PlayerController : Singleton<PlayerController>
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GameManager.Instance.TransToDayHouse();
+            }
+        }
+
+        if (goToSleepTiShi != null && goToSleepTiShi.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameManager.Instance.TransHouseToNight();
             }
         }
     }
@@ -94,8 +104,15 @@ public class PlayerController : Singleton<PlayerController>
         }
         if (collision.gameObject.CompareTag("假牙"))
         {
+            if (!DataSaveManager.Instance.isFakeToothFind)
+            {
+                ToothTanchuang.SetActive(true);
+            }
+            else
+            {
+                GetToothTiShi.SetActive(true);
+            }
             DataSaveManager.Instance.isFakeToothFind = true;
-            GetToothTiShi.SetActive(true);
             Destroy(collision.gameObject);
             Invoke("GetToothTiShiShut", 2f);
         }
@@ -103,6 +120,22 @@ public class PlayerController : Singleton<PlayerController>
         if (collision.CompareTag("XinshouMonster"))
         {
             GameManager.Instance.TransXinshouToHouse();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bed"))
+        {
+            goToSleepTiShi.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bed"))
+        {
+            goToSleepTiShi.SetActive(false);
         }
     }
 
