@@ -8,6 +8,8 @@ public class scarecrow : MonoBehaviour
     private bool isTrigger=false;
     private int live, dead;
     public GameObject jiaoFu;
+    public GameObject followPlayer;
+    private Transform texiao;
 
     [SerializeField] private float _speed;//怪物的移动速度
 
@@ -57,6 +59,12 @@ public class scarecrow : MonoBehaviour
                 }
             }
         }
+
+        if (gameObject.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
+        {
+            DataSaveManager.Instance.isFirstChuMoScare = true;
+            GameManager.Instance.TanChuangScare();
+        }
     }
 
     public void ChuMoScare()
@@ -69,6 +77,7 @@ public class scarecrow : MonoBehaviour
             DataSaveManager.Instance.TransPoints();
         }
         DataSaveManager.Instance.isScareBeated = true;
+        followPlayer.GetComponent<DialogueSysYinDao>().ChuMoScareYinDaoVar();
     }
 
     private void FixedUpdate()
@@ -102,6 +111,8 @@ public class scarecrow : MonoBehaviour
         if (curState != EnemyStates.Death && collision.CompareTag("Player"))
         {
             PlayerController.Instance.speed *= 0.7f;
+            texiao = collision.transform.GetChild(2);
+            texiao.gameObject.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -110,6 +121,7 @@ public class scarecrow : MonoBehaviour
         if (curState != EnemyStates.Death && collision.CompareTag("Player"))
         {
             PlayerController.Instance.speed /= 0.7f;
+            texiao.gameObject.SetActive(false);
             clickE.SetActive(false);
         }
     }

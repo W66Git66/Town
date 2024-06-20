@@ -5,6 +5,7 @@ using UnityEngine;
 public class DogIndex : MonoBehaviour
 {
     public int n,m;
+    public GameObject jiRouKang;
     Animator animator;
     void Start()
     {
@@ -29,10 +30,19 @@ public class DogIndex : MonoBehaviour
             }
             animator.SetTrigger("IsFull");
         }
-
-        if(DataSaveManager.Instance.isProteinEverbeenFound && DataSaveManager.Instance.isJirouBack)
+        if (DataSaveManager.Instance.canJirouBack)
         {
+            jiRouKang.SetActive(true);
+            DataSaveManager.Instance.JiRouBack();
+        }
+        
+    }
 
+    public void Update()
+    {
+        if (DataSaveManager.Instance.isProteinEverbeenFound && DataSaveManager.Instance.isJirouBack)
+        {
+            gameObject.transform.position = new Vector3(3.98f, -4.63f, 0);
             GameObject.Find("≤Ò»Æ").GetComponent<DialogueIndex>().AddToIndex(4);
         }
     }

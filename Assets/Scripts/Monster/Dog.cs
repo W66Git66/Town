@@ -222,6 +222,7 @@ public class Dog : MonoBehaviour
         {
             if(DataSaveManager.Instance.isDog==false)
             {
+                GameManager.Instance.TanChuangGou();
                 DataSaveManager.Instance.isDog = true;
             }
             TransState(EnemyStates.Death);

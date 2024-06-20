@@ -134,6 +134,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(GameManager.Instance.gfireNumber>=3)
             {
+                DataSaveManager.Instance.ShenSheBack();
                 StartCoroutine(WinUI());
                 GameManager.Instance.TransToDay();
             }

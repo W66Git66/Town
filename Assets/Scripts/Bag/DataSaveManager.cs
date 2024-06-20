@@ -30,6 +30,7 @@ public class DataSaveManager : Singleton<DataSaveManager>
 
     [Header("是否召回肌肉康")]
     public bool isJirouBack = false;
+    public bool canJirouBack = false;
 
     [Header("是否神社传回")]
     public bool isShenSheBack = false;
@@ -43,13 +44,23 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否进行过入梦黑夜引导")]
     public bool isRuMengYinDao = false;
 
+    [Header("是否进行过稻草人引导")]
+    public bool isScarecrowYinDao;
+
     [Header("是否第一次除魔狗")]
     public bool isChuMoGou = false;
 
     [Header("是否第一次拿到麻雀")]
+    public bool isFirstGiveBird = false;
     [Header("是否第一次除魔稻草人")]
+    public bool isFirstChuMoScare = false;
     [Header("是否第一次除魔猪")]
     public bool isChumoZhu = false;
+
+    [Header("是否当日给过麻雀")]
+    public bool isGivenBird = false;
+
+
 
     public bool isDog=false;
 
@@ -148,5 +159,35 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void SetRuMengYinDao()
     {
         isRuMengYinDao= true;
+    }
+
+    public void CanJirouBack()
+    {
+        canJirouBack = true;
+    }
+
+    public void JiRouBack()
+    {
+        isJirouBack= true;
+    }
+
+    public void HaveGivenBird()
+    {
+        isGivenBird= true;
+    }
+
+    public void YetGivenBird()
+    {
+        isGivenBird = false;
+    }
+
+    public void FirstGiveBird()
+    {
+        isFirstGiveBird= true;
+    }
+
+    public void SetScarecrowYinDao()
+    {
+        isScarecrowYinDao= true;
     }
 }

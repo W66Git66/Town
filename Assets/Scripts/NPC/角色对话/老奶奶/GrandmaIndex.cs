@@ -12,16 +12,17 @@ public class GrandmaIndex : MonoBehaviour
         {
             GameObject.Find("析通通").GetComponent<DialogueIndex>().AddToIndex(2);
             animator.SetTrigger("IsTooth");
+            DataSaveManager.Instance.CanJirouBack();
         }
-        if (DataSaveManager.Instance.isJirouBack)
-        {
-            GameObject.Find("析通通").GetComponent<DialogueIndex>().AddToIndex(3);
-        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (DataSaveManager.Instance.isJirouBack)
+        {
+            GameObject.Find("析通通").GetComponent<DialogueIndex>().AddToIndex(3);
+        }
     }
 }

@@ -47,6 +47,13 @@ public class GameManager : Singleton<GameManager>
     public GameObject gfire;
     public GameObject shenShe;
 
+    public int n, m;//麻雀数量
+
+    public GameObject TanchuangBird;
+    public GameObject TanchuangZhu;
+    public GameObject TanchuangScare;
+    public GameObject TanchuangGou;
+
     public int gfireNumber = 0;
 
     protected override void Awake()
@@ -75,6 +82,7 @@ public class GameManager : Singleton<GameManager>
     public void TransToNight()
     {
         DataSaveManager.Instance.UnShenSheBack();
+        DataSaveManager.Instance.YetGivenBird();
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneDay, SceneNight);
         PlayerController.Instance.transform.position = createNightPoint.position;
@@ -86,6 +94,7 @@ public class GameManager : Singleton<GameManager>
     public void TransHouseToNight()
     {
         DataSaveManager.Instance.UnShenSheBack();
+        DataSaveManager.Instance.YetGivenBird();
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneHouse, SceneNight);
         PlayerController.Instance.transform.position = createNightPoint.position;
@@ -96,6 +105,16 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToDay()
     {
+        if (DataSaveManager.Instance.isJirouBack)
+        {
+            n = Random.Range(3, 6);//随机3-5个
+            m = Random.Range(3, 6);
+        }
+        else
+        {
+            n = Random.Range(1, 4);//随机1-3个
+            m = Random.Range(1, 4);
+        }
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, SceneNight, sceneHouse);
         PlayerController.Instance.transform.position = createHousePoint.position;
@@ -127,6 +146,20 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToHouseDay()
     {
+        if (DataSaveManager.Instance.isProteinEverbeenFound)
+        {
+            DataSaveManager.Instance.GetDeadBird(n);
+            if (DataSaveManager.Instance.isShenSheBack)
+            {
+                DataSaveManager.Instance.GetDeadBird(m);
+            }
+            if (!DataSaveManager.Instance.isFirstGiveBird)
+            {
+                TanchuangBird.SetActive(true);
+                DataSaveManager.Instance.FirstGiveBird();
+            }
+        }
+        DataSaveManager.Instance.HaveGivenBird();
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneHouse, sceneDay);
         PlayerController.Instance.transform.position = createDayPoint.position;
@@ -186,6 +219,21 @@ public class GameManager : Singleton<GameManager>
     public void PlaySound()
     {
         audioSource.Play();
+    }
+
+    public void TanChuangZhu()
+    {
+        TanchuangZhu.SetActive(true);
+    }
+
+    public void TanChuangScare()
+    {
+        TanchuangScare.SetActive(true);
+    }
+
+    public void TanChuangGou()
+    {
+        TanchuangGou.SetActive(true);
     }
 
     IEnumerator DieScene()
