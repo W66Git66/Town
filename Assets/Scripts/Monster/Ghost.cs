@@ -162,10 +162,11 @@ public class Ghost : MonoBehaviour
                 break;
             case EnemyStates.Death:
 
-                anim.Play("null");
-                MovementInput = Vector2.zero;
-                rb.velocity = Vector2.zero;//待机时不要移动
-                _pathPoints = null;
+                anim.SetTrigger("Death");
+                GameManager.Instance.ChangeAudioClip(GameManager.Instance.chuMo);
+                GameManager.Instance.PlaySound();
+                Destroy(gameObject, 1.5f);
+                rb.velocity = Vector2.zero;
                 isPatrol = false;
 
                 break;
@@ -174,7 +175,14 @@ public class Ghost : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (curState != EnemyStates.Death && collision.CompareTag("Kinef"))
+        {
+            if (DataSaveManager.Instance.isChumoGhost == false)
+            {
+                DataSaveManager.Instance.isChumoGhost = true;
+            }
+            TransState(EnemyStates.Death);
+        }
     }
     public void GetPlayerTransform()
     {

@@ -52,7 +52,7 @@ public class scarecrow : MonoBehaviour
             if (DataSaveManager.Instance.deadBird != 0 || DataSaveManager.Instance.liveBird != 0)
             {
                 clickE.SetActive(true);
-                jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
+                //jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     jiaoFu.SetActive(true);

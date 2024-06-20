@@ -968,6 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c7a3f60f05f1242905ec140740e743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knife: {fileID: 6869281293860526846, guid: 0481bfbf80b7b3a40b96340a647c98a6, type: 3}
   speed: 10
   GetToothTiShi: {fileID: 1905519549}
   ToothTanchuang: {fileID: 1600917563}
@@ -975,7 +976,12 @@ MonoBehaviour:
   goToSleepTiShi: {fileID: 1805276296}
   backselfUI: {fileID: 959612723}
   bebeatenUI: {fileID: 597362157}
+<<<<<<< HEAD
   magicCircle: {fileID: 0}
+=======
+  horizontalMove: 0
+  magicCircle: {fileID: 8055929244383257599, guid: 0e4a00bddf5f81b49844d1668e09f23b, type: 3}
+>>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
 --- !u!4 &446949837
 Transform:
   m_ObjectHideFlags: 0
@@ -1963,12 +1969,12 @@ MonoBehaviour:
   - {fileID: 2078967307}
   - {fileID: 453514434}
   - {fileID: 833713930}
-  - {fileID: 1968343773}
+  - {fileID: 1553618319}
   checkPoints2:
   - {fileID: 1421054918}
   - {fileID: 251959475}
   - {fileID: 1900517271}
-  - {fileID: 1968343773}
+  - {fileID: 1135504473}
   checkPoints3:
   - {fileID: 1435170452}
   - {fileID: 748474342}
@@ -1991,7 +1997,11 @@ MonoBehaviour:
   isFirstGiveBird: 0
   isFirstChuMoScare: 0
   isChumoZhu: 0
+<<<<<<< HEAD
   isGivenBird: 0
+=======
+  isChumoGhost: 0
+>>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
   isDog: 0
 --- !u!114 &699906461
 MonoBehaviour:

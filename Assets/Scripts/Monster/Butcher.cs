@@ -238,6 +238,7 @@ public class Butcher : MonoBehaviour
             {
                 GameManager.Instance.TanChuangZhu();
                 DataSaveManager.Instance.isChumoZhu = true;
+                DataSaveManager.Instance.GetKnife();
             }
             TransState(EnemyStates.Death);
         }
