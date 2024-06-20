@@ -104,10 +104,6 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToDay()
     {
-        var obj1 = PlayerController.Instance.transform.GetChild(2).gameObject;
-     
-        Debug.Log(obj1);
-        obj1.SetActive(false);
         if (DataSaveManager.Instance.isJirouBack)
         {
             n = Random.Range(3, 6);//随机3-5个
@@ -134,8 +130,8 @@ public class GameManager : Singleton<GameManager>
         }
         gfireNumber = 0;
         DataSaveManager.Instance.NightReSet();
-        
-        
+        var obj1 = PlayerController.Instance.transform.GetChild(2).gameObject;
+        obj1.SetActive(false);
     }
 
     public void TransToDayHouse()
@@ -188,6 +184,8 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.TransMove(false);
         yield return new WaitForSeconds(1f);
         PlayerController.Instance.TransMove(true);
+        var obj1 = PlayerController.Instance.transform.GetChild(2).gameObject;
+        obj1.SetActive(false);
     }
 
     //打开设置UI
