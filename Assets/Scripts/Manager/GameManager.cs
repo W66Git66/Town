@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-<<<<<<< HEAD
 using UnityEngine.UI;
 using UnityEditor.UIElements;
-=======
 using UnityEngine.SceneManagement;
->>>>>>> dc8981cfa0fdad4275ddb711b49200f3517bf725
 
 public class GameManager : Singleton<GameManager>
 {
