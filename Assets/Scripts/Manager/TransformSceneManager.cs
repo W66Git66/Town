@@ -10,6 +10,7 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
     public float fadeDuration;
 
     private bool isFade;
+    public bool isFade1;
 
     protected override void Awake()//≥ı ºªØ
     {
@@ -79,18 +80,20 @@ public class TransformSceneManager : Singleton<TransformSceneManager>
         isFade = false;
     }
 
-    public IEnumerator FadeUI(CanvasGroup fadeCanvasGroup,float fadeDuration,float targetAlpha)
+    public IEnumerator FadeUI(CanvasGroup fadeCanvasGroup1,float fadeDuration,float targetAlpha)
     {
-        fadeCanvasGroup.blocksRaycasts = true;
+        isFade1 = true;
+        fadeCanvasGroup1.blocksRaycasts = true;
 
-        float speed = Mathf.Abs(fadeCanvasGroup.alpha - targetAlpha) / fadeDuration;
+        float speed = Mathf.Abs(fadeCanvasGroup1.alpha - targetAlpha) / fadeDuration;
 
-        while (!Mathf.Approximately(fadeCanvasGroup.alpha, targetAlpha))
+        while (!Mathf.Approximately(fadeCanvasGroup1.alpha, targetAlpha))
         {
-            fadeCanvasGroup.alpha = Mathf.MoveTowards(fadeCanvasGroup.alpha, targetAlpha, speed * Time.deltaTime);
+            fadeCanvasGroup1.alpha = Mathf.MoveTowards(fadeCanvasGroup1.alpha, targetAlpha, speed * Time.deltaTime);
             yield return null;
         }
 
-        fadeCanvasGroup.blocksRaycasts = false;
+        fadeCanvasGroup1.blocksRaycasts = false;
+        isFade1 = false;
     }
 }

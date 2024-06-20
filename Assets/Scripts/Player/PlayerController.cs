@@ -117,7 +117,10 @@ public class PlayerController : Singleton<PlayerController>
         }
         if(collision.CompareTag("monster"))
         {
-            StartCoroutine(LoseUI());
+            if (!TransformSceneManager.Instance.isFade1)
+            {
+                StartCoroutine(LoseUI());
+            }
             GameManager.Instance.TransToDay();
         }
         if (collision.CompareTag("¹í»ð"))
@@ -147,7 +150,10 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(GameManager.Instance.gfireNumber>=3)
             {
-                StartCoroutine(WinUI());
+                if (!TransformSceneManager.Instance.isFade1)
+                {
+                     StartCoroutine(WinUI());
+                }
                 GameManager.Instance.TransToDay();
             }
         }

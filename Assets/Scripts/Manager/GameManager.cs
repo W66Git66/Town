@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
-using UnityEditor.UIElements;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -141,7 +140,11 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createHousePoint.position;
         myCameraConfiner.m_BoundingShape2D = houseBoard;
         PlayerController.Instance.speed = 10;
-        StartCoroutine(DieScene());
+        if (!TransformSceneManager.Instance.isFade1)
+            {
+                StartCoroutine(DieScene());
+            }
+        
     }
     IEnumerator TransMove()
     {
