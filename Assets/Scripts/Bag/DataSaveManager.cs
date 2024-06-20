@@ -30,6 +30,12 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否神社传回")]
     public bool isShenSheBack = false;
 
+    [Header("是否进行过新手夜晚对话")]
+    public bool isXinshouGuanYinDao = false;
+
+    [Header("是否进行过村长引导对话")]
+    public bool isCunZhangYinDao=false;
+
     public bool isDog=false;
 
     protected override void Awake()
@@ -102,5 +108,15 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void UnShenSheBack()
     {
         isShenSheBack= false;
+    }
+
+    public void SetXinshouGuanYinDao()
+    {
+        isXinshouGuanYinDao= true;
+    }
+
+    public void SetCunZhangYinDao()
+    {
+        isCunZhangYinDao= true;
     }
 }

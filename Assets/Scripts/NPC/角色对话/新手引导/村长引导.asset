@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66de2635b6c9fbd4e8cb876b505824bb, type: 3}
+  m_Name: "\u6751\u957F\u5F15\u5BFC"
+  m_EditorClassIdentifier: 
+  dialogNodes:
+  - name: ???
+    sprite: {fileID: 21300000, guid: cea9344ebe83be945b22e09e734def52, type: 3}
+    content: "\u5E74\u8F7B\u4EBA\uFF0C\u4F60\u9192\u6765\u4E86\u3002\u770B\u6765\u4F60\u505A\u4E86\u4E00\u4E2A\u5669\u68A6\u3002"
+  - name: You
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u5669\u68A6....\u6211\u597D\u50CF\u7684\u786E\u505A\u4E86\u4E00\u4E2A\u5669\u68A6\u3002\u8FD9\u91CC\u54EA\u513F\uFF1F\u6211...\u4E3A\u4EC0\u4E48\u4F1A\u5728\u8FD9\uFF1F"
+  - name: ???
+    sprite: {fileID: 21300000, guid: cea9344ebe83be945b22e09e734def52, type: 3}
+    content: "\u8FD9\u91CC....\u8FD9\u91CC\u662F\u4E00\u4E2A\u88AB\u5669\u68A6\u56F0\u4F4F\u7684\u6751\u5B50\uFF0C\u6240\u6709\u4EBA\u90FD\u662F\u88AB\u5669\u68A6\u9001\u6765\u7684\u3002"
+  - name: You
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u55EF..."
+  - name: ???
+    sprite: {fileID: 21300000, guid: cea9344ebe83be945b22e09e734def52, type: 3}
+    content: "\u6628\u665A\uFF0C\u4F60\u7684\u5669\u68A6\u662F\u4EC0\u4E48\u6837\u7684\uFF1F"
+  - name: You
+    sprite: {fileID: 21300000, guid: 97e03417d23f4bc42b38bc8d5114a8c8, type: 3}
+    content: "\u6211\u68A6\u89C1\u4E86\u81EA\u5DF1\u5728\u4E00\u4E2A\u8FF7\u5BAB\u91CC\u884C\u8D70\uFF0C\u7136\u540E\u88AB\u602A\u7269\u8FFD\u9010....."
+  - name: ???
+    sprite: {fileID: 21300000, guid: cea9344ebe83be945b22e09e734def52, type: 3}
+    content: "\u4F60\u7684\u5669\u68A6\u5F88\u4E0D\u4E00\u6837\uFF0C\u8FD9\u91CC\u7684\u5176\u5B83\u4EBA\u90FD\u5DE6\u53F3\u4E0D\u4E86\u81EA\u5DF1\u7684\u68A6\uFF0C\u54EA\u6015\u4E00\u70B9\u90FD\u4E0D\u884C\u3002\u4E5F\u8BB8\uFF0C\u4F60\u80FD\u4E3A\u8FD9\u4E2A\u6751\u5B50\u5E26\u6765\u4E00\u4E9B\u6539\u53D8\u3002"
+  - name: "\u6751\u957F"
+    sprite: {fileID: 21300000, guid: cea9344ebe83be945b22e09e734def52, type: 3}
+    content: "\u6211\u59D1\u4E14\u7B97\u662F\u8FD9\u4E2A\u6751\u5B50\u7684\u6751\u957F\uFF0C\u5E74\u8F7B\u4EBA\uFF0C\u6709\u4EC0\u4E48\u4E0D\u61C2\u7684\uFF0C\u53EF\u4EE5\u968F\u65F6\u6765\u6751\u5B50\u5357\u8FB9\u627E\u6211\u3002"

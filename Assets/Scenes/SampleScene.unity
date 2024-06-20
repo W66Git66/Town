@@ -939,8 +939,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Offset: {x: -0.014297485, y: -0.26429784}
+  m_Size: {x: 0.9289293, y: 1.3292639}
   m_Direction: 0
 --- !u!50 &167468265
 Rigidbody2D:
@@ -1223,6 +1223,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e34f7d1399dffd34cbef702750f341f6, type: 2}
   - {fileID: 11400000, guid: eeb64bc7d55e6584f89d5fff58b5eb57, type: 2}
   - {fileID: 11400000, guid: 77c3512432b198842bc91ca74ef96b92, type: 2}
+  isOver: 0
 --- !u!50 &239943821
 Rigidbody2D:
   serializedVersion: 4
@@ -3864,6 +3865,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dcb9e45042335414f99926269e8121be, type: 2}
   - {fileID: 11400000, guid: b1411557981c163429eab9d35011b652, type: 2}
   - {fileID: 11400000, guid: ade271c81996b0a4d87301c9ee90f8d5, type: 2}
+  isOver: 0
 --- !u!50 &1174272471
 Rigidbody2D:
   serializedVersion: 4
@@ -5646,6 +5648,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c90ada3e5d346148b825b72c52ebb89, type: 2}
   - {fileID: 11400000, guid: 49ecde99c0d0cb249844296304edb13b, type: 2}
   - {fileID: 11400000, guid: ee0c0dd3c5220174aa553e97b9cf8896, type: 2}
+  isOver: 0
 --- !u!50 &1513819492
 Rigidbody2D:
   serializedVersion: 4
@@ -6332,6 +6335,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8227694dc1c38604b9c9ce62dd23f913, type: 2}
   - {fileID: 11400000, guid: 285c957cbd9c906498e813861cc887f2, type: 2}
   - {fileID: 11400000, guid: dd4373e5e4bf27945ae0b3b0a9a6cde3, type: 2}
+  isOver: 0
 --- !u!50 &1793847474
 Rigidbody2D:
   serializedVersion: 4
@@ -6675,6 +6679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: []
+  isOver: 0
 --- !u!50 &1956920519
 Rigidbody2D:
   serializedVersion: 4
@@ -6845,6 +6850,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f6e3dfebf4ad604ba60bf2bde3cbb6f, type: 2}
   - {fileID: 11400000, guid: 0740bd9430429584cafc0bb9201475c1, type: 2}
   - {fileID: 11400000, guid: 81e49787df7388042b8ccff7a8fa81e9, type: 2}
+  isOver: 0
 --- !u!50 &2055576705
 Rigidbody2D:
   serializedVersion: 4

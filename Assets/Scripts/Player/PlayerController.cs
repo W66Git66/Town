@@ -99,6 +99,11 @@ public class PlayerController : Singleton<PlayerController>
             Destroy(collision.gameObject);
             Invoke("GetToothTiShiShut", 2f);
         }
+
+        if (collision.CompareTag("XinshouMonster"))
+        {
+            GameManager.Instance.TransXinshouToHouse();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

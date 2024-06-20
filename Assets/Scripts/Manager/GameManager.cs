@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
+using UnityEditor.UIElements;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -22,6 +24,7 @@ public class GameManager : Singleton<GameManager>
     public string sceneDay;
     public string SceneNight;
     public string sceneHouse;
+    public string sceneXinshou;
 
     public AudioClip uiClick;
     public AudioClip playerInjured;
@@ -30,6 +33,10 @@ public class GameManager : Singleton<GameManager>
     public AudioClip lightFire;
     public AudioClip footBgm;
     public AudioClip chuMo;
+
+    //转换UI界面（被怪捶死/神社传回）
+    public GameObject beBeatenUI;
+    public GameObject sendSelfUI;
 
     //设置UI界面
     public GameObject uiPanel;
@@ -73,12 +80,23 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(MakePoints());
     }
 
+    public void TransHouseToNight()
+    {
+        DataSaveManager.Instance.UnShenSheBack();
+        StartCoroutine(TransMove());
+        EventCenter.Broadcast(EventType.teleport, sceneHouse, SceneNight);
+        PlayerController.Instance.transform.position = createNightPoint.position;
+        myCameraConfiner.m_BoundingShape2D = nightBoard;
+        PlayerController.Instance.speed = 10;
+        StartCoroutine(MakePoints());
+    }
+
     public void TransToDay()
     {
         StartCoroutine(TransMove());
-        EventCenter.Broadcast(EventType.teleport, SceneNight, sceneDay);
-        PlayerController.Instance.transform.position = createDayPoint.position;
-        myCameraConfiner.m_BoundingShape2D = dayBoard;
+        EventCenter.Broadcast(EventType.teleport, SceneNight, sceneHouse);
+        PlayerController.Instance.transform.position = createHousePoint.position;
+        myCameraConfiner.m_BoundingShape2D = houseBoard;
         PlayerController.Instance.speed = 10;
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Arrow");
         foreach (GameObject obj in objects)
@@ -113,6 +131,15 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.speed = 10;
     }
 
+    public void TransXinshouToHouse()
+    {
+        StartCoroutine(TransMove());
+        EventCenter.Broadcast(EventType.teleport, sceneXinshou, sceneHouse);
+        PlayerController.Instance.transform.position = createHousePoint.position;
+        myCameraConfiner.m_BoundingShape2D = houseBoard;
+        PlayerController.Instance.speed = 10;
+        StartCoroutine(DieScene());
+    }
     IEnumerator TransMove()
     {
         PlayerController.Instance.TransMove(false);
@@ -156,6 +183,13 @@ public class GameManager : Singleton<GameManager>
     public void PlaySound()
     {
         audioSource.Play();
+    }
+
+    IEnumerator DieScene()
+    {
+        beBeatenUI.gameObject.SetActive(true);
+        yield return new WaitForSeconds (2f);
+        beBeatenUI.gameObject.SetActive (false);
     }
 
     IEnumerator MakePoints()

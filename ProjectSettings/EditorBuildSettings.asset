@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/House.unity
     guid: 1fe72401a802f8348bd2274b2b201ca0
+  - enabled: 1
+    path: Assets/Scenes/XinshouGuan.unity
+    guid: fb33e4e9589c856438706db9eed1e6b4
   m_configObjects: {}
