@@ -196,14 +196,14 @@ public class GameManager : Singleton<GameManager>
         yield return TransformSceneManager.Instance.FadeUI(beBeatenUI, 1, 0);
     }
 
-    IEnumerator MakePoints(List<Transform> checkPoints)
+    IEnumerator MakePoints(List<Transform> checkPoints1)
     {
         for (int i=0;i<3;i++)
         {
-            var obj=Instantiate(gfire, checkPoints[i].position, Quaternion.identity, transform);
+            var obj=Instantiate(gfire, checkPoints1[i].position, Quaternion.identity, transform);
             gfirePoints.Add(obj);
         }
-        var obj1=Instantiate(shenShe, checkPoints[3].position, Quaternion.identity, transform);
+        var obj1=Instantiate(shenShe, checkPoints1[3].position, Quaternion.identity, transform);
         gfirePoints.Add(obj1);
         yield return new WaitForSeconds(1f);
     }
