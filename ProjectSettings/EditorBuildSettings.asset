@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Peisistant.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Night.unity
-    guid: 2532f91e7d9694849ba517c92645c5e8
-  - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 5cfcecd9ee1ff72459f98a80afaa695d
+  - enabled: 1
+    path: Assets/Scenes/Night.unity
+    guid: 2532f91e7d9694849ba517c92645c5e8
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: e2a9e150444aaa64b831e7d9f80d478d
