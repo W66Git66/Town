@@ -40,6 +40,16 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否进行过村长引导对话")]
     public bool isCunZhangYinDao=false;
 
+    [Header("是否进行过入梦黑夜引导")]
+    public bool isRuMengYinDao = false;
+
+    [Header("是否第一次除魔狗")]
+    public bool isChuMoGou = false;
+
+    [Header("是否第一次拿到麻雀")]
+    [Header("是否第一次除魔稻草人")]
+    [Header("是否第一次除魔猪")]
+
     public bool isDog=false;
 
     protected override void Awake()
@@ -129,8 +139,14 @@ public class DataSaveManager : Singleton<DataSaveManager>
         isCunZhangYinDao= true;
     }
 
+<<<<<<< HEAD
     public void TransPoints()
     {
         GameManager.Instance.checkPoints = checkPoints2;
+=======
+    public void SetRuMengYinDao()
+    {
+        isRuMengYinDao= true;
+>>>>>>> d849bde9ee35d24b7d2ec6dc5dbe9a3f5fb40ffb
     }
 }
