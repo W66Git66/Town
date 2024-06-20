@@ -139,14 +139,13 @@ public class DataSaveManager : Singleton<DataSaveManager>
         isCunZhangYinDao= true;
     }
 
-<<<<<<< HEAD
+
     public void TransPoints()
     {
         GameManager.Instance.checkPoints = checkPoints2;
-=======
+    }
     public void SetRuMengYinDao()
     {
         isRuMengYinDao= true;
->>>>>>> d849bde9ee35d24b7d2ec6dc5dbe9a3f5fb40ffb
     }
 }

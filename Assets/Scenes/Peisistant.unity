@@ -1695,10 +1695,6 @@ MonoBehaviour:
   isShenSheBack: 0
   isXinshouGuanYinDao: 0
   isCunZhangYinDao: 0
-<<<<<<< HEAD
-  isDog: 0
---- !u!1 &748474341
-=======
   isRuMengYinDao: 0
   isChuMoGou: 0
   isDog: 0
@@ -1716,7 +1712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tanchuang: {fileID: 1600917563}
 --- !u!1 &701787810
->>>>>>> d849bde9ee35d24b7d2ec6dc5dbe9a3f5fb40ffb
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

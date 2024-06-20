@@ -8,6 +8,7 @@ public class Gfire : MonoBehaviour
     public Sprite lightFire;
     private SpriteRenderer sr;
     public GameObject light;
+    private bool isLight = false;
     private Vector3 BPoint;
 
     private GameObject enemyPos;
@@ -28,6 +29,10 @@ public class Gfire : MonoBehaviour
 
     private void Update()
     {
+        if(isLight)
+        {
+            return;
+        }
         BPoint = Camera.main.WorldToScreenPoint(transform.position);
         if (BPoint.x < Screen.width
        && BPoint.y < Screen.height
@@ -53,17 +58,20 @@ public class Gfire : MonoBehaviour
     }
     public void ChangeSprite()
     {
+        isLight = true;
         light.SetActive(true);
         sr.sprite = lightFire;
         GameManager.Instance.gfireNumber += 1;
+        Destroy(enemyPos);
+        
     }
 
     Vector3 target;
     // 这里的  50  是指箭头距离边框的余量 可根据实际情况自行调整
-    Vector2 la = new Vector2(viewLerp, 100);//左下   
-    Vector2 lb = new Vector2(viewLerp, Screen.height - 100f);//左上
-    Vector2 ra = new Vector2(Screen.width - viewLerp, 100);//右下
-    Vector2 rb = new Vector2(Screen.width - viewLerp, Screen.height - 100f);//右上
+    Vector2 la = new Vector2(viewLerp, 80);//左下   
+    Vector2 lb = new Vector2(viewLerp, Screen.height - 80f);//左上
+    Vector2 ra = new Vector2(Screen.width - viewLerp, 80);//右下
+    Vector2 rb = new Vector2(Screen.width - viewLerp, Screen.height - 80f);//右上
     static float viewLerp = Screen.width * 0.12f;
     bool GetPoint(Vector2 pos1, Vector2 pos2, Vector2 pos3, Vector2 pos4)
     {
