@@ -104,6 +104,10 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToDay()
     {
+        var obj1 = PlayerController.Instance.transform.GetChild(2).gameObject;
+     
+        Debug.Log(obj1);
+        obj1.SetActive(false);
         if (DataSaveManager.Instance.isJirouBack)
         {
             n = Random.Range(3, 6);//Ëæ»ú3-5¸ö

@@ -12,9 +12,21 @@ public class TanchuangController : MonoBehaviour
     public void HideTanchuang()
     {
         Tanchuang.SetActive(false);
-        Tanchuang1.SetActive(false);
-        Tanchuang2.SetActive(false);
-        Tanchuang3.SetActive(false);
-        Tanchuang4.SetActive(false);
+        if (Tanchuang1 != null)
+        {
+            Tanchuang1.SetActive(false);
+        }
+        if (Tanchuang2 != null)
+        {
+            Tanchuang2.SetActive(false);
+        }
+        if (Tanchuang3 != null)
+        {
+            Tanchuang3.SetActive(false);
+        }
+        if (Tanchuang4 != null)
+        {
+            Tanchuang4.SetActive(false);
+        }
     }
 }

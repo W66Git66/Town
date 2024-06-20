@@ -976,12 +976,8 @@ MonoBehaviour:
   goToSleepTiShi: {fileID: 1805276296}
   backselfUI: {fileID: 959612723}
   bebeatenUI: {fileID: 597362157}
-<<<<<<< HEAD
-  magicCircle: {fileID: 0}
-=======
   horizontalMove: 0
   magicCircle: {fileID: 8055929244383257599, guid: 0e4a00bddf5f81b49844d1668e09f23b, type: 3}
->>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
 --- !u!4 &446949837
 Transform:
   m_ObjectHideFlags: 0
@@ -1997,11 +1993,8 @@ MonoBehaviour:
   isFirstGiveBird: 0
   isFirstChuMoScare: 0
   isChumoZhu: 0
-<<<<<<< HEAD
   isGivenBird: 0
-=======
   isChumoGhost: 0
->>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
   isDog: 0
 --- !u!114 &699906461
 MonoBehaviour:

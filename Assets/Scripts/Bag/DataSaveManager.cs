@@ -57,15 +57,12 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否第一次除魔猪")]
     public bool isChumoZhu = false;
 
-<<<<<<< HEAD
     [Header("是否当日给过麻雀")]
     public bool isGivenBird = false;
 
 
-=======
     [Header("是否第一次除魔幽灵")]
     public bool isChumoGhost = false;
->>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
 
     public bool isDog=false;
 

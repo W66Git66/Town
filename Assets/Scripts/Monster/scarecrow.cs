@@ -10,6 +10,7 @@ public class scarecrow : MonoBehaviour
     public GameObject jiaoFu;
     public GameObject followPlayer;
     private Transform texiao;
+    public GameObject ScarecrowYinDao;
 
     [SerializeField] private float _speed;//怪物的移动速度
 
@@ -52,7 +53,7 @@ public class scarecrow : MonoBehaviour
             if (DataSaveManager.Instance.deadBird != 0 || DataSaveManager.Instance.liveBird != 0)
             {
                 clickE.SetActive(true);
-                //jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
+                jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     jiaoFu.SetActive(true);
@@ -60,7 +61,7 @@ public class scarecrow : MonoBehaviour
             }
         }
 
-        if (gameObject.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
+        if (ScarecrowYinDao.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
         {
             DataSaveManager.Instance.isFirstChuMoScare = true;
             GameManager.Instance.TanChuangScare();

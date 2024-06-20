@@ -150,15 +150,11 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(GameManager.Instance.gfireNumber>=3)
             {
-<<<<<<< HEAD
                 DataSaveManager.Instance.ShenSheBack();
-                StartCoroutine(WinUI());
-=======
                 if (!TransformSceneManager.Instance.isFade1)
                 {
                      StartCoroutine(WinUI());
                 }
->>>>>>> 278eb2ec2ccefe5b6587385d37a8314e6b4c1871
                 GameManager.Instance.TransToDay();
             }
         }
