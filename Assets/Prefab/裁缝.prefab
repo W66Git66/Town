@@ -185,7 +185,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   anim: {fileID: 0}
   enemyCollider: {fileID: 0}
-  bullet: {fileID: 9042264091129073040, guid: 2edb7ecf556b57444861541b3e8f96d2, type: 3}
+  bullet: {fileID: 3105188765030904464, guid: 74435d439ab38c949b9602e484136d5e, type: 3}
 --- !u!114 &8549336729014603497
 MonoBehaviour:
   m_ObjectHideFlags: 0

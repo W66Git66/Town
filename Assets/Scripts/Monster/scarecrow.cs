@@ -50,25 +50,25 @@ public class scarecrow : MonoBehaviour
             if (DataSaveManager.Instance.deadBird != 0 || DataSaveManager.Instance.liveBird != 0)
             {
                 clickE.SetActive(true);
+                jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     jiaoFu.SetActive(true);
                 }
             }
-
-            if (live != DataSaveManager.Instance.liveBird || dead != DataSaveManager.Instance.deadBird)
-            {
-                clickE.SetActive(false);
-                TransState(EnemyStates.Death);
-                DataSaveManager.Instance.GetLiveBird();                
-                if (DataSaveManager.Instance.isScareBeated == false)
-                {
-                    DataSaveManager.Instance.TransPoints();
-                }
-                DataSaveManager.Instance.isScareBeated = true;
-
-            }
         }
+    }
+
+    public void ChuMoScare()
+    {
+        clickE.SetActive(false);
+        TransState(EnemyStates.Death);
+        DataSaveManager.Instance.GetLiveBird();
+        if (DataSaveManager.Instance.isScareBeated == false)
+        {
+            DataSaveManager.Instance.TransPoints();
+        }
+        DataSaveManager.Instance.isScareBeated = true;
     }
 
     private void FixedUpdate()

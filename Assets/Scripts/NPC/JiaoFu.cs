@@ -11,6 +11,7 @@ public class JiaoFu : MonoBehaviour
 
     public GameObject yesButton;
     public GameObject noButton;
+    public scarecrow scarecrow_;
     void Start()
     {
         
@@ -35,10 +36,12 @@ public class JiaoFu : MonoBehaviour
     {
         if(live > dead)
         {
+            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
             DataSaveManager.Instance.UseLiveBird();
         }
         else
         {
+            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
             DataSaveManager.Instance.UseDeadBird();
         }
         gameObject.SetActive(false);

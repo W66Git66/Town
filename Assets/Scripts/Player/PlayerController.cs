@@ -19,6 +19,7 @@ public class PlayerController : Singleton<PlayerController>
     private Vector2 direction;
 
     private bool isMove=true;
+    public GameObject magicCircle;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,11 @@ public class PlayerController : Singleton<PlayerController>
             {
                 GameManager.Instance.TransHouseToNight();
             }
+        }
+        if (Input.GetKeyDown(KeyCode.J)&&DataSaveManager.Instance.isScareBeated && DataSaveManager.Instance.liveBird >= 1)
+        {
+                DataSaveManager.Instance.UseLiveBird();
+                Instantiate(magicCircle, new Vector2(transform.position.x,transform.position.y+8), Quaternion.identity);
         }
     }
 

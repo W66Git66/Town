@@ -130,6 +130,17 @@ public class Butcher : MonoBehaviour
                     if(!hit)
                     {
                         anim.Play("ButcherMove");
+                        if(dashPosition.x<0)
+                        {
+                            if (dashPosition.x < 0)//左
+                            {
+                                sr.flipX = false;
+                            }
+                            if (dashPosition.x > 0)//右
+                            {
+                                sr.flipX = true;
+                            }
+                        }
                         rb.velocity = dashPosition.normalized * currentSpeed;
                     }
                 }
@@ -208,11 +219,11 @@ public class Butcher : MonoBehaviour
                 break;
             case EnemyStates.Death:
 
-                anim.Play("null");
-                MovementInput = Vector2.zero;
-                rb.velocity = Vector2.zero;//待机时不要移动
-                _pathPoints = null;
-                isPatrol = false;
+                anim.SetTrigger("Death");
+                GameManager.Instance.ChangeAudioClip(GameManager.Instance.chuMo);
+                GameManager.Instance.PlaySound();
+                Destroy(gameObject, 1.5f);
+                rb.velocity = Vector2.zero;
 
                 break;
         }
@@ -221,11 +232,11 @@ public class Butcher : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (curState != EnemyStates.Death && collision.CompareTag("蛋白粉"))
+        if (curState != EnemyStates.Death && collision.CompareTag("魔法阵"))
         {
-            if (DataSaveManager.Instance.isDog == false)
+            if (DataSaveManager.Instance.isChumoZhu == false)
             {
-                DataSaveManager.Instance.isDog = true;
+                DataSaveManager.Instance.isChumoZhu = true;
             }
             TransState(EnemyStates.Death);
         }
