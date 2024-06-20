@@ -369,8 +369,8 @@ MonoBehaviour:
   lightFire: {fileID: 0}
   footBgm: {fileID: 0}
   chuMo: {fileID: 0}
-  beBeatenUI: {fileID: 597362153}
-  sendSelfUI: {fileID: 959612719}
+  beBeatenUI: {fileID: 597362157}
+  sendSelfUI: {fileID: 959612723}
   uiPanel: {fileID: 1583564227}
   checkPoints: []
   gfire: {fileID: 7992901968378049037, guid: 4a8d2096246d6b84f8fa35b0ef087288, type: 3}
@@ -701,7 +701,12 @@ MonoBehaviour:
   ToothTanchuang: {fileID: 1600917563}
   enterHouseTiShi: {fileID: 1530426511}
   goToSleepTiShi: {fileID: 1805276296}
+<<<<<<< HEAD
   magicCircle: {fileID: 8055929244383257599, guid: 0e4a00bddf5f81b49844d1668e09f23b, type: 3}
+=======
+  backselfUI: {fileID: 959612723}
+  bebeatenUI: {fileID: 597362157}
+>>>>>>> fce8278fb5fa5fe6aebda3c33e07868e563a1892
 --- !u!4 &446949837
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,13 +1296,14 @@ GameObject:
   - component: {fileID: 597362154}
   - component: {fileID: 597362156}
   - component: {fileID: 597362155}
+  - component: {fileID: 597362157}
   m_Layer: 5
   m_Name: DieSceneUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &597362154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1340,8 +1346,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1358,6 +1364,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597362153}
   m_CullTransparentMesh: 1
+--- !u!225 &597362157
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597362153}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &611849499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,13 +2011,14 @@ GameObject:
   - component: {fileID: 959612720}
   - component: {fileID: 959612722}
   - component: {fileID: 959612721}
+  - component: {fileID: 959612723}
   m_Layer: 5
   m_Name: ChengGongUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &959612720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2041,8 +2060,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2059,6 +2078,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959612719}
   m_CullTransparentMesh: 1
+--- !u!225 &959612723
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959612719}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1004607279
 GameObject:
   m_ObjectHideFlags: 0

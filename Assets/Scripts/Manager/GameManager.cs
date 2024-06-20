@@ -36,8 +36,8 @@ public class GameManager : Singleton<GameManager>
     public AudioClip chuMo;
 
     //转换UI界面（被怪捶死/神社传回）
-    public GameObject beBeatenUI;
-    public GameObject sendSelfUI;
+    public CanvasGroup beBeatenUI;
+    public CanvasGroup sendSelfUI;
 
     //设置UI界面
     public GameObject uiPanel;
@@ -190,9 +190,10 @@ public class GameManager : Singleton<GameManager>
 
     IEnumerator DieScene()
     {
-        beBeatenUI.gameObject.SetActive(true);
-        yield return new WaitForSeconds (2f);
-        beBeatenUI.gameObject.SetActive (false);
+        //beBeatenUI.gameObject.SetActive(true);
+        yield return TransformSceneManager.Instance.FadeUI(beBeatenUI, 1, 1);
+        //yield return new WaitForSeconds (2f);
+        yield return TransformSceneManager.Instance.FadeUI(beBeatenUI, 1, 0);
     }
 
     IEnumerator MakePoints(List<Transform> checkPoints)

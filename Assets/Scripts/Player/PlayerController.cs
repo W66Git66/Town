@@ -13,6 +13,8 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject ToothTanchuang;//第一次弹窗
     public GameObject enterHouseTiShi;//进入自己家提示
     public GameObject goToSleepTiShi;//入眠提示
+    public CanvasGroup backselfUI;
+    public CanvasGroup bebeatenUI;
     private float horizontalMove;
     private float verticalMove;
 
@@ -102,6 +104,7 @@ public class PlayerController : Singleton<PlayerController>
         }
         if(collision.CompareTag("monster"))
         {
+            StartCoroutine(LoseUI());
             GameManager.Instance.TransToDay();
         }
         if (collision.CompareTag("鬼火"))
@@ -131,6 +134,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             if(GameManager.Instance.gfireNumber>=3)
             {
+                StartCoroutine(WinUI());
                 GameManager.Instance.TransToDay();
             }
         }
@@ -168,5 +172,25 @@ public class PlayerController : Singleton<PlayerController>
     public void GetToothTiShiShut()
     {
         GetToothTiShi.SetActive(false);
+    }
+
+    private IEnumerator WinUI()
+    {
+        yield return TransformSceneManager.Instance.FadeUI(backselfUI, 1, 1);
+        //yield return new WaitForSeconds (2f);
+        yield return TransformSceneManager.Instance.FadeUI(backselfUI, 1, 0);
+        //backselfUI.gameObject.SetActive(true);
+        //yield return new WaitForSeconds(2f);
+        //backselfUI.gameObject.SetActive(false);
+    }
+
+    private IEnumerator LoseUI()
+    {
+        yield return TransformSceneManager.Instance.FadeUI(bebeatenUI, 1, 1);
+        //yield return new WaitForSeconds (2f);
+        yield return TransformSceneManager.Instance.FadeUI(bebeatenUI, 1, 0);
+        //bebeatenUI.gameObject.SetActive(true);
+        //yield return new WaitForSeconds(2f);
+        //bebeatenUI.gameObject.SetActive(false);
     }
 }
