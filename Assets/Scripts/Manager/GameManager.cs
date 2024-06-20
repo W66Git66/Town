@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>
     public List<Transform> checkPoints;
     private List<GameObject> gfirePoints=new List<GameObject>();
     public GameObject gfire;
+    public GameObject shenShe;
 
     public int gfireNumber = 0;
 
@@ -68,10 +69,7 @@ public class GameManager : Singleton<GameManager>
     }
     private void Update()
     {
-        if(gfireNumber>=3)
-        {
-            Invoke("TransToDay", 1f);
-        }
+
     }
 
     public void TransToNight()
@@ -82,7 +80,7 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createNightPoint.position;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
         PlayerController.Instance.speed = 10;
-        StartCoroutine(MakePoints());
+        StartCoroutine(MakePoints(checkPoints));
     }
 
     public void TransHouseToNight()
@@ -93,7 +91,7 @@ public class GameManager : Singleton<GameManager>
         PlayerController.Instance.transform.position = createNightPoint.position;
         myCameraConfiner.m_BoundingShape2D = nightBoard;
         PlayerController.Instance.speed = 10;
-        StartCoroutine(MakePoints());
+        StartCoroutine(MakePoints(checkPoints));
     }
 
     public void TransToDay()
@@ -197,14 +195,15 @@ public class GameManager : Singleton<GameManager>
         beBeatenUI.gameObject.SetActive (false);
     }
 
-    IEnumerator MakePoints()
+    IEnumerator MakePoints(List<Transform> checkPoints)
     {
-        for (int i = 0; i < 3; i++)
+        for (int i=0;i<3;i++)
         {
-            int num = Random.Range(0, 8);
-            var obj=Instantiate(gfire, checkPoints[num].position, Quaternion.identity, transform);
+            var obj=Instantiate(gfire, checkPoints[i].position, Quaternion.identity, transform);
             gfirePoints.Add(obj);
         }
+        var obj1=Instantiate(shenShe, checkPoints[3].position, Quaternion.identity, transform);
+        gfirePoints.Add(obj1);
         yield return new WaitForSeconds(1f);
     }
 }

@@ -104,6 +104,13 @@ public class PlayerController : Singleton<PlayerController>
         {
             GameManager.Instance.TransXinshouToHouse();
         }
+        if (collision.CompareTag("ÉñÉç"))
+        {
+            if(GameManager.Instance.gfireNumber>=3)
+            {
+                GameManager.Instance.TransToDay();
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

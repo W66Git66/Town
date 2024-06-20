@@ -1,29 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Gfire : MonoBehaviour
+public class Shenshe : MonoBehaviour
 {
-    public Sprite lightFire;
-    private SpriteRenderer sr;
-    public GameObject light;
+
     private Vector3 BPoint;
 
-    private GameObject enemyPos;
-    public GameObject enemyArrow;
+    private GameObject shenshePos;
+    public GameObject shensheArrow;
     private Vector3 APoint;
     public GameObject parent;
-
     private void Start()
-    { 
+    {
         parent = GameObject.FindWithTag("Canvas");
-        sr = GetComponent<SpriteRenderer>();
 
         APoint = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-        enemyPos=Instantiate(enemyArrow, parent.transform,false);
-        
-       
+        shenshePos = Instantiate(shensheArrow, parent.transform, false);
+
+
     }
 
     private void Update()
@@ -32,30 +27,24 @@ public class Gfire : MonoBehaviour
         if (BPoint.x < Screen.width
        && BPoint.y < Screen.height
        && BPoint.x > 0 && BPoint.y > 0)
-        { enemyPos.SetActive(false); return; }
+        { shenshePos.SetActive(false); return; }
         //否则
         else
         {
             //enemyPos指箭头UI物体  在Start函数动态生成，每一只怪物出生时都会生成一个对应箭头
             //并设置为怪物的子物体，且更名为”icon“
-            enemyPos.SetActive(true);
+            shenshePos.SetActive(true);
             //UILookAt方法使箭头始终指向怪物  具体代码见博客下方
-            UILookAt(enemyPos.transform, BPoint - APoint, Vector3.up);
+            UILookAt(shenshePos.transform, BPoint - APoint, Vector3.up);
             //OnLinearAlgebra方法确定箭头当前位置  具体代码见博客下方
             OnLinearAlgebra(APoint, BPoint);
         }
         //调整指示箭头Z轴旋转，使UI正确面向相机
-        if (transform.Find("icon") != null)
+        if (transform.Find("icon1") != null)
         {
-            transform.Find("icon").transform.LookAt(Camera.main.transform);
+            transform.Find("icon1").transform.LookAt(Camera.main.transform);
         }
 
-    }
-    public void ChangeSprite()
-    {
-        light.SetActive(true);
-        sr.sprite = lightFire;
-        GameManager.Instance.gfireNumber += 1;
     }
 
     Vector3 target;
@@ -98,10 +87,10 @@ public class Gfire : MonoBehaviour
         Vector2 da = la;//左下
         Vector2 db = ra;//右下
 
-        if (GetPoint(pos1, pos2, la, lb)) enemyPos.transform.position = target;
-        else if (GetPoint(pos1, pos2, ra, rb)) enemyPos.transform.position = target;
-        else if (GetPoint(pos1, pos2, ua, ub)) enemyPos.transform.position = target;
-        else if (GetPoint(pos1, pos2, da, db)) enemyPos.transform.position = target;
+        if (GetPoint(pos1, pos2, la, lb)) shenshePos.transform.position = target;
+        else if (GetPoint(pos1, pos2, ra, rb)) shenshePos.transform.position = target;
+        else if (GetPoint(pos1, pos2, ua, ub)) shenshePos.transform.position = target;
+        else if (GetPoint(pos1, pos2, da, db)) shenshePos.transform.position = target;
 
     }
 

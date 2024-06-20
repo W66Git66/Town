@@ -60,8 +60,13 @@ public class scarecrow : MonoBehaviour
             {
                 clickE.SetActive(false);
                 TransState(EnemyStates.Death);
-                DataSaveManager.Instance.GetLiveBird();
+                DataSaveManager.Instance.GetLiveBird();                
+                if (DataSaveManager.Instance.isScareBeated == false)
+                {
+                    DataSaveManager.Instance.TransPoints();
+                }
                 DataSaveManager.Instance.isScareBeated = true;
+
             }
         }
     }

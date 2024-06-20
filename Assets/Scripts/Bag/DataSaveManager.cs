@@ -5,6 +5,10 @@ using UnityEngine;
 public class DataSaveManager : Singleton<DataSaveManager>
 {
     //public PlayerBag bag = new PlayerBag();
+    public List<Transform> checkPoints0;
+    public List<Transform> checkPoints1;
+    public List<Transform> checkPoints2;
+    public List<Transform> checkPoints3;
 
     [Header("死去的麻雀数量")]
     public int deadBird=0;
@@ -41,6 +45,10 @@ public class DataSaveManager : Singleton<DataSaveManager>
     protected override void Awake()
     {
         base.Awake();
+    }
+    private void Start()
+    {
+        GameManager.Instance.checkPoints = checkPoints0;
     }
 
     protected override void OnDestroy()
@@ -93,6 +101,7 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void FindProtein()
     {
         isProteinEverbeenFound = true;
+        GameManager.Instance.checkPoints = checkPoints1;
     }
 
     public void NightReSet()//夜晚刷新
@@ -118,5 +127,10 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void SetCunZhangYinDao()
     {
         isCunZhangYinDao= true;
+    }
+
+    public void TransPoints()
+    {
+        GameManager.Instance.checkPoints = checkPoints2;
     }
 }

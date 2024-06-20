@@ -16,6 +16,7 @@ TagManager:
   - Canvas
   - XinShou
   - XinshouMonster
+  - "\u795E\u793E"
   layers:
   - Default
   - TransparentFX
