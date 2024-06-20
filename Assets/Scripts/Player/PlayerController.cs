@@ -7,6 +7,7 @@ public class PlayerController : Singleton<PlayerController>
     private Rigidbody2D rb;
     private Collider2D coll;
     private Animator anim;
+    public GameObject knife;
 
     public float speed;
     public GameObject GetToothTiShi;//获得假牙提示
@@ -15,13 +16,15 @@ public class PlayerController : Singleton<PlayerController>
     public GameObject goToSleepTiShi;//入眠提示
     public CanvasGroup backselfUI;
     public CanvasGroup bebeatenUI;
-    private float horizontalMove;
+    public float horizontalMove;
     private float verticalMove;
 
     private Vector2 direction;
 
     private bool isMove=true;
     public GameObject magicCircle;
+
+    private float shootDur = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -64,7 +67,17 @@ public class PlayerController : Singleton<PlayerController>
         if (Input.GetKeyDown(KeyCode.J)&&DataSaveManager.Instance.isScareBeated && DataSaveManager.Instance.liveBird >= 1)
         {
                 DataSaveManager.Instance.UseLiveBird();
-                Instantiate(magicCircle, new Vector2(transform.position.x,transform.position.y+8), Quaternion.identity);
+                var obj=Instantiate(magicCircle, new Vector2(transform.position.x,transform.position.y+8), Quaternion.identity);
+                Destroy(obj,7f);
+        }
+        if(DataSaveManager.Instance.isChumoZhu == true)
+        {
+            shootDur += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.K)&&shootDur>1f)
+            {
+                shootDur = 0;
+                Instantiate(knife,transform.position, Quaternion.identity);
+            }
         }
     }
 

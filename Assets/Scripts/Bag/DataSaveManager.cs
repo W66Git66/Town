@@ -51,6 +51,9 @@ public class DataSaveManager : Singleton<DataSaveManager>
     [Header("是否第一次除魔猪")]
     public bool isChumoZhu = false;
 
+    [Header("是否第一次除魔幽灵")]
+    public bool isChumoGhost = false;
+
     public bool isDog=false;
 
     protected override void Awake()
@@ -102,6 +105,7 @@ public class DataSaveManager : Singleton<DataSaveManager>
     public void GetKnife()//获得煞气刃
     {
         isKnifeOn = true;
+        GameManager.Instance.checkPoints = checkPoints3;
     }
 
     public void FindFakeTooth()
