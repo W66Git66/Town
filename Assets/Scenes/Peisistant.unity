@@ -701,12 +701,8 @@ MonoBehaviour:
   ToothTanchuang: {fileID: 1600917563}
   enterHouseTiShi: {fileID: 1530426511}
   goToSleepTiShi: {fileID: 1805276296}
-<<<<<<< HEAD
-  magicCircle: {fileID: 8055929244383257599, guid: 0e4a00bddf5f81b49844d1668e09f23b, type: 3}
-=======
   backselfUI: {fileID: 959612723}
   bebeatenUI: {fileID: 597362157}
->>>>>>> fce8278fb5fa5fe6aebda3c33e07868e563a1892
 --- !u!4 &446949837
 Transform:
   m_ObjectHideFlags: 0
