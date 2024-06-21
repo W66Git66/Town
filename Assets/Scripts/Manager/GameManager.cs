@@ -145,7 +145,7 @@ public class GameManager : Singleton<GameManager>
 
     public void TransToHouseDay()
     {
-        if (DataSaveManager.Instance.isProteinEverbeenFound)
+        if (DataSaveManager.Instance.isProteinEverbeenFound && DataSaveManager.Instance.isGivenBird)
         {
             DataSaveManager.Instance.GetDeadBird(n);
             if (DataSaveManager.Instance.isShenSheBack)
