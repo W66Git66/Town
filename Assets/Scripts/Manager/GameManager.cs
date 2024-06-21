@@ -153,13 +153,13 @@ public class GameManager : Singleton<GameManager>
             {
                 DataSaveManager.Instance.GetDeadBird(m);
             }
+            DataSaveManager.Instance.HaveGivenBird();
             if (!DataSaveManager.Instance.isFirstGiveBird)
             {
                 TanchuangBird.SetActive(true);
                 DataSaveManager.Instance.FirstGiveBird();
             }
         }
-        DataSaveManager.Instance.HaveGivenBird();
         StartCoroutine(TransMove());
         EventCenter.Broadcast(EventType.teleport, sceneHouse, sceneDay);
         PlayerController.Instance.transform.position = createDayPoint.position;

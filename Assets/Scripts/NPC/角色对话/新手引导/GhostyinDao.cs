@@ -8,6 +8,7 @@ public class GhostyinDao : MonoBehaviour
     {
         if (gameObject.GetComponent<NPC>().isOver)
         {
+            DataSaveManager.Instance.isGhostDes = true;
             DataSaveManager.Instance.isGhostYinDao=true;
         }
         if (DataSaveManager.Instance.isGhostYinDao)
