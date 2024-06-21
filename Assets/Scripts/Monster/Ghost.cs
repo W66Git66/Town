@@ -77,11 +77,14 @@ public class Ghost : MonoBehaviour
            // AutoPath();
         }
 
-        if (ghostYinDao.GetComponent<NPC>().isOver && !DataSaveManager.Instance.isGhostTanChuang)
+        if(ghostYinDao != null)
         {
-            DataSaveManager.Instance.isGhostTanChuang = true;
-            GameManager.Instance.TanChuangGhost();
-        }
+            if (ghostYinDao.GetComponent<NPC>().isOver && !DataSaveManager.Instance.isGhostTanChuang)
+            {
+                DataSaveManager.Instance.isGhostTanChuang = true;
+                GameManager.Instance.TanChuangGhost();
+            }
+        }      
     }
 
     private void FixedUpdate()

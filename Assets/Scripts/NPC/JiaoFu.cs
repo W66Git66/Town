@@ -36,13 +36,13 @@ public class JiaoFu : MonoBehaviour
     {
         if(live > dead)
         {
-            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
             DataSaveManager.Instance.UseLiveBird();
+            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
         }
         else
         {
-            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
             DataSaveManager.Instance.UseDeadBird();
+            scarecrow_.GetComponent<scarecrow>().ChuMoScare();
         }
         gameObject.SetActive(false);
     }

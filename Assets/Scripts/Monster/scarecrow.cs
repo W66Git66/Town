@@ -73,8 +73,8 @@ public class scarecrow : MonoBehaviour
     public void ChuMoScare()
     {
         clickE.SetActive(false);
-        TransState(EnemyStates.Death);
         DataSaveManager.Instance.GetLiveBird();
+        TransState(EnemyStates.Death);
         if (texiao != null)
         {
             texiao.gameObject.SetActive(false);

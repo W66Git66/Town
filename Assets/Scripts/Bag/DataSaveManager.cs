@@ -102,6 +102,7 @@ public class DataSaveManager : Singleton<DataSaveManager>
         else if (deadBird > 0)
         {
             liveBird = deadBird;
+            deadBird = 0;
         }
     }
     public void UseLiveBird()//使用活蹦乱跳的麻雀
