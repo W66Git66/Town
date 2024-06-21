@@ -60,13 +60,8 @@ public class scarecrow : MonoBehaviour
                 }
             }
         }
-<<<<<<< HEAD
         if (ScarecrowYinDao!= null)
-=======
-
-        if (ScarecrowYinDao.GetComponent<NPC>().isOver && !DataSaveManager.Instance.isFirstChuMoScare)
->>>>>>> 60b466e7ce981de1e89d9462ac8beba5b22eea0b
-        {
+        { 
             if (ScarecrowYinDao.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
             {
                 DataSaveManager.Instance.isFirstChuMoScare = true;
