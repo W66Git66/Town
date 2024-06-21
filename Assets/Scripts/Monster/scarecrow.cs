@@ -60,11 +60,13 @@ public class scarecrow : MonoBehaviour
                 }
             }
         }
-
-        if (ScarecrowYinDao.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
+        if (ScarecrowYinDao.GetComponent<NPC>() != null)
         {
-            DataSaveManager.Instance.isFirstChuMoScare = true;
-            GameManager.Instance.TanChuangScare();
+            if (ScarecrowYinDao.GetComponent<NPC>().isOver && DataSaveManager.Instance.isFirstChuMoScare)
+            {
+                DataSaveManager.Instance.isFirstChuMoScare = true;
+                GameManager.Instance.TanChuangScare();
+            }
         }
     }
 
@@ -98,6 +100,8 @@ public class scarecrow : MonoBehaviour
                 GameManager.Instance.PlaySound();
                 Destroy(gameObject, 1.5f);
                 PlayerController.Instance.speed = 10.0f;
+                texiao.gameObject.SetActive(false);
+                clickE.SetActive(false);
                 //加一个图片淡出效果
 
                 break;
