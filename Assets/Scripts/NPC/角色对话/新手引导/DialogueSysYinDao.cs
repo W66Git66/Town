@@ -18,6 +18,7 @@ public class DialogueSysYinDao : MonoBehaviour
     public GameObject cunzhangYindao;
     public GameObject heiyeYindao;
     public GameObject chumoScareYinDao;
+    public GameObject ghostYinDao;
 
     private int index;//Ë÷Òý
 
@@ -96,6 +97,23 @@ public class DialogueSysYinDao : MonoBehaviour
             npcOnTrigger = chumoScareYinDao;
             dialogueIndex = chumoScareYinDao.GetComponent<DialogueIndex>().dialogueIndex;
             dialogue = chumoScareYinDao.GetComponent<NPC>().dialogue[dialogueIndex];
+            Time.timeScale = 0;
+            SetDialogueBox();
+            dialogueBox.SetActive(true);
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public void GhostYinDao()
+    {
+        if (ghostYinDao != null)
+        {
+            npcOnTrigger = ghostYinDao;
+            dialogueIndex = ghostYinDao.GetComponent<DialogueIndex>().dialogueIndex;
+            dialogue = ghostYinDao.GetComponent<NPC>().dialogue[dialogueIndex];
             Time.timeScale = 0;
             SetDialogueBox();
             dialogueBox.SetActive(true);

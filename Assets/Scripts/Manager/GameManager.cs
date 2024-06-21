@@ -52,6 +52,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject TanchuangZhu;
     public GameObject TanchuangScare;
     public GameObject TanchuangGou;
+    public GameObject TanchuangGhost;
 
     public int gfireNumber = 0;
 
@@ -239,6 +240,11 @@ public class GameManager : Singleton<GameManager>
     public void TanChuangGou()
     {
         TanchuangGou.SetActive(true);
+    }
+
+    public void TanChuangGhost()
+    {
+        TanchuangGhost.SetActive(true);
     }
 
     IEnumerator DieScene()

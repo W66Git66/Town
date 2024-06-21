@@ -9,6 +9,7 @@ public class TanchuangController : MonoBehaviour
     public GameObject Tanchuang2;
     public GameObject Tanchuang3;
     public GameObject Tanchuang4;
+    public GameObject Tanchuang5;
     public void HideTanchuang()
     {
         Tanchuang.SetActive(false);
@@ -27,6 +28,10 @@ public class TanchuangController : MonoBehaviour
         if (Tanchuang4 != null)
         {
             Tanchuang4.SetActive(false);
+        }
+        if (Tanchuang5 != null)
+        {
+            Tanchuang5.SetActive(false);
         }
     }
 }
