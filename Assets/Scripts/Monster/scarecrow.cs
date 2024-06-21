@@ -36,8 +36,7 @@ public class scarecrow : MonoBehaviour
 
     private void Start()
     {
-        Transform clickETransform= transform.Find("E");
-        clickE = clickETransform.gameObject;
+        clickE = transform.GetChild(1).gameObject;
         clickE.SetActive(false);
         jiaoFu.SetActive(false);
 
@@ -46,18 +45,18 @@ public class scarecrow : MonoBehaviour
 
     private void Update()
     {
-        StateMachine();
-
+        
         if (isTrigger)
         {
             if (DataSaveManager.Instance.deadBird != 0 || DataSaveManager.Instance.liveBird != 0)
             {
                 clickE.SetActive(true);
-                jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;
+                jiaoFu.GetComponent<JiaoFu>().scarecrow_ = this;               
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     jiaoFu.SetActive(true);
                 }
+                
             }
         }
         if (ScarecrowYinDao!= null)
@@ -69,6 +68,10 @@ public class scarecrow : MonoBehaviour
             }
         }
     }
+    private void FixedUpdate()
+    {
+        StateMachine();
+    }
 
     public void ChuMoScare()
     {
@@ -79,18 +82,17 @@ public class scarecrow : MonoBehaviour
         {
             texiao.gameObject.SetActive(false);
         }
+        
         if (DataSaveManager.Instance.isScareBeated == false)
         {
             DataSaveManager.Instance.TransPoints();
         }
         DataSaveManager.Instance.isScareBeated = true;
         followPlayer.GetComponent<DialogueSysYinDao>().ChuMoScareYinDaoVar();
-    }
-
-    private void FixedUpdate()
-    {
 
     }
+
+
 
     private void StateMachine()
     {
@@ -98,11 +100,11 @@ public class scarecrow : MonoBehaviour
         {
             
             case EnemyStates.Death:
-
-               anim.SetTrigger("IsBird");
+                Destroy(gameObject,1.5f);
+                anim.SetTrigger("IsBird");
                 GameManager.Instance.ChangeAudioClip(GameManager.Instance.chuMo);
                 GameManager.Instance.PlaySound();
-                Destroy(gameObject, 1.5f);
+                
                 PlayerController.Instance.speed = 10.0f;
 
                 break;
@@ -111,11 +113,12 @@ public class scarecrow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        live = DataSaveManager.Instance.liveBird;
-        dead = DataSaveManager.Instance.deadBird;
-        isTrigger = true;
+
         if (curState != EnemyStates.Death && collision.CompareTag("Player"))
         {
+            live = DataSaveManager.Instance.liveBird;
+            dead = DataSaveManager.Instance.deadBird;
+            isTrigger = true;
             PlayerController.Instance.speed *= 0.7f;
             texiao = collision.transform.GetChild(2);
             texiao.gameObject.SetActive(true);
@@ -123,9 +126,10 @@ public class scarecrow : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isTrigger= false;
+        
         if (curState != EnemyStates.Death && collision.CompareTag("Player"))
-        {
+        {   
+            isTrigger= false;
             PlayerController.Instance.speed /= 0.7f;
             texiao.gameObject.SetActive(false);
             clickE.SetActive(false);

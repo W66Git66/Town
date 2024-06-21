@@ -43,6 +43,7 @@ public class JiaoFu : MonoBehaviour
         {
             DataSaveManager.Instance.UseDeadBird();
             scarecrow_.GetComponent<scarecrow>().ChuMoScare();
+            Debug.Log("111");
         }
         gameObject.SetActive(false);
     }
