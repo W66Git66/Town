@@ -50,6 +50,9 @@ public class Ghost : MonoBehaviour
     public GameObject bullet;
     float shootTime = 2f;
 
+    public GameObject followPlayer;
+    public GameObject ghostYinDao;
+
     private void Awake()
     {
         _seeker = GetComponent<Seeker>();
@@ -74,7 +77,11 @@ public class Ghost : MonoBehaviour
            // AutoPath();
         }
 
-       
+        if (ghostYinDao.GetComponent<NPC>().isOver && !DataSaveManager.Instance.isGhostTanChuang)
+        {
+            DataSaveManager.Instance.isGhostTanChuang = true;
+            GameManager.Instance.TanChuangGhost();
+        }
     }
 
     private void FixedUpdate()
@@ -179,6 +186,7 @@ public class Ghost : MonoBehaviour
         {
             if (DataSaveManager.Instance.isChumoGhost == false)
             {
+                followPlayer.GetComponent<DialogueSysYinDao>().GhostYinDao();
                 DataSaveManager.Instance.isChumoGhost = true;
             }
             TransState(EnemyStates.Death);
