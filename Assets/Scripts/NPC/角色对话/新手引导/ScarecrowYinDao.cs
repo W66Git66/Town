@@ -8,6 +8,7 @@ public class ScarecrowYinDao : MonoBehaviour
     {
         if (gameObject.GetComponent<NPC>().isOver == true)
         {
+            DataSaveManager.Instance.isScareDes = true;
             DataSaveManager.Instance.SetScarecrowYinDao();
         }
         if (DataSaveManager.Instance.isScarecrowYinDao)

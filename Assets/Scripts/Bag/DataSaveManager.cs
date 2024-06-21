@@ -46,10 +46,12 @@ public class DataSaveManager : Singleton<DataSaveManager>
 
     [Header("是否进行过稻草人引导")]
     public bool isScarecrowYinDao;
+    public bool isScareDes=false;
 
     [Header("是否进行过幽灵引导")]
     public bool isGhostYinDao = false;
     public bool isGhostTanChuang = false;
+    public bool isGhostDes = false;
 
     [Header("是否第一次除魔狗")]
     public bool isChuMoGou = false;
