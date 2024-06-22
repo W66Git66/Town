@@ -46,13 +46,16 @@ public class GameManager : Singleton<GameManager>
     public GameObject gfire;
     public GameObject shenShe;
 
-    public int n, m;//麻雀数量
+    public int n, m,p;//麻雀数量
 
     public GameObject TanchuangBird;
     public GameObject TanchuangZhu;
     public GameObject TanchuangScare;
     public GameObject TanchuangGou;
     public GameObject TanchuangGhost;
+
+    public GameObject numBirdbox;
+    public Text numBird;
 
     public int gfireNumber = 0;
 
@@ -76,7 +79,22 @@ public class GameManager : Singleton<GameManager>
     }
     private void Update()
     {
-
+        if (DataSaveManager.Instance.isProteinEverbeenFound)
+        {
+            numBirdbox.SetActive(true);
+        }
+        {
+            
+        }
+        if (DataSaveManager.Instance.liveBird > DataSaveManager.Instance.deadBird)
+        {
+            p=DataSaveManager.Instance.liveBird;
+        }
+        else
+        {
+            p = DataSaveManager.Instance.deadBird;
+        }
+        numBird.text = "当前剩余麻雀数： " + p.ToString();
     }
 
     public void TransToNight()
@@ -229,6 +247,12 @@ public class GameManager : Singleton<GameManager>
 
     public void TanChuangZhu()
     {
+        StartCoroutine(TanChuangZhuYanShi());
+        
+    }
+    IEnumerator TanChuangZhuYanShi()
+    {
+        yield return new WaitForSeconds(1.5f);
         TanchuangZhu.SetActive(true);
     }
 
